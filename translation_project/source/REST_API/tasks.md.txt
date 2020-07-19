@@ -1,0 +1,17 @@
+# Tasks
+
+## Get active tasks
+
+## Create a new task
+
+## Get an active task
+
+## Update a task
+
+## Clone a task
+
+## Reopen a task
+
+## Delete a task
+
+

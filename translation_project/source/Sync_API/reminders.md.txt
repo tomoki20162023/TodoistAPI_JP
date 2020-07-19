@@ -1,0 +1,11 @@
+# Reminders
+
+## Add a reminder
+
+## Update a reminder
+
+## Delete a reminder
+
+## Clear the locations
+
+

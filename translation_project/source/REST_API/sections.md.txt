@@ -1,0 +1,15 @@
+# Sections
+
+## Get all sections
+
+## Get project sections
+
+## Create a new sections
+
+## Get a single section
+
+## Update a section
+
+## Delete a section
+
+

@@ -1,0 +1,13 @@
+# User
+
+## Register a new user
+
+## Delete an existing user
+
+## Update use's properties
+
+## Update karma goals
+
+## Update notification settings
+
+

@@ -1,0 +1,16 @@
+# Sections
+
+## Add a section
+
+## Update a section
+
+## Move a section
+
+## Reorder a section
+
+## Delete a section
+
+## Archive a section
+
+## Unarchive a section
+

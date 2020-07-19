@@ -1,0 +1,12 @@
+# Sharing
+
+## Share a project
+
+## Delete a collaborator
+
+## Accept an invitation
+
+## Reject an invitation
+
+## Delete an invitation
+

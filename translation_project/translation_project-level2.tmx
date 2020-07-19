@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tmx SYSTEM "tmx14.dtd">
+<tmx version="1.4">
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="4.3.2_0_6a661c5e" segtype="sentence" srclang="EN-US"/>
+  <body>
+<!-- Default translations -->
+    <tu>
+      <tuv xml:lang="EN-US">
+        <seg># Index</seg>
+      </tuv>
+      <tuv xml:lang="JA" changeid="tom71" changedate="20200719T113730Z" creationid="tom71" creationdate="20200719T113730Z">
+        <seg># インデックス</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv xml:lang="EN-US">
+        <seg>- Overview
+- Getting started
+- Authorization
+- Sync
+- Projects
+- Templates
+- Items
+- Labels
+- Notes
+- ProjectNotes
+- Sections
+- Uploads
+- Filters
+- Reminders
+- Due dates
+- Miscellaneous
+- Quick add task
+- User
+- User settings
+- Sharing
+- Live notifications
+- Business
+- Activity
+- Backups
+- Emails
+- URL schemes
+- Webhooks
+- Batching commands
+- Limits
+- Changes
+- Brand usage</seg>
+      </tuv>
+      <tuv xml:lang="JA" changeid="tom71" changedate="20200719T114724Z" creationid="tom71" creationdate="20200719T114211Z">
+        <seg>- 概要
+- 始めに
+- 認証
+- 同期
+- プロジェクト
+- テンプレート
+- アイテム
+- Labels
+- Notes
+- ProjectNotes
+- Sections
+- Uploads
+- Filters
+- Reminders
+- Due dates
+- Miscellaneous
+- Quick add task
+- User
+- User settings
+- Sharing
+- Live notifications
+- Business
+- Activity
+- Backups
+- Emails
+- URL schemes
+- Webhooks
+- Batching commands
+- Limits
+- Changes
+- Brand usage</seg>
+      </tuv>
+    </tu>
+<!-- Alternative translations -->
+  </body>
+</tmx>

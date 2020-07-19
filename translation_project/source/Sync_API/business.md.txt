@@ -1,0 +1,8 @@
+# Business
+
+## Send invitation
+
+## Accept invitation
+
+## Reject invitation
+
