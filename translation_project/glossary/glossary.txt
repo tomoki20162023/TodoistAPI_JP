@@ -7,3 +7,4 @@ Label	ラベル
 Note	ノート
 Section	セクション
 Upload	アップロード
+Overview	概要

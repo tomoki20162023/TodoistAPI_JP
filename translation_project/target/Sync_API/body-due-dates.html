@@ -1,0 +1,291 @@
+          <h1 id="due-dates">Due dates</h1>&#13;
+&#13;
+<p>Due dates for tasks and reminders is one of the core concepts of Todoist. It’s 
+very powerful and quite complex, because it has to embrace different use-cases
+of Todoist users.</p>&#13;
+&#13;
+<p>Todoist supports three types of due dates.</p>&#13;
+&#13;
+<ul>&#13;
+<li>Full-day dates (like “1 January 2018” or “tomorrow”)</li>&#13;
+<li>Floating due dates with time (like “1 January 2018 at 12:00” or “tomorrow 
+at 10am”)</li>&#13;
+<li>Due dates with time and fixed timezone (like “1 January 2018 at 12:00 
+America/Chicago” or “tomorrow at 10am Asia/Jakarta”)</li>&#13;
+</ul>&#13;
+&#13;
+<p>Unless specified explicitly, dates with time are created as floating.</p>&#13;
+&#13;
+<p>In addition, any of these due dates can be set to recurring or not, depending
+on the date string, provided by the client.</p>&#13;
+&#13;
+<ul>&#13;
+<li><a href="https://get.todoist.help/hc/en-us/articles/360001450039">More about the difference between floating due dates and dates with fixed 
+timezones</a></li>&#13;
+<li><a href="https://get.todoist.help/hc/en-us/articles/360000636289">More about recurring due 
+dates</a></li>&#13;
+</ul>&#13;
+&#13;
+<h2 id="full-day-dates">Full-day dates</h2>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of a full-day date</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-01"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"every day"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lang"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_recurring"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<h3 id="properties">Properties</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Property</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>date <em>string</em></td>&#13;
+<td>Due date in the format of <code class="prettyprint">YYYY-MM-DD</code> (<a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a>). For recurring dates, the date of the current iteration.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>timezone <em>string</em></td>&#13;
+<td>Always set to <code class="prettyprint">null</code>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>string <em>string</em></td>&#13;
+<td>Human-readable representation of due date. String always represents the due object in user’s timezone. Look at our reference to see <a href="https://get.todoist.help/hc/articles/205325931">which formats are supported</a>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>lang <em>string</em></td>&#13;
+<td>Lang which has to be used to parse the content of the string attribute. Used by clients and on the server side to properly process due dates when date object is not set, and when dealing with recurring tasks. Valid languages are: <code class="prettyprint">en</code>, <code class="prettyprint">da</code>, <code class="prettyprint">pl</code>, <code class="prettyprint">zh</code>, <code class="prettyprint">ko</code>, <code class="prettyprint">de</code>, <code class="prettyprint">pt</code>, <code class="prettyprint">ja</code>, <code class="prettyprint">it</code>, <code class="prettyprint">fr</code>, <code class="prettyprint">sv</code>, <code class="prettyprint">ru</code>, <code class="prettyprint">es</code>, <code class="prettyprint">nl</code>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>is_recurring <em>boolean</em></td>&#13;
+<td>Boolean flag which is set to <code class="prettyprint">true</code> is due object represents a recurring due date</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="floating-due-dates-with-time">Floating due dates with time</h2>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of a floating due date with time</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-0T12:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"every day at 12"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lang"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_recurring"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Property</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>date <em>string</em></td>&#13;
+<td>Due date in the format of <code class="prettyprint">YYYY-MM-DDTHH:MM:SS</code>. For recurring dates, the date of the current iteration. Due date always represent an event in current user’s timezone.  Note that it’s not quite compatible with <a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a>, because the concept of timezone is not applicable to this object. Also note that unlike fixed due dates, the date representation doesn’t end with “Z”</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>timezone <em>string</em></td>&#13;
+<td>Always set to <code class="prettyprint">null</code>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>string <em>string</em></td>&#13;
+<td>Human-readable representation of due date. String always represents the due object in user’s timezone. Look at our reference to see <a href="https://get.todoist.help/hc/articles/205325931">which formats are supported</a>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>lang <em>string</em></td>&#13;
+<td>Lang which has to be used to parse the content of the string attribute. Used by clients and on the server side to properly process due dates when date object is not set, and when dealing with recurring tasks. Valid languages are: <code class="prettyprint">en</code>, <code class="prettyprint">da</code>, <code class="prettyprint">pl</code>, <code class="prettyprint">zh</code>, <code class="prettyprint">ko</code>, <code class="prettyprint">de</code>, <code class="prettyprint">pt</code>, <code class="prettyprint">ja</code>, <code class="prettyprint">it</code>, <code class="prettyprint">fr</code>, <code class="prettyprint">sv</code>, <code class="prettyprint">ru</code>, <code class="prettyprint">es</code>, <code class="prettyprint">nl</code>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>is_recurring <em>boolean</em></td>&#13;
+<td>Boolean flag which is set to <code class="prettyprint">true</code> is due object represents a recurring due date</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="due-dates-with-time-and-fixed-timezone">Due dates with time and fixed timezone</h2>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of a due date with time and fixed timezone</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-06T13:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Europe/Madrid"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ev day at 2pm"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lang"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_recurring"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<h3 id="properties">Properties</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Property</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>date <em>string</em></td>&#13;
+<td>Due date in the format of <code class="prettyprint">YYYY-MM-DDTHH:MM:SSZ</code> (<a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a>). For recurring dates, the date of the current iteration. Due date is stored in UTC.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>timezone <em>string</em></td>&#13;
+<td>Timezone of the due instance. Used to recalculate properly the next iteration for a recurring due date.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>string <em>string</em></td>&#13;
+<td>Human-readable representation of due date. String always represents the due object in user’s timezone. Look at our reference to see <a href="https://get.todoist.help/hc/articles/205325931">which formats are supported</a>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>lang <em>string</em></td>&#13;
+<td>Lang which has to be used to parse the content of the string attribute. Used by clients and on the server side to properly process due dates when date object is not set, and when dealing with recurring tasks. Valid languages are: <code class="prettyprint">en</code>, <code class="prettyprint">da</code>, <code class="prettyprint">pl</code>, <code class="prettyprint">zh</code>, <code class="prettyprint">ko</code>, <code class="prettyprint">de</code>, <code class="prettyprint">pt</code>, <code class="prettyprint">ja</code>, <code class="prettyprint">it</code>, <code class="prettyprint">fr</code>, <code class="prettyprint">sv</code>, <code class="prettyprint">ru</code>, <code class="prettyprint">es</code>, <code class="prettyprint">nl</code>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>is_recurring <em>boolean</em></td>&#13;
+<td>Boolean flag which is set to <code class="prettyprint">true</code> is due object represents a recurring due date</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="create-or-update-due-dates">Create or update due dates</h2>&#13;
+&#13;
+<p>Usually you create due dates when you create a new task or a reminder, or
+you want to update a due date for an object. In both cases due date is provided
+as a <code class="prettyprint">due</code> attribute of an object. You may provide all fields of an object in
+the constructor, but it’s more convenient to provide only a subset of the
+fields and let the server to fill the gaps.</p>&#13;
+&#13;
+<h3 id="create-or-update-due-date-from-user-provided-string">Create or update due date from user-provided string</h3>&#13;
+&#13;
+<blockquote>&#13;
+<p>Input example</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"due"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"string"</span><span class="p">:</span><span class="w">  </span><span class="s2">"tomorrow"</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<blockquote>&#13;
+<p>Output example. Full-date instance is created.</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"due"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-15"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_recurring"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tomorrow"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lang"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<blockquote>&#13;
+<p>Input example</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"due"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"string"</span><span class="p">:</span><span class="w">  </span><span class="s2">"tomorrow at 12"</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<blockquote>&#13;
+<p>Output example. Floating due date created</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"due"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-15T12:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_recurring"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tomorrow at 12"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lang"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<blockquote>&#13;
+<p>Input example. Timezone is set explicitly</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"due"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tomorrow at 12"</span><span class="p">,</span><span class="w"> </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asia/Jakarta"</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<blockquote>&#13;
+<p>Output example. Due date with fixed timezone created</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"due"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-11-16T05:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asia/Jakarta"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_recurring"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tomorrow at 12"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lang"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<p>You can ask user to provide a due string and to create a new object from that.
+You need to provide a timezone if you want to create a fixed due date instead
+of the floating one. If you want to create a task without a due date, you
+can set due attribute to <code class="prettyprint">null</code>.</p>&#13;
+&#13;
+<p>See the code section to the right for more examples. In all cases you can set
+the <code class="prettyprint">lang</code> attribute of the date to set the language of the input. If language
+is not set, the language from user settings will be used.  </p>&#13;
+&#13;
+<h3 id="create-or-update-due-date-from-a-date-object">Create or update due date from a date object</h3>&#13;
+&#13;
+<blockquote>&#13;
+<p>Input example for a full-day event</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"due"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-14"</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<p>For a full date event the format of the date attribute is <code class="prettyprint">YYYY-MM-DD</code>.</p>&#13;
+&#13;
+<blockquote>&#13;
+<p>Output example</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"due"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-14"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_recurring"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-14"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lang"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<blockquote>&#13;
+<p>Input example for a floating due date</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"due"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-14T10:00:00"</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<blockquote>&#13;
+<p>Output example</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"due"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-14T10:00:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_recurring"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-14 10:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lang"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<p>In some cases you have a date object and want to create a due date from it.
+Usually all you need to do is to chose the format of the due date (floating
+or fixed) and format the time object properly with strftime or alternative for
+your programming language. The formatted string goes to a “date” attribute of
+the constructor.</p>&#13;
+&#13;
+<p>Note that this approach does not allow you to create recurring due dates.</p>&#13;
+&#13;
+<p>For a floating due date event the format of the date attribute is 
+<code class="prettyprint">YYYY-MM-DDTHH:MM:SS</code> and the date has to be provided in user’s local
+timezone.</p>&#13;
+&#13;
+<blockquote>&#13;
+<p>Input example for a due date with a fixed timezone</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"due"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-14T05:00:00Z"</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<blockquote>&#13;
+<p>Output example</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="s2">"due"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-14T05:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Asia/Jakarta"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_recurring"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-10-14 12:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lang"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<p>For a floating due date event the format of the date attribute is 
+<code class="prettyprint">YYYY-MM-DDTHH:MM:SSZ</code> (mind the “Z” ending) and the date has to be provided
+in UTC. Optionally you can provide a timezone name to overwrite the default
+timezone of the user.</p>&#13;
+&#13;

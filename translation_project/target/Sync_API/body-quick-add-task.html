@@ -1,0 +1,93 @@
+          <h1 id="quick-add-task">Quick add task</h1>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of quick add task:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/quick/add <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">text</span><span class="o">=</span><span class="s1">'Task1 @Label1 #Project1 +ExampleUser'</span>
+
+<span class="o">{</span>
+  <span class="s2">"added_by_uid"</span>: 1855589,
+  <span class="s2">"assigned_by_uid"</span>: 1855589,
+  <span class="s2">"labels"</span>: <span class="o">[</span>
+    874,
+  <span class="o">]</span>,
+  <span class="s2">"sync_id"</span>: null,
+  <span class="s2">"in_history"</span>: 0,
+  <span class="s2">"date_added"</span>: <span class="s2">"2015-02-18T11:09:11Z"</span>,
+  <span class="s2">"parent_id"</span>: null,
+  <span class="s2">"children"</span>: null,
+  <span class="s2">"content"</span>: <span class="s2">"Task1"</span>,
+  <span class="s2">"is_deleted"</span>: 0,
+  <span class="s2">"user_id"</span>: 1855589,
+  <span class="s2">"due"</span>: null,
+  <span class="s2">"id"</span>: 33548400,
+  <span class="s2">"priority"</span>: 4,
+  <span class="s2">"child_order"</span>: 1,
+  <span class="s2">"responsible_uid"</span>: 1855589,
+  <span class="s2">"project_id"</span>: 128501411,
+  <span class="s2">"collapsed"</span>: 0,
+  <span class="s2">"checked"</span>: 0,
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">quick</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">'Task1 @Label1 #Project1 +ExampleUser'</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="s">'labels'</span><span class="p">:</span> <span class="p">[</span>
+    <span class="mi">874</span>
+  <span class="p">],</span>
+  <span class="s">'sync_id'</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+  <span class="s">'in_history'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s">'checked'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s">'id'</span><span class="p">:</span> <span class="mi">33548400</span><span class="p">,</span>
+  <span class="s">'priority'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+  <span class="s">'user_id'</span><span class="p">:</span> <span class="mi">1855589</span><span class="p">,</span>
+  <span class="s">'date_added'</span><span class="p">:</span> <span class="s">'2015-02-18T11:09:11Z'</span><span class="p">,</span>
+  <span class="s">'children'</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+  <span class="s">'content'</span><span class="p">:</span> <span class="s">'Task1'</span><span class="p">,</span>
+  <span class="s">'child_order'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s">'project_id'</span><span class="p">:</span> <span class="mi">128501411</span><span class="p">,</span>
+  <span class="s">'added_by_uid'</span><span class="p">:</span> <span class="mi">1855589</span><span class="p">,</span>
+  <span class="s">'assigned_by_uid'</span><span class="p">:</span> <span class="mi">1855589</span><span class="p">,</span>
+  <span class="s">'collapsed'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s">'parent_id'</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+  <span class="s">'is_deleted'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s">'due'</span><span class="p">:</span> <span class="bp">None</span><span class="p">,</span>
+  <span class="s">'responsible_uid'</span><span class="p">:</span> <span class="mi">1855589</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>&#13;
+<p>Add a new task using the Quick Add Task implementation available in the official
+clients.</p>&#13;
+&#13;
+<h3 id="parameters">Parameters</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Parameter</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>text <em>String</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The text of the task that is parsed.  It can include a due date in free form text, a project name starting with the <code class="prettyprint">#</code> character (without spaces), a label starting with the <code class="prettyprint">@</code> character, and an assignee starting with the <code class="prettyprint">+</code> character.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>note <em>String</em></td>&#13;
+<td>No</td>&#13;
+<td>The content of the note.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>reminder <em>String</em></td>&#13;
+<td>No</td>&#13;
+<td>The date of the reminder, added in free form text.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>auto_reminder <em>Boolean</em></td>&#13;
+<td>No</td>&#13;
+<td>When this option is enabled, the default reminder will be added to the new item if it has a due date with time set. See also the <a href="#user">auto_reminder user option</a> for more info about the default reminder.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;

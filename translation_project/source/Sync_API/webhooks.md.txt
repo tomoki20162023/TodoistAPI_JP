@@ -1,6 +1,0 @@
-# Webhoks
-
-## Configuration
-
-## Request Format
-

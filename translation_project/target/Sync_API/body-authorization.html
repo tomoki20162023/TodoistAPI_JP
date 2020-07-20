@@ -1,0 +1,301 @@
+          <h1 id="authorization">Authorization</h1>&#13;
+&#13;
+<p>In order to make authorized calls to Todoist APIs, your application must first
+obtain an access token from the users. This section describes the different ways
+of obtaining such a token.</p>&#13;
+&#13;
+<p>For the sake of simplicity we decided to not list the token on every parameter
+table but please note that the <strong>token is required for every resource</strong>.</p>&#13;
+&#13;
+<p>Note that we encourage your application to use
+the <a href="http://en.wikipedia.org/wiki/OAuth">OAuth</a> protocol to obtain the access
+token from the user.</p>&#13;
+&#13;
+<h2 id="oauth">OAuth</h2>&#13;
+&#13;
+<p>External applications could obtain a user authorized API token via the OAuth2
+protocol. Before getting started, developers need to create their applications
+in <a href="../../appconsole.html">App Management Console</a> and configure a valid OAuth
+redirect URL. A registered Todoist application is assigned a unique <code class="prettyprint">Client ID</code>
+and <code class="prettyprint">Client Secret</code> which are needed for the OAuth2 flow.</p>&#13;
+&#13;
+<p>This procedure is comprised of 3 steps, which will be described below.</p>&#13;
+&#13;
+<h3 id="step-1-the-authorization-request">Step 1: The authorization request</h3>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of the URL to the authorization endpoint:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code>https://todoist.com/oauth/authorize?client_id<span class="o">=</span>0123456789abcdef&amp;scope<span class="o">=</span>data:read,data:delete&amp;state<span class="o">=</span>secretstring
+</code></pre></div>&#13;
+<p>Redirect users to the authorization URL at the endpoint
+<code class="prettyprint">https://todoist.com/oauth/authorize</code>, with the specified request parameters.</p>&#13;
+&#13;
+<p>Here follow the required parameters:</p>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Name</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>client_id <em>String</em></td>&#13;
+<td>The unique Client ID of the Todoist application that you registered.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>scope <em>String</em></td>&#13;
+<td>A comma separated list of permissions that you would like the users to grant to your application. See below a table with more details about this.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>state <em>String</em></td>&#13;
+<td>A unique and unguessable string. It is used to protect you against cross-site request forgery attacks.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<p>Here are the scope parameters mentioned before:</p>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Name</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>task:add</td>&#13;
+<td>Grants permission to add tasks to the Inbox project (the application cannot read tasks data). This is only used by the helper method of <a href="#add-item">adding an item</a>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>data:read</td>&#13;
+<td>Grants read-only access to application data, including tasks, projects, labels, and filters.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>data:read_write</td>&#13;
+<td>Grants read and write access to application data, including tasks, projects, labels, and filters. This scope includes <code class="prettyprint">task:add</code> and <code class="prettyprint">data:read</code> scopes.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>data:delete</td>&#13;
+<td>Grants permission to delete application data, including tasks, labels, and filters.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>project:delete</td>&#13;
+<td>Grants permission to delete projects.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<p>And here are some common errors that you may encounter:</p>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Error</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>User Rejected Authorization Request</td>&#13;
+<td>When the user denies your authorization request, Todoist will redirect the user to the configured redirect URI with the <code class="prettyprint">error</code> parameter: <code class="prettyprint">http://example.com?error=access_denied</code>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>Redirect URI Not Configured</td>&#13;
+<td>This JSON error will be returned to the requester (your user’s browser) if redirect URI is not configured in the App Management Console.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>Invalid Application Status</td>&#13;
+<td>When your application exceeds the maximum token limit or when your application is being suspended due to abuse, Todoist will redirect the user to the configured redirect URI with the <code class="prettyprint">error</code> parameter: <code class="prettyprint">http://example.com?error=invalid_application_status</code>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>Invalid Scope</td>&#13;
+<td>When the <code class="prettyprint">scope</code> parameter is invalid, Todoist will redirect the user to the configured redirect URI with <code class="prettyprint">error</code> parameter: <code class="prettyprint">http://example.com?error=invalid_scope</code>.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h3 id="step-2-the-redirection-to-your-application-site">Step 2: The redirection to your application site</h3>&#13;
+&#13;
+<p>When the user grants your authorization request, the user will be redirected to
+the redirect URL configured in your application setting. The redirect request
+will come with two query parameters attached: <code class="prettyprint">code</code> and <code class="prettyprint">state</code>.</p>&#13;
+&#13;
+<p>The <code class="prettyprint">code</code> parameter contains the authorization code that you will use to
+exchange for an access token. The <code class="prettyprint">state</code> parameter should match the <code class="prettyprint">state</code>
+parameter that you supplied in the previous step.  If the <code class="prettyprint">state</code> is unmatched,
+your request has been compromised by other parties, and the process should be
+aborted.</p>&#13;
+&#13;
+<h3 id="step-3-the-token-exchange">Step 3: The token exchange</h3>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of exchanging the token:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl <span class="s2">"https://todoist.com/oauth/access_token"</span> <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s2">"client_id=0123456789abcdef"</span> <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s2">"client_secret=secret"</span> <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s2">"code=abcdef"</span> <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s2">"redirect_uri=https://example.com"</span>
+</code></pre></div>&#13;
+<blockquote>&#13;
+<p>On success, Todoist returns HTTP 200 with token in JSON object format:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"access_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0123456789abcdef0123456789abcdef01234567"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"token_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bearer"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<p>Once you have the authorization <code class="prettyprint">code</code>, you can exchange it for the access token
+by doing a <code class="prettyprint">POST</code> request to the following endpoint:</p>&#13;
+&#13;
+<p><code class="prettyprint">https://todoist.com/oauth/access_token</code>.</p>&#13;
+&#13;
+<p>Here follow the required parameters:</p>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Name</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>client_id <em>String</em></td>&#13;
+<td>The unique Client ID of the Todoist application that you registered.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>client_secret <em>String</em></td>&#13;
+<td>The unique Client Secret of the Todoist application that you registered.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>code <em>String</em></td>&#13;
+<td>The unique string code that you obtained in the previous step.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<p>And here are some common errors that you may encounter (all the error responses
+will be in JSON format):</p>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Error</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>Bad Authorization Code Error</td>&#13;
+<td>Occurs when the <code class="prettyprint">code</code> parameter does not match the code that is given in the redirect request: <code class="prettyprint">{"error": "bad_authorization_code"}</code></td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>Incorrect Client Credentials Error</td>&#13;
+<td>Occurs when the <code class="prettyprint">client_id</code> or <code class="prettyprint">client_secret</code> parameters are incorrect: <code class="prettyprint">{"error": "incorrect_application_credentials"}</code></td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="revoke-access-tokens">Revoke Access Tokens</h2>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.todoist.com/sync/v8/access_tokens/revoke <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{"client_id":"xyz", "client_secret":"xyz", "access_token":"xyz"}'</span>
+</code></pre></div>&#13;
+<p>Access tokens obtained via OAuth could be revoked making a JSON request (HTTP
+POST) to the following endpoint:</p>&#13;
+&#13;
+<p><code class="prettyprint">https://api.todoist.com/sync/v8/access_tokens/revoke</code></p>&#13;
+&#13;
+<h3 id="parameters">Parameters:</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Name</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>client_id <em>String</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The unique Client ID of the Todoist application that you registered.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>client_secret <em>String</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The unique Client Secret of the Todoist application that you registered.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>access_token <em>String</em></td>&#13;
+<td>Yes</td>&#13;
+<td>Access token obtained from the OAuth authentication</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<p>Upon successful request, a HTTP 204 response will be returned.</p>&#13;
+&#13;
+<h2 id="migrate-personal-tokens-to-oauth-tokens">Migrate Personal Tokens to OAuth Tokens</h2>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST https://api.todoist.com/sync/v8/access_tokens/migrate_personal_token <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    <span class="nt">-d</span> <span class="s1">'{"client_id":"xyz", "client_secret":"xyz", "personal_token":"xyz", "scope": "data:read"}'</span>
+
+<span class="o">{</span><span class="s2">"access_token"</span>: <span class="s2">"...."</span>, <span class="s2">"token_type"</span>: <span class="s2">"Bearer"</span><span class="o">}</span>
+</code></pre></div>&#13;
+<p>Tokens obtained via the old email/password authentication method could be
+migrated to the new OAuth access token. Migrating your users’ personal tokens
+will allow users to see your app in their Todoist Settings page and give them
+the ability to manage their app authorization.</p>&#13;
+&#13;
+<p>Here is the migration API endpoint (HTTP POST, with JSON request parameters):</p>&#13;
+&#13;
+<p><code class="prettyprint">https://api.todoist.com/sync/v8/access_tokens/migrate_personal_token</code></p>&#13;
+&#13;
+<h3 id="parameters">Parameters:</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Name</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>client_id <em>String</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The unique Client ID of the Todoist application that you registered.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>client_secret <em>String</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The unique Client Secret of the Todoist application that you registered.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>personal_token <em>String</em></td>&#13;
+<td>Yes</td>&#13;
+<td>Token obtained from the email/password authentication</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>scope <em>String</em></td>&#13;
+<td>Yes</td>&#13;
+<td>Scopes of the OAuth token. Please refer to the <a href="https://developer.todoist.com/#oauth">OAuth</a> section for the detailed list of available scopes.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<p>Upon successful request, a HTTP 200 response will be returned with a new OAuth
+token in JSON format:</p>&#13;
+&#13;
+<p><code class="prettyprint">{"access_token": "....", "token_type": "Bearer"}</code></p>&#13;
+&#13;
+<h2 id="cross-origin-resource-sharing">Cross Origin Resource Sharing</h2>&#13;
+&#13;
+<blockquote>&#13;
+<p>CORS headers example:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s1">'Origin: http://example.com'</span>
+
+HTTP/1.1 200 OK
+Access-Control-Allow-Credentials: <span class="nb">false
+</span>Access-Control-Allow-Origin: <span class="k">*</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">requests</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://api.todoist.com/sync/v8/sync'</span><span class="p">,</span>
+<span class="o">...</span>               <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s">'token'</span><span class="p">:</span> <span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">},</span>
+<span class="o">...</span>               <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">'Origin'</span><span class="p">:</span> <span class="s">'https://example.com'</span><span class="p">})</span><span class="o">.</span><span class="n">headers</span>
+
+<span class="p">{</span><span class="s">'Access-Control-Allow-Credentials'</span><span class="p">:</span> <span class="s">'false'</span><span class="p">,</span> <span class="s">'Access-Control-Allow-Origin'</span><span class="p">:</span> <span class="s">'*'</span><span class="p">,</span> <span class="o">&lt;...&gt;</span><span class="p">}</span>
+</code></pre></div>&#13;
+<p>All API endpoints not related to the 3 OAuth steps support Cross Origin Resource
+Sharing (CORS) for requests from any origin. The header
+<code class="prettyprint">Access-Control-Allow-Origin: *</code> is set for successfully authenticated requests.</p>&#13;
+&#13;

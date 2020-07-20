@@ -1,0 +1,37 @@
+          <div name="limits" data-unique="limits"/><h1 id="limits">Limits</h1>
+
+<p>There is currently a 1MiB http request body limit on POST requests. The
+exception to this rule is any of the <em>upload</em> endpoints which have a limit of
+100 MiB.</p>
+
+<p>Upload endpoints are for POST requests pointed at paths such as <code class="prettyprint">/upload</code> and <code class="prettyprint">/uploads/add</code>.</p>
+
+<h3 id="processing-timeouts">Processing Timeouts</h3>
+
+<p>There are processing timeouts associated with each endpoint and these vary
+depending on the type of action being performed.</p>
+
+<table><thead>
+<tr>
+<th>Type</th>
+<th>Limit</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Uploads</td>
+<td>5 minutes</td>
+</tr>
+<tr>
+<td>Standard Request</td>
+<td>15 seconds</td>
+</tr>
+</tbody></table>
+
+<h3 id="headers">Headers</h3>
+
+<p>Total size of HTTP headers cannot exceed 65 KiB.</p>
+
+<h3 id="requests-per-minute">Requests per Minute</h3>
+
+<p>You can make a total of 50 requests per minute per user when using the REST API.</p>
+

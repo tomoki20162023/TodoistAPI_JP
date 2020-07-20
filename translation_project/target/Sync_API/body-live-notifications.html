@@ -1,0 +1,690 @@
+          <h1 id="live-notifications">Live notifications</h1>&#13;
+&#13;
+<blockquote>&#13;
+<p>Examples of live notifications:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1377639720</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invitation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invitation_secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdefghijklmno"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"share_invitation_sent"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seq_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345567890</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1377639720</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invitation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"share_invitation_accepted"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">789</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legacy_project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">567</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seq_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1377639720</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invitation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"share_invitation_rejected"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">789</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legacy_project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">567</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reject_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"me@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seq_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1377639720</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_left_project"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legacy_project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">567</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seq_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1377639720</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_removed_from_project"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">567</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legacy_project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"removed_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example User"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"removed_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">789</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seq_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"assigned_by_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">789</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1377639720</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"item_content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NewTask"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">789</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legacy_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item_assigned"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">567</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legacy_project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">789</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"responsible_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">321</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seq_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"assigned_by_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">789</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1377639720</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"item_content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NewTask"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">789</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legacy_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item_completed"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">567</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legacy_project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">789</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"responsible_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">321</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seq_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"assigned_by_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">789</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1377639720</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"item"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"item_content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NewTask"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item_uncompleted"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project"</span><span class="p">:</span><span class="w"> </span><span class="mi">789</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"responsible_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">321</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seq_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1377639720</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">789</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legacy_item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"note_content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NewTask"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"note_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">321</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legacy_note_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">789</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"note_added"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">221</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legacy_project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">321</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seq_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1377639720</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"me@example.com"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biz_policy_disallowed_invitation"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">543</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"legacy_project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seq_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"you@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example User"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"789"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"image_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"321"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1377639720</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"inviter_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">456</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biz_policy_rejected_invitation"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seq_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"you@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example User"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"789"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"image_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"321"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"active_until"</span><span class="p">:</span><span class="w"> </span><span class="mi">1399299727</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1377639720</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biz_trial_will_end"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"plan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business_monthly"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seq_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"active_until"</span><span class="p">:</span><span class="w"> </span><span class="mi">1399299727</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"amount_due"</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"attempt_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1377639720</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2 x Subscription to Monthly ($3.00/month)"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"next_payment_attempt"</span><span class="p">:</span><span class="w"> </span><span class="mi">1399299735</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biz_payment_failed"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"plan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business_monthly"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seq_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"active_until"</span><span class="p">:</span><span class="w"> </span><span class="mi">1399299727</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1377639720</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biz_account_disabled"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"plan"</span><span class="p">:</span><span class="w"> </span><span class="s2">"business_monthly"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seq_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"account_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Inc."</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1377639720</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"you@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example User"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"456"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"image_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"789"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invitation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">321</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invitation_message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Welcome to our team!"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invitation_secret"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcdefghijklmno"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biz_invitation_created"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seq_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"accepted"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1377639720</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"account_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Inc."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"you@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example User"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"456"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"image_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"789"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invitation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">321</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biz_invitation_accepted"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seq_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="s2">"created"</span><span class="p">:</span><span class="w"> </span><span class="mi">1377639720</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"from_user"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"account_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Inc."</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"you@example.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example User"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"456"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"image_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"789"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">17</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invitation_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">321</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"notification_123"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"notification_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"biz_invitation_rejected"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"seq_no"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234567890</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<h3 id="types">Types</h3>&#13;
+&#13;
+<p>This is the list of notifications which can be issued by the system:</p>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Type</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>share_invitation_sent</td>&#13;
+<td>Sent to the sharing invitation receiver.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>share_invitation_accepted</td>&#13;
+<td>Sent to the sharing invitation sender, when the receiver accepts the invitation.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>share_invitation_rejected</td>&#13;
+<td>Sent to the sharing invitation sender, when the receiver rejects the invitation.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>user_left_project</td>&#13;
+<td>Sent to everyone when somebody leaves the project.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>user_removed_from_project</td>&#13;
+<td>Sent to everyone, when a person removes somebody from the project.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>item_assigned</td>&#13;
+<td>Sent to user who is responsible for the task. Optionally it’s also sent to the user who created the task initially, if the assigner and the task creator is not the same person.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>item_completed</td>&#13;
+<td>Sent to the user who assigned the task when the task is completed. Optionally it’s also sent to the user who is responsible for this task, if the responsible user and the user who completed the task is not the same person.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>item_uncompleted</td>&#13;
+<td>Sent to the user who assigned the task when the task is uncompleted. Optionally it’s also sent to the user who is responsible for this task, if the responsible user and the user who completed the task is not the same person.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>note_added</td>&#13;
+<td>Sent to all members of the shared project, whenever someone adds a note to the task.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>biz_policy_disallowed_invitation</td>&#13;
+<td>Sent to you when you try to share a project with someone outside of your business account, but the business account policy disallows this action.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>biz_policy_rejected_invitation</td>&#13;
+<td>Sent to you when you try to accept the invitation to a shared project from someone outside of your business account, but the business account policy disallows this action.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>biz_trial_will_end</td>&#13;
+<td>Sent to all business account administrators three days before the trial period of a subscription is scheduled to end.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>biz_payment_failed</td>&#13;
+<td>Sent to all business account administrators whenever an invoice attempt payment fails. This can occur either due to a declined payment, or because the customer has no active card. A particular case of note is that if a customer with no active card reaches the end of its free trial.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>biz_account_disabled</td>&#13;
+<td>Sent to all business account administrators when the account is disabled.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>biz_invitation_created</td>&#13;
+<td>Sent to an invitee, when one of business account administrators invites this user to the business account.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>biz_invitation_accepted</td>&#13;
+<td>Sent to an inviter, when the invitation is accepted.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>biz_invitation_rejected</td>&#13;
+<td>Sent to an inviter, when the invitation is rejected.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h3 id="common-properties">Common properties</h3>&#13;
+&#13;
+<p>Some properties are common for all types of notifications, whereas some others
+depend on the notification type.</p>&#13;
+&#13;
+<p>Every live notification has the following properties:</p>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Property</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>id <em>Integer</em></td>&#13;
+<td>The id of the live notification.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>legacy_id <em>Integer</em></td>&#13;
+<td>The legacy id of the live notification. <em>(only shown for objects created before 1 April 2017)</em></td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>created <em>Integer</em></td>&#13;
+<td>Live notification creation date. A number representing a timestamp since epoch.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>from_uid <em>Integer</em></td>&#13;
+<td>The id of the user who initiated this live notification.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>notification_key <em>String</em></td>&#13;
+<td>Unique notification key.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>notification_type <em>String</em></td>&#13;
+<td>Type of notification. Different notification type define different extra fields which are described below.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>seq_no <em>Integer</em></td>&#13;
+<td>Notification sequence number.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>is_unread <em>Integer</em></td>&#13;
+<td>Whether the notification is marked as unread (<code class="prettyprint">1</code>) or read (<code class="prettyprint">0</code>).</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h3 id="specific-properties">Specific properties</h3>&#13;
+&#13;
+<p>Here are the extra properties for the <code class="prettyprint">*_invitation_*</code> types of live
+notifications:</p>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Property</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>from_user <em>Object</em></td>&#13;
+<td>User data, useful on <code class="prettyprint">share_invitation_sent</code>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>project_name <em>String</em></td>&#13;
+<td>The project name, useful for <code class="prettyprint">share_invitation_*</code> where you may not have the project in the local model.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>invitation_id <em>Integer</em></td>&#13;
+<td>The invitation id. Useful for accepting/rejecting invitations.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>invitation_secret <em>String</em></td>&#13;
+<td>The invitation secret key. Useful for accepting/rejecting invitations.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<p>Here are the extra properties for the <code class="prettyprint">share_invitation_sent</code> type of live notifications:</p>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Property</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>state <em>String</em></td>&#13;
+<td>Invitation state. Initially <code class="prettyprint">invited</code>, can change the state to <code class="prettyprint">accepted</code> or <code class="prettyprint">rejected</code>.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<p>Here are the extra properties for the <code class="prettyprint">user_removed_from_project</code> type of live notifications:</p>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Property</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>removed_name <em>String</em></td>&#13;
+<td>The name of the user removed.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>removed_uid <em>Integer</em></td>&#13;
+<td>The uid of the user removed.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<p>Here are the extra properties for the <code class="prettyprint">biz_trial_will_end</code> type of live notifications:</p>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Property</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>quantity <em>Integer</em></td>&#13;
+<td>The number of users under the control of the business account.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>plan <em>String</em></td>&#13;
+<td>Tariff plan name. Valid values are <code class="prettyprint">business_monthly</code> and <code class="prettyprint">business_yearly</code>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>active_until <em>Integer</em></td>&#13;
+<td>The timestamp when the business account will be disabled. The value may not match the business account subscription end date, as we give some extra days (up to two weeks) to pay the invoice.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<p>Here are the extra properties for the <code class="prettyprint">biz_payment_failed</code> type of live notifications:</p>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Property</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>quantity <em>Integer</em></td>&#13;
+<td>The number of users under the control of the business account.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>plan <em>String</em></td>&#13;
+<td>Tariff plan name. Valid values are <code class="prettyprint">business_monthly</code> and <code class="prettyprint">business_yearly</code>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>active_until <em>Integer</em></td>&#13;
+<td>The timestamp when the business account will be disabled. The value may not match the business account subscription end date, as we give some extra days (up to two weeks) to pay the invoice.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>amount_due <em>Integer</em></td>&#13;
+<td>Invoice amount. Integer value in <code class="prettyprint">0.01</code> of currency.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>attempt_count <em>Integer</em></td>&#13;
+<td>Number of automatic payment attempts made for this invoice.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>currency <em>String</em></td>&#13;
+<td>Currency value. Three-letter ISO currency code representing the currency in which the charge was made.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>description <em>String</em></td>&#13;
+<td>Invoice description.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>next_payment_attempt <em>String</em></td>&#13;
+<td>Timestamp value.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<p>Here are the extra properties for the <code class="prettyprint">biz_account_disabled</code> type of live notifications:</p>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Property</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>quantity <em>Integer</em></td>&#13;
+<td>The number of users under the control of the business account.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>plan <em>String</em></td>&#13;
+<td>Tariff plan name. Valid values are <code class="prettyprint">business_monthly</code> and <code class="prettyprint">business_yearly</code>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>active_until <em>Integer</em></td>&#13;
+<td>The timestamp when the business account will be disabled. The value may not match the business account subscription end date, as we give some extra days (up to two weeks) to pay the invoice.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<p>Here are the extra properties for the <code class="prettyprint">biz_invitation_created</code> type of live
+notifications:</p>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Property</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>state <em>String</em></td>&#13;
+<td>Invitation state. Initially <code class="prettyprint">invited</code>, can change the state to <code class="prettyprint">accepted</code> or <code class="prettyprint">rejected</code>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>invitation_secret <em>String</em></td>&#13;
+<td>Invitation secret. Should be used to accept or reject invitation.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>invitation_message <em>String</em></td>&#13;
+<td>Invitation message.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>account_name <em>String</em></td>&#13;
+<td>Business account (company) name.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="set-last-known">Set last known</h2>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of setting the last known notification:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{"type": "live_notifications_set_last_read", "uuid": "588b9ccf-29c0-4837-8bbc-fc858c0c6df8", "args": {"id": 1234}}]'</span>
+
+<span class="o">{</span>
+  ...
+  <span class="s2">"sync_status"</span>: <span class="o">{</span><span class="s2">"588b9ccf-29c0-4837-8bbc-fc858c0c6df8"</span>: <span class="s2">"ok"</span><span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">live_notifications</span><span class="o">.</span><span class="n">set_last_read</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>Set the last known notification.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>id <em>Integer</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The id of the last known notification (a number or <code class="prettyprint">0</code> or <code class="prettyprint">null</code> to mark all read).</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="mark-as-read">Mark as read</h2>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of marking a notification as read:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{"type": "live_notifications_mark_read", "uuid": "588b9ccf-29c0-4837-8bbc-fc858c0c6df8", "args": {"id": 1234}}]'</span>
+
+<span class="o">{</span>
+  ...
+  <span class="s2">"sync_status"</span>: <span class="o">{</span><span class="s2">"588b9ccf-29c0-4837-8bbc-fc858c0c6df8"</span>: <span class="s2">"ok"</span><span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">live_notifications</span><span class="o">.</span><span class="n">mark_read</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>Mark the notification as read.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>id <em>Integer</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The id of the notification.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="mark-all-as-read">Mark all as read</h2>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of marking all notifications as read:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{"type": "live_notifications_mark_read_all", "uuid": "588b9ccf-29c0-4837-8bbc-fc858c0c6df8"}]'</span>
+
+<span class="o">{</span>
+  ...
+  <span class="s2">"sync_status"</span>: <span class="o">{</span><span class="s2">"588b9ccf-29c0-4837-8bbc-fc858c0c6df8"</span>: <span class="s2">"ok"</span><span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">live_notifications</span><span class="o">.</span><span class="n">mark_read_all</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>Mark all notifications as read.</p>&#13;
+&#13;
+<h2 id="mark-as-unread">Mark as unread</h2>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of marking a notification as unread:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{"type": "live_notifications_mark_unread", "uuid": "588b9ccf-29c0-4837-8bbc-fc858c0c6df8", "args": {"id": 1234}}]'</span>
+
+<span class="o">{</span>
+  ...
+  <span class="s2">"sync_status"</span>: <span class="o">{</span><span class="s2">"588b9ccf-29c0-4837-8bbc-fc858c0c6df8"</span>: <span class="s2">"ok"</span><span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">live_notifications</span><span class="o">.</span><span class="n">mark_unread</span><span class="p">(</span><span class="mi">1234</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>Mark the notification as unread.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>id <em>Integer</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The id of the notification.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;

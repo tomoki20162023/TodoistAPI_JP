@@ -1,4 +1,0 @@
-# Overview
-
-### Request and response format
-

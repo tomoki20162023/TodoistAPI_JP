@@ -1,0 +1,263 @@
+          <div name="sections" data-unique="sections"/><h1 id="sections">Sections</h1>
+
+<blockquote>
+<p>Section object example</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="o">{</span>
+    <span class="s2">"id"</span>: 1234,
+    <span class="s2">"project_id"</span>: 5678,
+    <span class="s2">"order"</span>: 1,
+    <span class="s2">"name"</span>: <span class="s2">"Agenda"</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="p">{</span>
+    <span class="s">"id"</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>
+    <span class="s">"project_id"</span><span class="p">:</span> <span class="mi">5678</span><span class="p">,</span>
+    <span class="s">"order"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">"name"</span><span class="p">:</span> <span class="s">"Agenda"</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="properties">Properties</h3>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id <em>Integer</em></td>
+<td>Section ID</td>
+</tr>
+<tr>
+<td>project_id <em>Integer</em></td>
+<td>ID of the project section belongs to</td>
+</tr>
+<tr>
+<td>order <em>Integer</em></td>
+<td>Section position among other sections from the same project</td>
+</tr>
+<tr>
+<td>name <em>String</em></td>
+<td>Section name</td>
+</tr>
+</tbody></table>
+
+<div name="get-all-sections" data-unique="get-all-sections"/><h2 id="get-all-sections">Get all sections</h2>
+
+<blockquote>
+<p>Get all sections</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span> <span class="se">\</span>
+    https://api.todoist.com/rest/v1/sections
+
+<span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s2">"id"</span>: 1234,
+        <span class="s2">"project_id"</span>: 5678,
+        <span class="s2">"order"</span>: 1,
+        <span class="s2">"name"</span>: <span class="s2">"Agenda"</span>
+    <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.todoist.com/rest/v1/sections"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span><span class="p">})</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s">"id"</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>
+        <span class="s">"project_id"</span><span class="p">:</span> <span class="mi">5678</span><span class="p">,</span>
+        <span class="s">"order"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">"name"</span><span class="p">:</span> <span class="s">"Agenda"</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>Returns JSON array of all sections. Successful response has <code class="prettyprint">200 OK</code> status and
+<code class="prettyprint">application/json</code> Content-Type.</p>
+
+<div name="get-project-sections" data-unique="get-project-sections"/><h2 id="get-project-sections">Get project sections</h2>
+
+<blockquote>
+<p>Get project sections</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span> <span class="se">\</span>
+    https://api.todoist.com/rest/v1/sections?project_id<span class="o">=</span>5678
+
+<span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s2">"id"</span>: 1234,
+        <span class="s2">"project_id"</span>: 5678,
+        <span class="s2">"order"</span>: 1,
+        <span class="s2">"name"</span>: <span class="s2">"Agenda"</span>
+    <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.todoist.com/rest/v1/sections?project_id=5678"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span><span class="p">})</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s">"id"</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>
+        <span class="s">"project_id"</span><span class="p">:</span> <span class="mi">5678</span><span class="p">,</span>
+        <span class="s">"order"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">"name"</span><span class="p">:</span> <span class="s">"Agenda"</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>Returns a JSON array of all the sections that are in the provided project.</p>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project_id <em>Integer</em></td>
+<td>Yes</td>
+<td>Project ID you want the sections of</td>
+</tr>
+</tbody></table>
+
+<div name="create-a-new-section" data-unique="create-a-new-section"/><h2 id="create-a-new-section">Create a new section</h2>
+
+<blockquote>
+<p>Create a new section</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-X</span> POST <span class="nt">--data</span> <span class="s1">'{"project_id":1234, "name":"Morning routine"}'</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span> <span class="se">\</span>
+    https://api.todoist.com/rest/v1/sections
+
+<span class="o">{</span>
+    <span class="s2">"id"</span>: 6789,
+    <span class="s2">"project_id"</span>: 1234,
+    <span class="s2">"order"</span>: 1,
+    <span class="s2">"name"</span>: <span class="s2">"Morning routine"</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">requests</span><span class="p">,</span> <span class="n">json</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s">"https://api.todoist.com/rest/v1/sections"</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+        <span class="s">"name"</span><span class="p">:</span> <span class="s">"Morning routine"</span>
+    <span class="p">}),</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+        <span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="p">{</span>
+    <span class="s">"id"</span><span class="p">:</span> <span class="mi">6789</span><span class="p">,</span>
+    <span class="s">"project_id"</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>
+    <span class="s">"order"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">"name"</span><span class="p">:</span> <span class="s">"Morning routine"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Creates a new section and returns it as a JSON object. Successful response has
+<code class="prettyprint">200 OK</code> status and <code class="prettyprint">application/json</code> Content-Type.</p>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name <em>String</em></td>
+<td>Yes</td>
+<td>Section name</td>
+</tr>
+<tr>
+<td>project_id <em>Integer</em></td>
+<td>Yes</td>
+<td>Project ID this section should belong to</td>
+</tr>
+<tr>
+<td>order <em>Integer</em></td>
+<td>No</td>
+<td>Order among other sections in a project</td>
+</tr>
+</tbody></table>
+
+<div name="get-a-single-section" data-unique="get-a-single-section"/><h2 id="get-a-single-section">Get a single section</h2>
+
+<blockquote>
+<p>Get a single section</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span> <span class="se">\</span>
+    https://api.todoist.com/rest/v1/sections/6789
+
+<span class="o">{</span>
+    <span class="s2">"id"</span>: 6789,
+    <span class="s2">"project_id"</span>: 1234,
+    <span class="s2">"order"</span>: 1,
+    <span class="s2">"name"</span>: <span class="s2">"Morning routine"</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.todoist.com/rest/v1/sections/6789"</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span><span class="p">})</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="p">{</span>
+    <span class="s">"id"</span><span class="p">:</span> <span class="mi">6789</span><span class="p">,</span>
+    <span class="s">"project_id"</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>
+    <span class="s">"order"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">"name"</span><span class="p">:</span> <span class="s">"Morning routine"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Returns single section as a JSON object. Successful response has <code class="prettyprint">200 OK</code> status
+and <code class="prettyprint">application/json</code> Content-Type.</p>
+
+<div name="update-a-section" data-unique="update-a-section"/><h2 id="update-a-section">Update a section</h2>
+
+<blockquote>
+<p>Update a section</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-X</span> POST <span class="nt">--data</span> <span class="s1">'{"name":"Morning routine"}'</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span> <span class="se">\</span>
+    https://api.todoist.com/rest/v1/sections/1234
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">requests</span><span class="p">,</span> <span class="n">json</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s">"https://api.todoist.com/rest/v1/sections/1234"</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s">"name"</span><span class="p">:</span> <span class="s">"Morning routine"</span><span class="p">}),</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+        <span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div>
+<p>Updates section for the given ID. Successful response has <code class="prettyprint">204 No Content</code>
+status and an empty body.</p>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name <em>String</em></td>
+<td>Yes</td>
+<td>Section name</td>
+</tr>
+</tbody></table>
+
+<div name="delete-a-section" data-unique="delete-a-section"/><h2 id="delete-a-section">Delete a section</h2>
+
+<blockquote>
+<p>Delete a section</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span> <span class="se">\</span>
+    https://api.todoist.com/rest/v1/sections/1234
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">"https://api.todoist.com/rest/v1/sections/1234"</span><span class="p">,</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span><span class="p">})</span>
+</code></pre></div>
+<p>Deletes a section. Successful response has <code class="prettyprint">204 No Content</code> status and an empty
+body.</p>
+

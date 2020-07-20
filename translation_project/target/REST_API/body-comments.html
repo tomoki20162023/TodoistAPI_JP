@@ -1,0 +1,340 @@
+          <div name="comments" data-unique="comments"/><h1 id="comments">Comments</h1>
+
+<blockquote>
+<p>Comment object sample</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="o">{</span>
+    <span class="s2">"attachment"</span>: <span class="o">{</span>
+        <span class="s2">"file_name"</span>: <span class="s2">"File.pdf"</span>,
+        <span class="s2">"file_type"</span>: <span class="s2">"application/pdf"</span>,
+        <span class="s2">"file_url"</span>: <span class="s2">"https://cdn-domain.tld/path/to/file.pdf"</span>,
+        <span class="s2">"resource_type"</span>: <span class="s2">"file"</span>
+    <span class="o">}</span>,
+    <span class="s2">"content"</span>: <span class="s2">"Hello world"</span>,
+    <span class="s2">"id"</span>: 1234,
+    <span class="s2">"posted"</span>: <span class="s2">"2016-09-22T07:00:00Z"</span>,
+    <span class="s2">"project_id"</span>: 2345,
+    <span class="s2">"task_id"</span>: 2345
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="p">{</span>
+    <span class="s">"attachment"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"file_name"</span><span class="p">:</span> <span class="s">"File.pdf"</span><span class="p">,</span>
+        <span class="s">"file_type"</span><span class="p">:</span> <span class="s">"application/pdf"</span><span class="p">,</span>
+        <span class="s">"file_url"</span><span class="p">:</span> <span class="s">"https://cdn-domain.tld/path/to/file.pdf"</span><span class="p">,</span>
+        <span class="s">"resource_type"</span><span class="p">:</span> <span class="s">"file"</span>
+    <span class="p">},</span>
+    <span class="s">"content"</span><span class="p">:</span> <span class="s">"Hello world"</span><span class="p">,</span>
+    <span class="s">"id"</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>
+    <span class="s">"posted"</span><span class="p">:</span> <span class="s">"2016-09-22T07:00:00Z"</span><span class="p">,</span>
+    <span class="s">"project_id"</span><span class="p">:</span> <span class="mi">2345</span><span class="p">,</span>
+    <span class="s">"task_id"</span><span class="p">:</span> <span class="mi">2345</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="properties">Properties</h3>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id <em>Integer</em></td>
+<td>Comment id.</td>
+</tr>
+<tr>
+<td>task_id <em>Integer</em></td>
+<td>Comment’s task id (for task comments).</td>
+</tr>
+<tr>
+<td>project_id <em>Integer</em></td>
+<td>Comment’s project id (for project comments).</td>
+</tr>
+<tr>
+<td>posted <em>String</em></td>
+<td>Date and time when comment was added, <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339</a> format in UTC.</td>
+</tr>
+<tr>
+<td>content <em>String</em></td>
+<td>Comment content.</td>
+</tr>
+<tr>
+<td>attachment <em>Object</em></td>
+<td>Attachment file (optional).</td>
+</tr>
+</tbody></table>
+
+<p>The optional attachment attribute describes object with attachment
+metadata. Format of this object depends on the kind of attachment it describes,
+see <a href="https://developer.todoist.com/sync/v8#uploads">sync API documentation for format details</a>.</p>
+
+<div name="get-all-comments" data-unique="get-all-comments"/><h2 id="get-all-comments">Get all comments</h2>
+
+<blockquote>
+<p>Get all comments</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="s2">"https://api.todoist.com/rest/v1/comments?task_id=2345"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
+
+<span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s2">"id"</span>: 123,
+        <span class="s2">"task_id"</span>: 2345,
+        <span class="s2">"content"</span>: <span class="s2">"Hello world"</span>,
+        <span class="s2">"posted"</span>: <span class="s2">"2016-09-22T07:00:00Z"</span>,
+        <span class="s2">"attachment"</span>: <span class="o">{</span>
+            <span class="s2">"resource_type"</span>: <span class="s2">"file"</span>,
+            <span class="s2">"file_url"</span>: <span class="s2">"https://cdn-domain.tld/path/to/file.pdf"</span>,
+            <span class="s2">"file_type"</span>: <span class="s2">"application/pdf"</span>,
+            <span class="s2">"file_name"</span>: <span class="s2">"File.pdf"</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s">"https://api.todoist.com/rest/v1/comments"</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"task_id"</span><span class="p">:</span> <span class="mi">2345</span>
+    <span class="p">},</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s">"id"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s">"task_id"</span><span class="p">:</span> <span class="mi">2345</span><span class="p">,</span>
+        <span class="s">"content"</span><span class="p">:</span> <span class="s">"Hello world"</span><span class="p">,</span>
+        <span class="s">"posted"</span><span class="p">:</span> <span class="s">"2016-09-22T07:00:00Z"</span><span class="p">,</span>
+        <span class="s">"attachment"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">"resource_type"</span><span class="p">:</span> <span class="s">"file"</span><span class="p">,</span>
+            <span class="s">"file_url"</span><span class="p">:</span> <span class="s">"https://cdn-domain.tld/path/to/file.pdf"</span><span class="p">,</span>
+            <span class="s">"file_type"</span><span class="p">:</span> <span class="s">"application/pdf"</span><span class="p">,</span>
+            <span class="s">"file_name"</span><span class="p">:</span> <span class="s">"File.pdf"</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>Returns JSON-encoded array of all comments for a given <code class="prettyprint">task_id</code> or
+<code class="prettyprint">project_id</code>. Note that one of <code class="prettyprint">task_id</code> or <code class="prettyprint">project_id</code> arguments is
+required.</p>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project_id <em>Integer</em></td>
+<td>Yes (or <code class="prettyprint">task_id</code>)</td>
+<td>Id of the project used to filter comments.</td>
+</tr>
+<tr>
+<td>task_id <em>Integer</em></td>
+<td>Yes (or <code class="prettyprint">project_id</code>)</td>
+<td>Id of the task used to filter comments.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Note</strong>: You <strong>must</strong> use at least one of them.</p>
+
+<div name="create-a-new-comment" data-unique="create-a-new-comment"/><h2 id="create-a-new-comment">Create a new comment</h2>
+
+<blockquote>
+<p>Create a new comment</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span><span class="nb">cat</span> <span class="o">&gt;</span> /tmp/note.json
+<span class="o">{</span>
+    <span class="s2">"task_id"</span>: 2345,
+    <span class="s2">"content"</span>: <span class="s2">"Hello world"</span>,
+    <span class="s2">"attachment"</span>: <span class="o">{</span>
+        <span class="s2">"resource_type"</span>: <span class="s2">"file"</span>,
+        <span class="s2">"file_url"</span>: <span class="s2">"https://s3.amazonaws.com/domorebetter/Todoist+Setup+Guide.pdf"</span>,
+        <span class="s2">"file_type"</span>: <span class="s2">"application/pdf"</span>,
+        <span class="s2">"file_name"</span>: <span class="s2">"File.pdf"</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+^C
+
+<span class="nv">$ </span>curl <span class="s2">"https://api.todoist.com/rest/v1/comments"</span> <span class="se">\</span>
+    <span class="nt">-X</span> POST <span class="se">\</span>
+    <span class="nt">--data</span> @/tmp/note.json <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"X-Request-Id: </span><span class="k">$(</span>uuidgen<span class="k">)</span><span class="s2">"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
+
+<span class="o">{</span>
+    <span class="s2">"id"</span>: 123,
+    <span class="s2">"content"</span>: <span class="s2">"Hello world"</span>,
+    <span class="s2">"task_id"</span>: 2345,
+    <span class="s2">"posted"</span>: <span class="s2">"2016-09-22T07:00:00Z"</span>,
+    <span class="s2">"attachment"</span>: <span class="o">{</span>
+        <span class="s2">"resource_type"</span>: <span class="s2">"file"</span>,
+        <span class="s2">"file_url"</span>: <span class="s2">"https://s3.amazonaws.com/domorebetter/Todoist+Setup+Guide.pdf"</span>,
+        <span class="s2">"file_type"</span>: <span class="s2">"application/pdf"</span>,
+        <span class="s2">"file_name"</span>: <span class="s2">"File.pdf"</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s">"https://api.todoist.com/rest/v1/comments"</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+        <span class="s">"task_id"</span><span class="p">:</span> <span class="mi">2248549994</span><span class="p">,</span>
+        <span class="s">"content"</span><span class="p">:</span> <span class="s">"Hello world"</span><span class="p">,</span>
+        <span class="s">"attachment"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">"resource_type"</span><span class="p">:</span>
+            <span class="s">"file"</span><span class="p">,</span>
+            <span class="s">"file_url"</span><span class="p">:</span><span class="s">"https://s3.amazonaws.com/domorebetter/Todoist+Setup+Guide.pdf"</span><span class="p">,</span>
+            <span class="s">"file_type"</span><span class="p">:</span>
+            <span class="s">"application/pdf"</span><span class="p">,</span>
+            <span class="s">"file_name"</span><span class="p">:</span>
+            <span class="s">"File.pdf"</span>
+        <span class="p">}</span>
+    <span class="p">}),</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+        <span class="s">"X-Request-Id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()),</span>
+        <span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="p">{</span>
+    <span class="s">"id"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="s">"content"</span><span class="p">:</span> <span class="s">"Hello world"</span><span class="p">,</span>
+    <span class="s">"task_id"</span><span class="p">:</span> <span class="mi">2345</span><span class="p">,</span>
+    <span class="s">"posted"</span><span class="p">:</span> <span class="s">"2016-09-22T07:00:00Z"</span><span class="p">,</span>
+    <span class="s">"attachment"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"resource_type"</span><span class="p">:</span> <span class="s">"file"</span><span class="p">,</span>
+        <span class="s">"file_url"</span><span class="p">:</span> <span class="s">"https://s3.amazonaws.com/domorebetter/Todoist+Setup+Guide.pdf"</span><span class="p">,</span>
+        <span class="s">"file_type"</span><span class="p">:</span> <span class="s">"application/pdf"</span><span class="p">,</span>
+        <span class="s">"file_name"</span><span class="p">:</span> <span class="s">"File.pdf"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Creates a new comment on a project or task and returns its object.</p>
+
+<h3 id="json-body-parameters">JSON body parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>task_id <em>Integer</em></td>
+<td>Yes (or <code class="prettyprint">project_id</code>)</td>
+<td>Comment’s task id (for task comments).</td>
+</tr>
+<tr>
+<td>project_id <em>Integer</em></td>
+<td>Yes (or <code class="prettyprint">task_id</code>)</td>
+<td>Comment’s project id (for project comments).</td>
+</tr>
+<tr>
+<td>content <em>String</em></td>
+<td>Yes</td>
+<td>Comment content.</td>
+</tr>
+<tr>
+<td>attachment <em>Object</em></td>
+<td>No</td>
+<td>Object for attachment object.</td>
+</tr>
+</tbody></table>
+
+<div name="get-a-comment" data-unique="get-a-comment"/><h2 id="get-a-comment">Get a comment</h2>
+
+<blockquote>
+<p>Get a comment</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="s2">"https://api.todoist.com/rest/v1/comments/1234"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
+
+<span class="o">{</span>
+    <span class="s2">"id"</span>: 1234,
+    <span class="s2">"content"</span>: <span class="s2">"Hello world"</span>,
+    <span class="s2">"task_id"</span>: 2345,
+    <span class="s2">"posted"</span>: <span class="s2">"2016-09-22T07:00:00Z"</span>,
+    <span class="s2">"attachment"</span>: <span class="o">{</span>
+        <span class="s2">"resource_type"</span>: <span class="s2">"file"</span>,
+        <span class="s2">"file_url"</span>: <span class="s2">"https://cdn-domain.tld/path/to/file.pdf"</span>,
+        <span class="s2">"file_type"</span>: <span class="s2">"application/pdf"</span>,
+        <span class="s2">"file_name"</span>: <span class="s2">"File.pdf"</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.todoist.com/rest/v1/comments/1234"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span><span class="p">})</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="p">{</span>
+    <span class="s">"id"</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>
+    <span class="s">"content"</span><span class="p">:</span> <span class="s">"Hello world"</span><span class="p">,</span>
+    <span class="s">"task_id"</span><span class="p">:</span> <span class="mi">2345</span><span class="p">,</span>
+    <span class="s">"posted"</span><span class="p">:</span> <span class="s">"2016-09-22T07:00:00Z"</span><span class="p">,</span>
+    <span class="s">"attachment"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"resource_type"</span><span class="p">:</span> <span class="s">"file"</span><span class="p">,</span>
+        <span class="s">"file_url"</span><span class="p">:</span> <span class="s">"https://cdn-domain.tld/path/to/file.pdf"</span><span class="p">,</span>
+        <span class="s">"file_type"</span><span class="p">:</span> <span class="s">"application/pdf"</span><span class="p">,</span>
+        <span class="s">"file_name"</span><span class="p">:</span> <span class="s">"File.pdf"</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Returns a comment by id</p>
+
+<div name="update-a-comment" data-unique="update-a-comment"/><h2 id="update-a-comment">Update a comment</h2>
+
+<blockquote>
+<p>Update a comment</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="s2">"https://api.todoist.com/rest/v1/comments/1234"</span> <span class="se">\</span>
+    <span class="nt">-X</span> POST <span class="se">\</span>
+    <span class="nt">--data</span> <span class="s1">'{"content": "Goodbye world"}'</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"X-Request-Id: </span><span class="k">$(</span>uuidgen<span class="k">)</span><span class="s2">"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s">"https://api.todoist.com/rest/v1/comments/1234"</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+        <span class="s">"content"</span><span class="p">:</span> <span class="s">"Goodbye world"</span>
+    <span class="p">}),</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+        <span class="s">"X-Request-Id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()),</span>
+        <span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span>
+    <span class="p">})</span>
+</code></pre></div>
+<p>Updates a comment and returns an empty body with a HTTP status code 204.</p>
+
+<h3 id="json-body-parameters">JSON body parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>content <em>String</em></td>
+<td>Yes</td>
+<td>New content for the comment.</td>
+</tr>
+</tbody></table>
+
+<div name="delete-a-comment" data-unique="delete-a-comment"/><h2 id="delete-a-comment">Delete a comment</h2>
+
+<blockquote>
+<p>Delete a comment</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-X</span> DELETE <span class="s2">"https://api.todoist.com/rest/v1/comments/1234"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">"https://api.todoist.com/rest/v1/comments/1234"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span><span class="p">})</span>
+</code></pre></div>
+<p>Deletes a comment and returns an empty body with a HTTP status code 204.</p>
+

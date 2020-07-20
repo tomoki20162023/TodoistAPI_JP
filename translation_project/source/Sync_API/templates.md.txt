@@ -1,9 +1,0 @@
-# Templates
-
-## Import into project
-
-## Export as file
-
-## Export as shareable URL
-
-

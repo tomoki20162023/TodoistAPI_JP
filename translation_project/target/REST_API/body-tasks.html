@@ -1,0 +1,581 @@
+          <div name="tasks" data-unique="tasks"/><h1 id="tasks">Tasks</h1>
+
+<blockquote>
+<p>Task object sample</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="o">{</span>
+    <span class="s2">"assignee"</span>: 1
+    <span class="s2">"comment_count"</span>: 10,
+    <span class="s2">"completed"</span>: <span class="nb">true</span>,
+    <span class="s2">"content"</span>: <span class="s2">"My task"</span>,
+    <span class="s2">"due"</span>: <span class="o">{</span>
+        <span class="s2">"date"</span>: <span class="s2">"2016-09-01"</span>,
+        <span class="s2">"recurring"</span>: <span class="nb">true</span>,
+        <span class="s2">"datetime"</span>: <span class="s2">"2016-09-01T09:00:00Z"</span>,
+        <span class="s2">"string"</span>: <span class="s2">"tomorrow at 12"</span>,
+        <span class="s2">"timezone"</span>: <span class="s2">"Europe/Moscow"</span>
+    <span class="o">}</span>,
+    <span class="s2">"id"</span>: 1234,
+    <span class="s2">"label_ids"</span>: <span class="o">[</span>
+        124,
+        125,
+        128
+    <span class="o">]</span>,
+    <span class="s2">"order"</span>: 123,
+    <span class="s2">"priority"</span>: 1,
+    <span class="s2">"project_id"</span>: 2345,
+    <span class="s2">"section_id"</span>: 6789,
+    <span class="s2">"parent_id"</span>: 3456,
+    <span class="s2">"url"</span>: <span class="s2">"https://todoist.com/showTask?id=12345&amp;sync_id=56789"</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="p">{</span>
+    <span class="s">"assignee"</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="s">"comment_count"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="s">"completed"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+    <span class="s">"content"</span><span class="p">:</span> <span class="s">"My task"</span><span class="p">,</span>
+    <span class="s">"due"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"date"</span><span class="p">:</span> <span class="s">"2016-09-01"</span><span class="p">,</span>
+        <span class="s">"recurring"</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s">"datetime"</span><span class="p">:</span> <span class="s">"2016-09-01T09:00:00Z"</span><span class="p">,</span>
+        <span class="s">"string"</span><span class="p">:</span> <span class="s">"tomorrow at 12"</span><span class="p">,</span>
+        <span class="s">"timezone"</span><span class="p">:</span> <span class="s">"Europe/Moscow"</span>
+    <span class="p">},</span>
+    <span class="s">"id"</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>
+    <span class="s">"label_ids"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="mi">124</span><span class="p">,</span>
+        <span class="mi">125</span><span class="p">,</span>
+        <span class="mi">128</span>
+    <span class="p">],</span>
+    <span class="s">"order"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="s">"priority"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s">"project_id"</span><span class="p">:</span> <span class="mi">2345</span><span class="p">,</span>
+    <span class="s">"section_id"</span><span class="p">:</span> <span class="mi">6789</span><span class="p">,</span>
+    <span class="s">"parent_id"</span><span class="p">:</span> <span class="mi">3456</span><span class="p">,</span>
+    <span class="s">"url"</span><span class="p">:</span> <span class="s">"https://todoist.com/showTask?id=12345&amp;sync_id=56789"</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="properties">Properties</h3>
+
+<table><thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id <em>Integer</em></td>
+<td>Task id.</td>
+</tr>
+<tr>
+<td>project_id <em>Integer</em></td>
+<td>Task’s project id (read-only).</td>
+</tr>
+<tr>
+<td>section_id <em>Integer</em></td>
+<td>ID of section task belongs to.</td>
+</tr>
+<tr>
+<td>content <em>String</em></td>
+<td>Task content.</td>
+</tr>
+<tr>
+<td>completed <em>Boolean</em></td>
+<td>Flag to mark completed tasks.</td>
+</tr>
+<tr>
+<td>label_ids <em>Array of Integers</em></td>
+<td>Array of label ids, associated with a task.</td>
+</tr>
+<tr>
+<td>parent_id <em>Integer</em></td>
+<td>ID of parent task (read-only, absent for top-level tasks).</td>
+</tr>
+<tr>
+<td>parent <strong><em>Deprecated</em></strong> <em>Integer</em></td>
+<td>Will be removed in the next API version. Use <code class="prettyprint">parent_id</code>.</td>
+</tr>
+<tr>
+<td>order <em>Integer</em></td>
+<td>Position under the same parent or project for top-level tasks (read-only).</td>
+</tr>
+<tr>
+<td>priority <em>Integer</em></td>
+<td>Task priority from 1 (normal, default value) to 4 (urgent).</td>
+</tr>
+<tr>
+<td>due <em>Object</em></td>
+<td>object representing task due date/time (described below).</td>
+</tr>
+<tr>
+<td>url <em>String</em></td>
+<td>URL to access this task in Todoist web interface.</td>
+</tr>
+<tr>
+<td>comment_count <em>Integer</em></td>
+<td>Number of task comments.</td>
+</tr>
+<tr>
+<td>assignee <em>Integer</em></td>
+<td>The responsible user id (if set, and only for shared tasks).</td>
+</tr>
+</tbody></table>
+
+<h3 id="due-object">Due object</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>string <em>String</em></td>
+<td>Yes</td>
+<td>Human defined date in arbitrary format.</td>
+</tr>
+<tr>
+<td>date <em>String</em></td>
+<td>Yes</td>
+<td>Date in format <code class="prettyprint">YYYY-MM-DD</code> corrected to user’s timezone.</td>
+</tr>
+<tr>
+<td>datetime <em>String</em></td>
+<td>No</td>
+<td>Only returned if exact due time set (i.e. it’s not a whole-day task), date and time in <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339</a> format in UTC.</td>
+</tr>
+<tr>
+<td>timezone <em>String</em></td>
+<td>No</td>
+<td>Only returned if exact due time set, user’s timezone definition either in tzdata-compatible format (“Europe/Berlin”) or as a string specifying east of UTC offset as “UTC±HH:MM” (i.e. “UTC-01:00”).</td>
+</tr>
+</tbody></table>
+
+<div name="get-active-tasks" data-unique="get-active-tasks"/><h2 id="get-active-tasks">Get active tasks</h2>
+
+<blockquote>
+<p>Get active tasks</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-X</span> GET <span class="se">\</span>
+  https://api.todoist.com/rest/v1/tasks <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
+
+<span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s2">"id"</span>: 123,
+        <span class="s2">"project_id"</span>: 234,
+        <span class="s2">"section_id"</span>: 6789,
+        <span class="s2">"parent_id"</span>: 3456,
+        <span class="s2">"content"</span>: <span class="s2">"Inbox"</span>,
+        <span class="s2">"comment_count"</span>: 10,
+        <span class="s2">"order"</span>: 1,
+        <span class="s2">"priority"</span>: 1,
+        <span class="s2">"url"</span>: <span class="s2">"https://todoist.com/showTask?id=123"</span>
+    <span class="o">}</span>,
+    ...
+<span class="o">]</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+    <span class="s">"https://api.todoist.com/rest/v1/tasks"</span><span class="p">,</span>
+    <span class="n">params</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"project_id"</span><span class="p">:</span> <span class="mi">123</span>
+    <span class="p">},</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+
+<span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s">"id"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+        <span class="s">"project_id"</span><span class="p">:</span> <span class="mi">234</span><span class="p">,</span>
+        <span class="s">"section_id"</span><span class="p">:</span> <span class="mi">6789</span><span class="p">,</span>
+        <span class="s">"parent_id"</span><span class="p">:</span> <span class="mi">3456</span><span class="p">,</span>
+        <span class="s">"content"</span><span class="p">:</span> <span class="s">"Inbox"</span><span class="p">,</span>
+        <span class="s">"comment_count"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s">"order"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">"priority"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s">"url"</span><span class="p">:</span> <span class="s">"https://todoist.com/showTask?id=123"</span>
+    <span class="p">},</span>
+    <span class="o">...</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>Returns a JSON-encoded array containing all user active tasks.</p>
+
+<h3 id="parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>project_id <em>Integer</em></td>
+<td>No</td>
+<td>Filter tasks by project id.</td>
+</tr>
+<tr>
+<td>label_id <em>Integer</em></td>
+<td>No</td>
+<td>Filter tasks by label.</td>
+</tr>
+<tr>
+<td>filter <em>String</em></td>
+<td>No</td>
+<td>Filter by any <a href="https://support.todoist.com/hc/en-us/articles/205248842">supported filter</a>.</td>
+</tr>
+<tr>
+<td>lang <em>String</em></td>
+<td>No</td>
+<td>IETF language tag defining what language filter is written in, if differs from default English.</td>
+</tr>
+<tr>
+<td>ids <em>Array of integers</em></td>
+<td>No</td>
+<td>A list of the task IDs to retrieve, this should be a comma separated list.</td>
+</tr>
+</tbody></table>
+
+<p><strong>Precedence of parameters</strong></p>
+
+<p>When fetching a list of tasks, the API will do so in the following order:
+- <code class="prettyprint">filter</code> (with or without <code class="prettyprint">lang</code>)
+- <code class="prettyprint">ids</code>
+- <code class="prettyprint">label_id</code>/<code class="prettyprint">project_id</code></p>
+
+<p>So if you include a filter <em>and</em> ids, then only the filter will be used, if you include ids and project_id, only ids is used, and so on.</p>
+
+<p>Note that <strong>filters are premium-only feature</strong>, if used for non-premium users,
+server would return 402 Payment Required.</p>
+
+<div name="create-a-new-task" data-unique="create-a-new-task"/><h2 id="create-a-new-task">Create a new task</h2>
+
+<blockquote>
+<p>Create a new task</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="s2">"https://api.todoist.com/rest/v1/tasks"</span> <span class="se">\</span>
+    <span class="nt">-X</span> POST <span class="se">\</span>
+    <span class="nt">--data</span> <span class="s1">'{"content": "Appointment with Maria", "due_string": "tomorrow at 12:00", "due_lang": "en", "priority": 4}'</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"X-Request-Id: </span><span class="k">$(</span>uuidgen<span class="k">)</span><span class="s2">"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
+
+<span class="o">{</span>
+    <span class="s2">"comment_count"</span>: 0,
+    <span class="s2">"completed"</span>: <span class="nb">false</span>,
+    <span class="s2">"content"</span>: <span class="s2">"Appointment with Maria"</span>,
+    <span class="s2">"due"</span>: <span class="o">{</span>
+        <span class="s2">"date"</span>: <span class="s2">"2016-09-01"</span>,
+        <span class="s2">"datetime"</span>: <span class="s2">"2016-09-01T11:00:00Z"</span>,
+        <span class="s2">"string"</span>: <span class="s2">"2017-07-01 12:00"</span>,
+        <span class="s2">"timezone"</span>: <span class="s2">"Europe/Lisbon"</span>
+    <span class="o">}</span>,
+    <span class="s2">"id"</span>: 123,
+    <span class="s2">"order"</span>: 20,
+    <span class="s2">"priority"</span>: 4,
+    <span class="s2">"project_id"</span>: 234,
+    <span class="s2">"section_id"</span>: 6789,
+    <span class="s2">"parent_id"</span>: 3456,
+    <span class="s2">"url"</span>: <span class="s2">"https://todoist.com/showTask?id=123"</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">uuid</span><span class="p">,</span> <span class="n">requests</span><span class="p">,</span> <span class="n">json</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s">"https://api.todoist.com/rest/v1/tasks"</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+        <span class="s">"content"</span><span class="p">:</span> <span class="s">"Appointment with Maria"</span><span class="p">,</span>
+        <span class="s">"due_string"</span><span class="p">:</span> <span class="s">"tomorrow at 12:00"</span><span class="p">,</span>
+        <span class="s">"due_lang"</span><span class="p">:</span> <span class="s">"en"</span><span class="p">,</span>
+        <span class="s">"priority"</span><span class="p">:</span> <span class="mi">4</span>
+    <span class="p">}),</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+        <span class="s">"X-Request-Id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()),</span>
+        <span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+
+<span class="p">{</span>
+    <span class="s">"comment_count"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s">"completed"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s">"content"</span><span class="p">:</span> <span class="s">"Appointment with Maria"</span><span class="p">,</span>
+    <span class="s">"due"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"date"</span><span class="p">:</span> <span class="s">"2016-09-01"</span><span class="p">,</span>
+        <span class="s">"datetime"</span><span class="p">:</span> <span class="s">"2016-09-01T11:00:00Z"</span><span class="p">,</span>
+        <span class="s">"string"</span><span class="p">:</span> <span class="s">"2017-07-01 12:00"</span><span class="p">,</span>
+        <span class="s">"timezone"</span><span class="p">:</span> <span class="s">"Europe/Lisbon"</span>
+    <span class="p">},</span>
+    <span class="s">"id"</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="s">"order"</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s">"priority"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s">"project_id"</span><span class="p">:</span> <span class="mi">234</span><span class="p">,</span>
+    <span class="s">"section_id"</span><span class="p">:</span> <span class="mi">6789</span><span class="p">,</span>
+    <span class="s">"parent_id"</span><span class="p">:</span> <span class="mi">3456</span><span class="p">,</span>
+    <span class="s">"url"</span><span class="p">:</span> <span class="s">"https://todoist.com/showTask?id=123"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Creates a new task and returns the JSON object according for it.</p>
+
+<h3 id="json-body-parameters">JSON body parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>content <em>String</em></td>
+<td>Yes</td>
+<td>Task content.</td>
+</tr>
+<tr>
+<td>project_id <em>Integer</em></td>
+<td>No</td>
+<td>Task project id. If not set, task is put to user’s Inbox.</td>
+</tr>
+<tr>
+<td>section_id <em>Integer</em></td>
+<td>No</td>
+<td>ID of section to put task into.</td>
+</tr>
+<tr>
+<td>parent_id <em>Integer</em></td>
+<td>No</td>
+<td>Parent task id.</td>
+</tr>
+<tr>
+<td>parent <strong><em>Deprecated</em></strong> <em>Integer</em></td>
+<td>No</td>
+<td>Will be removed in the next API version. Use <code class="prettyprint">parent_id</code>.</td>
+</tr>
+<tr>
+<td>order <em>Integer</em></td>
+<td>No</td>
+<td>Non-zero integer value used by clients to sort tasks under the same parent.</td>
+</tr>
+<tr>
+<td>label_ids <em>Array of Integers</em></td>
+<td>No</td>
+<td>Ids of labels associated with the task.</td>
+</tr>
+<tr>
+<td>priority <em>Integer</em></td>
+<td>No</td>
+<td>Task priority from 1 (normal) to 4 (urgent).</td>
+</tr>
+<tr>
+<td>due_string <em>String</em></td>
+<td>No</td>
+<td><a href="https://todoist.com/Help/DatesTimes">Human defined</a> task due date (ex.: “next Monday”, “Tomorrow”). Value is set using local (not UTC) time.</td>
+</tr>
+<tr>
+<td>due_date <em>String</em></td>
+<td>No</td>
+<td>Specific date in <code class="prettyprint">YYYY-MM-DD</code> format relative to user’s timezone.</td>
+</tr>
+<tr>
+<td>due_datetime <em>String</em></td>
+<td>No</td>
+<td>Specific date and time in <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339</a> format in UTC.</td>
+</tr>
+<tr>
+<td>due_lang <em>String</em></td>
+<td>No</td>
+<td>2-letter code specifying language in case <code class="prettyprint">due_string</code> is not written in English.</td>
+</tr>
+<tr>
+<td>assignee <em>Integer</em></td>
+<td>No</td>
+<td>The responsible user id (if set, and only for shared tasks).</td>
+</tr>
+</tbody></table>
+
+<p>Please note that only one of the <code class="prettyprint">due_*</code> fields can be used at
+the same time (<code class="prettyprint">due_lang</code> is a special case).</p>
+
+<div name="get-an-active-task" data-unique="get-an-active-task"/><h2 id="get-an-active-task">Get an active task</h2>
+
+<blockquote>
+<p>Get an active task</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="s2">"https://api.todoist.com/rest/v1/tasks/1234"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
+
+<span class="o">{</span>
+    <span class="s2">"comment_count"</span>: 0,
+    <span class="s2">"completed"</span>: <span class="nb">false</span>,
+    <span class="s2">"content"</span>: <span class="s2">"Appointment with Maria"</span>,
+    <span class="s2">"due"</span>: <span class="o">{</span>
+        <span class="s2">"date"</span>: <span class="s2">"2016-09-01"</span>,
+        <span class="s2">"datetime"</span>: <span class="s2">"2016-09-01T11:00:00Z"</span>,
+        <span class="s2">"string"</span>: <span class="s2">"2017-07-01 12:00"</span>,
+        <span class="s2">"timezone"</span>: <span class="s2">"Europe/Lisbon"</span>
+    <span class="o">}</span>,
+    <span class="s2">"id"</span>: 1234,
+    <span class="s2">"order"</span>: 20,
+    <span class="s2">"priority"</span>: 4,
+    <span class="s2">"project_id"</span>: 234,
+    <span class="s2">"section_id"</span>: 6789,
+    <span class="s2">"parent_id"</span>: 3456,
+    <span class="s2">"url"</span>: <span class="s2">"https://todoist.com/showTask?id=123"</span>
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.todoist.com/rest/v1/tasks/1234"</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span><span class="p">})</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+
+<span class="p">{</span>
+    <span class="s">"comment_count"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s">"completed"</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+    <span class="s">"content"</span><span class="p">:</span> <span class="s">"Appointment with Maria"</span><span class="p">,</span>
+    <span class="s">"due"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">"date"</span><span class="p">:</span> <span class="s">"2016-09-01"</span><span class="p">,</span>
+        <span class="s">"datetime"</span><span class="p">:</span> <span class="s">"2016-09-01T11:00:00Z"</span><span class="p">,</span>
+        <span class="s">"string"</span><span class="p">:</span> <span class="s">"2017-07-01 12:00"</span><span class="p">,</span>
+        <span class="s">"timezone"</span><span class="p">:</span> <span class="s">"Europe/Lisbon"</span>
+    <span class="p">},</span>
+    <span class="s">"id"</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>
+    <span class="s">"order"</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s">"priority"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s">"project_id"</span><span class="p">:</span> <span class="mi">234</span><span class="p">,</span>
+    <span class="s">"section_id"</span><span class="p">:</span> <span class="mi">6789</span><span class="p">,</span>
+    <span class="s">"parent_id"</span><span class="p">:</span> <span class="mi">3456</span><span class="p">,</span>
+    <span class="s">"url"</span><span class="p">:</span> <span class="s">"https://todoist.com/showTask?id=123"</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Returns an active (non-completed) task by id</p>
+
+<div name="update-a-task" data-unique="update-a-task"/><h2 id="update-a-task">Update a task</h2>
+
+<blockquote>
+<p>Update a task</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="s2">"https://api.todoist.com/rest/v1/tasks/1234"</span> <span class="se">\</span>
+    <span class="nt">-X</span> POST <span class="se">\</span>
+    <span class="nt">--data</span> <span class="s1">'{"content": "Movies to watch"}'</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"X-Request-Id: </span><span class="k">$(</span>uuidgen<span class="k">)</span><span class="s2">"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">uuid</span><span class="p">,</span> <span class="n">requests</span><span class="p">,</span> <span class="n">json</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+    <span class="s">"https://api.todoist.com/rest/v1/tasks/1234"</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span>
+        <span class="s">"content"</span><span class="p">:</span> <span class="s">"Movies to watch"</span>
+    <span class="p">}),</span>
+    <span class="n">headers</span><span class="o">=</span><span class="p">{</span>
+        <span class="s">"Content-Type"</span><span class="p">:</span> <span class="s">"application/json"</span><span class="p">,</span>
+        <span class="s">"X-Request-Id"</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()),</span>
+        <span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span>
+    <span class="p">})</span>
+</code></pre></div>
+<p>Updates a task and returns an empty body with the HTTP status code 204.</p>
+
+<h3 id="json-body-parameters">JSON body parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>content <em>String</em></td>
+<td>No</td>
+<td>Task content.</td>
+</tr>
+<tr>
+<td>label_ids <em>Array of Integers</em></td>
+<td>No</td>
+<td>Ids of labels associated with the task.</td>
+</tr>
+<tr>
+<td>priority <em>Integer</em></td>
+<td>No</td>
+<td>Task priority from 1 (normal) to 4 (urgent).</td>
+</tr>
+<tr>
+<td>due_string <em>String</em></td>
+<td>No</td>
+<td><a href="https://todoist.com/Help/DatesTimes">Human defined</a> task due date (ex.: “next Monday”, “Tomorrow”). Value is set using local (not UTC) time.</td>
+</tr>
+<tr>
+<td>due_date <em>String</em></td>
+<td>No</td>
+<td>Specific date in <code class="prettyprint">YYYY-MM-DD</code> format relative to user’s timezone.</td>
+</tr>
+<tr>
+<td>due_datetime <em>String</em></td>
+<td>No</td>
+<td>Specific date and time in <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC3339</a> format in UTC.</td>
+</tr>
+<tr>
+<td>due_lang <em>String</em></td>
+<td>No</td>
+<td>2-letter code specifying language in case <code class="prettyprint">due_string</code> is not written in English.</td>
+</tr>
+<tr>
+<td>assignee</td>
+<td>No</td>
+<td>The responsible user id or <code class="prettyprint">0</code> to unset (for shared tasks).</td>
+</tr>
+</tbody></table>
+
+<p>Please note that only one of the <code class="prettyprint">due_*</code> fields can be used at
+the same time (<code class="prettyprint">due_lang</code> is a special case).</p>
+
+<div name="close-a-task" data-unique="close-a-task"/><h2 id="close-a-task">Close a task</h2>
+
+<blockquote>
+<p>Close a task</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-X</span> POST <span class="s2">"https://api.todoist.com/rest/v1/tasks/1234/close"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://api.todoist.com/rest/v1/tasks/1234/close"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span><span class="p">})</span>
+</code></pre></div>
+<p>Closes a task and returns an empty body with a HTTP status code 204.</p>
+
+<p>The command does exactly what official clients do when you close a task. Regular
+tasks are completed and moved to history, subtasks are checked (marked as done,
+but not moved to history), recurring tasks are moved forward (due date is updated).</p>
+
+<div name="reopen-a-task" data-unique="reopen-a-task"/><h2 id="reopen-a-task">Reopen a task</h2>
+
+<blockquote>
+<p>Reopen a task</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-X</span> POST <span class="s2">"https://api.todoist.com/rest/v1/tasks/1234/reopen"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">"https://api.todoist.com/rest/v1/tasks/1234/reopen"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span><span class="p">})</span>
+</code></pre></div>
+<p>Reopens a task and returns an empty body with a HTTP status code 204.</p>
+
+<p>This command reopens a previously closed task. Works both with checked tasks in the
+user’s workspace and tasks moved to history. The behaviour varies for different
+types of tasks (the command follows the behaviour of official clients when tasks
+are uncompleted or extracted from the history).</p>
+
+<ul>
+<li>Regular tasks are extracted from the history and added back to the user
+workspace as normal unchecked tasks (without their subtasks though).</li>
+<li>Completed subtasks of a non-completed task are simply marked as uncompleted.</li>
+<li>Subtasks that were moved to history are added back to the workspace as first-level tasks.</li>
+<li>Non-completed recurring tasks are ignored.</li>
+</ul>
+
+<div name="delete-a-task" data-unique="delete-a-task"/><h2 id="delete-a-task">Delete a task</h2>
+
+<blockquote>
+<p>Delete a task</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-X</span> DELETE <span class="s2">"https://api.todoist.com/rest/v1/tasks/1234"</span> <span class="se">\</span>
+    <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">"https://api.todoist.com/rest/v1/tasks/1234"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span><span class="p">})</span>
+</code></pre></div>
+<p>Deletes a task and returns an empty body with a HTTP status 204.</p>
+

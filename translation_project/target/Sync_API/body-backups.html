@@ -1,0 +1,42 @@
+          <h1 id="backups">Backups</h1>&#13;
+&#13;
+<h2 id="get-backups">Get backups</h2>&#13;
+&#13;
+<blockquote>&#13;
+<p>The list of recent backup archives can be accessed via the following
+API endpoint, and upon successful request, a HTTP 200 response will
+be returned with a list of backup archives in JSON format:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/backups/get <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567
+
+<span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">"version"</span>: <span class="s2">"2018-07-13 02:03"</span>,
+    <span class="s2">"url"</span>: <span class="s2">"https://downloads.todoist.com/12345678901234567890123456789012.zip"</span>
+  <span class="o">}</span>,
+    ...
+<span class="o">]</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">backups</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+<span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s">'version'</span><span class="p">:</span> <span class="s">'2018-07-13 02:03'</span><span class="p">,</span>
+    <span class="s">'url'</span><span class="p">:</span> <span class="s">'https://downloads.todoist.com/12345678901234567890123456789012.zip'</span>
+  <span class="p">},</span>
+  <span class="o">...</span>
+<span class="p">]</span>
+</code></pre></div>&#13;
+<p>Todoist creates a backup archive of users’ data on a daily
+basis. Backup archives can also be accessed from the web app (<code class="prettyprint">Todoist
+Settings</code> -&gt; <code class="prettyprint">Backups</code>).</p>&#13;
+&#13;
+<h2 id="download-the-backup">Download the backup</h2>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl <span class="nt">-L</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer 0123456789abcdef0123456789abcdef01234567"</span> <span class="se">\</span>
+    https://downloads.todoist.com/12345678901234567890123456789012.zip <span class="o">&gt;</span> /tmp/todoist-backup.zip
+</code></pre></div>&#13;
+<p><a href="#get-backups">Get backups</a> will retrieve a list of downloadable files for the
+user related to the token being used. To download one of the files returned,
+you have to <strong>use the token as a header</strong>.</p>&#13;
+&#13;

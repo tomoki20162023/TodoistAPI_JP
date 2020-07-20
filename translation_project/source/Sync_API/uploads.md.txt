@@ -1,8 +1,0 @@
-# Uploads
-
-## Upload a file
-
-## Get uploads
-
-## Delete upload
-

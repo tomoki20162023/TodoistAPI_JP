@@ -1,0 +1,30 @@
+          <div name="authorization" data-unique="authorization"/><h1 id="authorization">Authorization</h1>
+
+<blockquote>
+<p>Authenticated request and response examples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-X</span> GET <span class="se">\</span>
+  https://api.todoist.com/rest/v1/projects <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
+
+<span class="o">[</span>
+    <span class="o">{</span>
+        <span class="s2">"id"</span>: 1234,
+        <span class="s2">"name"</span>: <span class="s2">"Inbox"</span>,
+        <span class="s2">"comment_count"</span>: 0
+    <span class="o">}</span>
+<span class="o">]</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python" style="display: block;"><code><span class="kn">import</span> <span class="nn">requests</span>  
+<span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.todoist.com/rest/v1/projects"</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">"Authorization"</span><span class="p">:</span> <span class="s">"Bearer </span><span class="si">%</span><span class="s">s"</span> <span class="o">%</span> <span class="n">your_token</span><span class="p">})</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="p">[{</span><span class="s">u'comment_count'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">u'id'</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span> <span class="s">u'name'</span><span class="p">:</span> <span class="s">u'Inbox'</span><span class="p">}]</span>
+</code></pre></div>
+<p>API endpoints accept GET arguments as <code class="prettyprint">url-encoded</code> values. Every endpoint
+requires an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization">authorization header</a> with the appropriate <code class="prettyprint">Bearer $token</code> that holds the
+<a href="https://todoist.com/Users/viewPrefs?page=integrations">Todoist personal API token</a> or
+<a href="https://developer.todoist.com/sync/v8/#oauth">OAuth API token</a> with full permission scope.</p>
+
+<p>Note that we’re using <code class="prettyprint">$token</code> on all of our <code class="prettyprint">curl</code> examples, so you
+can define a temporary environment variable containing your token and
+easily copy &amp; paste <code class="prettyprint">curl</code> commands into your terminal.</p>
+

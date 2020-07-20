@@ -1,0 +1,353 @@
+          <h1 id="reminders">Reminders</h1>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example reminder object</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">12763422</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"notify_uid"</span><span class="p">:</span><span class="w"> </span><span class="mi">1855589</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"item_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">33511505</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"email"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"absolute"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"due"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-08-05T07:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"is_recurring"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tomorrow at 10:00"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lang"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"mm_offset"</span><span class="p">:</span><span class="w"> </span><span class="mi">180</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"is_deleted"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<p><em>Reminders are only available for Todoist Premium users.</em></p>&#13;
+&#13;
+<h3 id="properties">Properties</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Property</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>id <em>Integer</em></td>&#13;
+<td>The id of the reminder.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>notify_uid <em>Integer</em></td>&#13;
+<td>The user id which should be notified of the reminder, typically the current user id creating the reminder.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>item_id <em>Integer</em></td>&#13;
+<td>The item id for which the reminder is about.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>service <em>String</em></td>&#13;
+<td>The way to get notified of the reminder: <code class="prettyprint">email</code> for e-mail, <code class="prettyprint">mobile</code> for mobile text message, or <code class="prettyprint">push</code> for mobile push notification.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>type <em>String</em></td>&#13;
+<td>The type of the reminder: <code class="prettyprint">relative</code> for a time-based reminder specified in minutes from now, <code class="prettyprint">absolute</code> for a time-based reminder with a specific time and date in the future, and <code class="prettyprint">location</code> for a location-based reminder.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>due <em>Object</em></td>&#13;
+<td>The due date of the reminder. See the <a href="#due-dates">Due dates</a> section for more details. Note that reminders only support due dates with time, since full-day reminders don’t make sense.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>mm_offset <em>Integer</em></td>&#13;
+<td>The relative time in minutes before the due date of the item, in which the reminder should be triggered. Note that the item should have a due date set in order to add a relative reminder.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>name <em>String</em></td>&#13;
+<td>An alias name for the location.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>loc_lat <em>String</em></td>&#13;
+<td>The location latitude.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>loc_long <em>String</em></td>&#13;
+<td>The location longitude.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>loc_trigger <em>String</em></td>&#13;
+<td>What should trigger the reminder: <code class="prettyprint">on_enter</code> for entering the location, or <code class="prettyprint">on_leave</code> for leaving the location.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>radius <em>Integer</em></td>&#13;
+<td>The radius around the location that is still considered as part of the location (in meters).</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>is_deleted <em>Integer</em></td>&#13;
+<td>Whether the reminder is marked as deleted (where <code class="prettyprint">1</code> is true and <code class="prettyprint">0</code> is false).</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="add-a-reminder">Add a reminder</h2>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of adding a relative reminder:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{"type": "reminder_add", "temp_id": "e24ad822-a0df-4b7d-840f-83a5424a484a", "uuid": "41e59a76-3430-4e44-92b9-09d114be0d49", "args": {"item_id": 33511505, "service": "email", "minute_offset": 30}}]'</span>
+
+<span class="o">{</span>
+  ...
+  <span class="s2">"sync_status"</span>: <span class="o">{</span><span class="s2">"41e59a76-3430-4e44-92b9-09d114be0d49"</span>: <span class="s2">"ok"</span><span class="o">}</span>,
+  <span class="s2">"temp_id_mapping"</span>: <span class="o">{</span><span class="s2">"e24ad822-a0df-4b7d-840f-83a5424a484a"</span>: 12763422<span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">reminder</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">reminders</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">33511505</span><span class="p">,</span> <span class="n">service</span><span class="o">=</span><span class="s">'email'</span><span class="p">,</span> <span class="n">minute_offset</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<blockquote>&#13;
+<p>An example of adding an absolute reminder:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{"type": "reminder_add", "temp_id": "952a365e-4965-4113-b4f4-80cdfcada172u", "uuid": "e7c8be2d-f484-4852-9422-a9984c58b1cd", "args": {"item_id": 33511505, "service": "email", "due": {"date": "2014-10-15T11:00:00Z"}}}]'</span>
+
+<span class="o">{</span>
+  ...
+  <span class="s2">"sync_status"</span>: <span class="o">{</span><span class="s2">"e7c8be2d-f484-4852-9422-a9984c58b1cd"</span>: <span class="s2">"ok"</span><span class="o">}</span>,
+  <span class="s2">"temp_id_mapping"</span>: <span class="o">{</span><span class="s2">"952a365e-4965-4113-b4f4-80cdfcada172"</span>: 12763422<span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">reminder</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">reminders</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">33511505</span><span class="p">,</span> <span class="n">service</span><span class="o">=</span><span class="s">'email'</span><span class="p">,</span> <span class="n">due</span><span class="o">=</span><span class="p">{</span><span class="s">'date'</span><span class="p">:</span> <span class="s">'2014-10-15T11:00:00Z'</span><span class="p">})</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<blockquote>&#13;
+<p>An example of adding a location reminder:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{"type": "reminder_add", "temp_id": "7ad9609d-579f-4828-95c5-3600acdb2c81", "uuid": "830cf409-daba-479c-a624-68eb0c07d01c", "args": {"item_id": 33511505, "service": "email", "type": "location", "name": "Aliados", "loc_lat": "41.148581", "loc_long":"-8.610945000000015", "loc_trigger":"on_enter", "radius": 100}}]'</span>
+
+<span class="o">{</span>
+  ...
+  <span class="s2">"sync_status"</span>: <span class="o">{</span><span class="s2">"830cf409-daba-479c-a624-68eb0c07d01c"</span>: <span class="s2">"ok"</span><span class="o">}</span>,
+  <span class="s2">"temp_id_mapping"</span>: <span class="o">{</span><span class="s2">"7ad9609d-579f-4828-95c5-3600acdb2c81"</span>: 12763422<span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">reminder</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">reminders</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">33511505</span><span class="p">,</span> <span class="n">service</span><span class="o">=</span><span class="s">'email'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s">'location'</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'Aliados'</span><span class="p">,</span> <span class="n">loc_lat</span><span class="o">=</span><span class="s">'41.148581'</span><span class="p">,</span> <span class="n">loc_long</span><span class="o">=</span><span class="s">'-8.610945000000015'</span><span class="p">,</span> <span class="n">loc_trigger</span><span class="o">=</span><span class="s">'on_enter'</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>Add a new reminder to the user account related to the API credentials.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>item_id <em>Integer or String (temp_id)</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The item id for which the reminder is about.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>type <em>String</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The type of the reminder: <code class="prettyprint">relative</code> for a time-based reminder specified in minutes from now, <code class="prettyprint">absolute</code> for a time-based reminder with a specific time and date in the future, and <code class="prettyprint">location</code> for a location-based reminder.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>notify_uid <em>Integer</em></td>&#13;
+<td>No</td>&#13;
+<td>The user id which should be notified of the reminder, typically the current user id creating the reminder.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>service <em>String</em></td>&#13;
+<td>No</td>&#13;
+<td>The way to get notified of the reminder: <code class="prettyprint">email</code> for e-mail, <code class="prettyprint">mobile</code> for mobile text message, or <code class="prettyprint">push</code> for mobile push notification.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>due <em>Object</em></td>&#13;
+<td>The due date of the reminder. See the <a href="#due-dates">Due dates</a> section for more details. Note that reminders only support due dates with time, since full-day reminders don’t make sense.</td>&#13;
+<td/>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>minute_offset <em>Integer</em></td>&#13;
+<td>No</td>&#13;
+<td>The relative time in minutes before the due date of the item, in which the reminder should be triggered. Note, that the item should have a due date set in order to add a relative reminder.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>name <em>String</em></td>&#13;
+<td>No</td>&#13;
+<td>An alias name for the location.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>loc_lat <em>String</em></td>&#13;
+<td>No</td>&#13;
+<td>The location latitude.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>loc_long <em>String</em></td>&#13;
+<td>No</td>&#13;
+<td>The location longitude.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>loc_trigger <em>String</em></td>&#13;
+<td>No</td>&#13;
+<td>What should trigger the reminder: <code class="prettyprint">on_enter</code> for entering the location, or <code class="prettyprint">on_leave</code> for leaving the location.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>radius <em>Integer</em></td>&#13;
+<td>No</td>&#13;
+<td>The radius around the location that is still considered as part of the location (in meters).</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="update-a-reminder">Update a reminder</h2>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of updating a reminder:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{"type": "reminder_update", "uuid": "b0e7562e-ea9f-4c84-87ee-9cbf9c103234", "args": {"id": 12763422, "due": {"date": "2014-10-10T15:00"}}}]'</span>
+
+<span class="o">{</span>
+  ...
+  <span class="s2">"sync_status"</span>: <span class="o">{</span><span class="s2">"b0e7562e-ea9f-4c84-87ee-9cbf9c103234"</span>: <span class="s2">"ok"</span><span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">reminder</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">reminders</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="mi">12763422</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">reminder</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">due</span><span class="o">=</span><span class="p">{</span><span class="s">'date'</span><span class="p">:</span> <span class="s">'2014-10-10T15:00'</span><span class="p">})</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>Update a reminder from the user account related to the API credentials.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>id <em>Integer or String (temp_id)</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The id of the reminder.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>notify_uid <em>Integer</em></td>&#13;
+<td>No</td>&#13;
+<td>The user id which should be notified of the reminder, typically the current user id creating the reminder.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>service <em>String</em></td>&#13;
+<td>No</td>&#13;
+<td>The way to get notified of the reminder: <code class="prettyprint">email</code> for e-mail, <code class="prettyprint">mobile</code> for mobile text message, or <code class="prettyprint">push</code> for mobile push notification.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>type <em>String</em></td>&#13;
+<td>No</td>&#13;
+<td>The type of the reminder: <code class="prettyprint">relative</code> for a time-based reminder specified in minutes from now, <code class="prettyprint">absolute</code> for a time-based reminder with a specific time and date in the future, and <code class="prettyprint">location</code> for a location-based reminder.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>due <em>Object</em></td>&#13;
+<td>The due date of the reminder. See the <a href="#due-dates">Due dates</a> section for more details. Note that reminders only support due dates with time, since full-day reminders don’t make sense.</td>&#13;
+<td/>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>minute_offset <em>Integer</em></td>&#13;
+<td>No</td>&#13;
+<td>The relative time in minutes before the due date of the item, in which the reminder should be triggered. Note, that the item should have a due date set in order to add a relative reminder.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>name <em>String</em></td>&#13;
+<td>No</td>&#13;
+<td>An alias name for the location.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>loc_lat <em>String</em></td>&#13;
+<td>No</td>&#13;
+<td>The location latitude.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>loc_long <em>String</em></td>&#13;
+<td>No</td>&#13;
+<td>The location longitude.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>loc_trigger <em>String</em></td>&#13;
+<td>No</td>&#13;
+<td>What should trigger the reminder: <code class="prettyprint">on_enter</code> for entering the location, or <code class="prettyprint">on_leave</code> for leaving the location.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>radius <em>Integer</em></td>&#13;
+<td>No</td>&#13;
+<td>The radius around the location that is still considered as part of the location (in meters).</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="delete-a-reminder">Delete a reminder</h2>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of deleting a reminder:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{"type": "reminder_delete", "uuid": "0896d03b-eb90-49f7-9020-5ed3fd09df2d", "args": {"id": 9}}]'</span>
+
+<span class="o">{</span>
+  ...
+  <span class="s2">"sync_status"</span>: <span class="o">{</span><span class="s2">"0896d03b-eb90-49f7-9020-5ed3fd09df2d"</span>: <span class="s2">"ok"</span><span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">reminder</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">reminders</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="mi">12763422</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">reminder</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>Delete a reminder from the user account related to the API credentials.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>id <em>Integer or String (temp_id)</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The id of the filter.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="clear-the-locations">Clear the locations</h2>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{"type": "clear_locations", "uuid": "d285ae02-80c6-477c-bfa9-45272d7bddfb", "args": {}}]'</span>
+
+<span class="o">{</span>
+  ...
+  <span class="s2">"sync_status"</span>: <span class="o">{</span><span class="s2">"d285ae02-80c6-477c-bfa9-45272d7bddfb"</span>: <span class="s2">"ok"</span><span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">reminder</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">locations</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>Clears the locations list, which is used for the location reminders.</p>&#13;
+&#13;

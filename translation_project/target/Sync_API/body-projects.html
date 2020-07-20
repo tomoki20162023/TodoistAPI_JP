@@ -1,0 +1,385 @@
+          <h1 id="projects">Projects</h1>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example project object</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">396936926</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"legacy_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">128501470</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"color"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"child_order"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"collapsed"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"shared"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"parent_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"legacy_parent_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"sync_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"is_deleted"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"is_archived"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"is_favorite"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<h3 id="properties">Properties</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Property</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>id <em>Integer</em></td>&#13;
+<td>The id of the project.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>legacy_id <em>Integer</em></td>&#13;
+<td>The legacy id of the project. <em>(only shown for objects created before 1 April 2017)</em></td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>name  <em>String</em></td>&#13;
+<td>The name of the project.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>color <em>Integer</em></td>&#13;
+<td>Color id. It’s a value between 30 and 49, refer to <a href="#colors">Colors</a> for more info.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>parent_id <em>Integer</em></td>&#13;
+<td>The id of the parent project. Set to <code class="prettyprint">null</code> for root projects.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>legacy_parent_id <em>Integer</em></td>&#13;
+<td>The legacy id of the parent project. Set to <code class="prettyprint">null</code> for root projects.  <em>(only shown for objects created before 1 April 2017)</em></td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>child_order <em>Integer</em></td>&#13;
+<td>The order of project. Defines the position of the task among all the projects with the same <code class="prettyprint">parent_id</code></td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>collapsed  <em>Integer</em></td>&#13;
+<td>Whether the project’s sub-projects are collapsed (where <code class="prettyprint">1</code> is true and <code class="prettyprint">0</code> is false).</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>shared  <em>Boolean</em></td>&#13;
+<td>Whether the project is shared (a <code class="prettyprint">true</code> or <code class="prettyprint">false</code> value).</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>is_deleted <em>Integer</em></td>&#13;
+<td>Whether the project is marked as deleted (where <code class="prettyprint">1</code> is true and <code class="prettyprint">0</code> is false).</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>is_archived <em>Integer</em></td>&#13;
+<td>Whether the project is marked as archived (where <code class="prettyprint">1</code> is true and <code class="prettyprint">0</code> is false).</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>is_favorite <em>Integer</em></td>&#13;
+<td>Whether the project is favorite (where <code class="prettyprint">1</code> is true and <code class="prettyprint">0</code> is false).</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>sync_id <em>integer</em></td>&#13;
+<td>Identifier to find the match between different copes of shared projects. When you share a project, its copy has a different ID for your collaborators. To find a project in a different account that matches yours, you can use the “sync_id” attribute. For non-shared projects the attribute is set to <code class="prettyprint">null</code>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>inbox_project <em>Boolean</em></td>&#13;
+<td>Whether the project is <code class="prettyprint">Inbox</code> (<code class="prettyprint">true</code> or otherwise this property is not sent).</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>team_inbox <em>Boolean</em></td>&#13;
+<td>Whether the project is <code class="prettyprint">TeamInbox</code> (<code class="prettyprint">true</code> or otherwise this property is not sent).</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="add-a-project">Add a project</h2>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{"type": "project_add", "temp_id": "4ff1e388-5ca6-453a-b0e8-662ebf373b6b", "uuid": "32774db9-a1da-4550-8d9d-910372124fa4", "args": {"name": "Project4"}}]'</span>
+
+<span class="o">{</span>
+  ...
+  <span class="s2">"sync_status"</span>: <span class="o">{</span><span class="s2">"32774db9-a1da-4550-8d9d-910372124fa4"</span>: <span class="s2">"ok"</span><span class="o">}</span>,
+  <span class="s2">"temp_id_mapping"</span>: <span class="o">{</span><span class="s2">"4ff1e388-5ca6-453a-b0e8-662ebf373b6b"</span>: 128501815<span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">project</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">projects</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">'Project4'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>Add a new project.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>name <em>String</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The name of the project (a string value).</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>color <em>Integer</em></td>&#13;
+<td>No</td>&#13;
+<td>Color id. It’s a value between 30 and 49, refer to <a href="#colors">Colors</a> for more info.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>parent_id <em>Integer</em></td>&#13;
+<td>No</td>&#13;
+<td>The id of the parent project. Set to <code class="prettyprint">null</code> for root projects</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>child_order <em>Integer</em></td>&#13;
+<td>No</td>&#13;
+<td>The order of project. Defines the position of the task among all the projects with the same <code class="prettyprint">parent_id</code></td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>is_favorite <em>Integer</em></td>&#13;
+<td>No</td>&#13;
+<td>Whether the project is favorite (where <code class="prettyprint">1</code> is true and <code class="prettyprint">0</code> is false).</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="update-a-project">Update a project</h2>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=[{</span><span class="s2">"type"</span>: <span class="s2">"project_update"</span>, <span class="s2">"uuid"</span>: <span class="s2">"1ca42128-d12f-4a66-8413-4d6ff2838fde"</span>, <span class="s2">"args"</span>: <span class="o">{</span><span class="s2">"id"</span>: 128501815, <span class="s2">"name"</span>: <span class="s2">"foo"</span><span class="o">}}]</span><span class="s1">'
+
+{
+  ...
+  "sync_status": {"1ca42128-d12f-4a66-8413-4d6ff2838fde": "ok"},
+  ...
+}
+</span></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">project</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">projects</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="mi">128501815</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">project</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'foo'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>Update an existing project.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>id  <em>Integer or String (temp_id)</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The id of the project (could be temp id).</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>name <em>String</em></td>&#13;
+<td>No</td>&#13;
+<td>The name of the project (a string value).</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>color <em>Integer</em></td>&#13;
+<td>No</td>&#13;
+<td>Color id. It’s a value between 30 and 49, refer to <a href="#colors">Colors</a> for more info.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>collapsed <em>Integer</em></td>&#13;
+<td>No</td>&#13;
+<td>Whether the project’s sub-projects are collapsed (where <code class="prettyprint">1</code> is true and <code class="prettyprint">0</code> is false).</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>is_favorite <em>Integer</em></td>&#13;
+<td>No</td>&#13;
+<td>Whether the project is favorite (where <code class="prettyprint">1</code> is true and <code class="prettyprint">0</code> is false).</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="move-a-project">Move a project</h2>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=[{</span><span class="s2">"type"</span>: <span class="s2">"project_move"</span>, <span class="s2">"uuid"</span>: <span class="s2">"1ca42128-d12f-4a66-8413-4d6ff2838fde"</span>, <span class="s2">"args"</span>: <span class="o">{</span><span class="s2">"id"</span>: 1001, <span class="s2">"parent_id"</span>: 1002<span class="o">}}]</span><span class="s1">'
+
+{
+  ...
+  "sync_status": {"1ca42128-d12f-4a66-8413-4d6ff2838fde": "ok"},
+  ...
+}
+</span></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">project</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">projects</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="mi">1001</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">project</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">parent_id</span><span class="o">=</span><span class="mi">1002</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>Update parent project relationships of the project.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>id  <em>Integer or String (temp_id)</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The id of the project (could be temp id).</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>parent_id  <em>Integer or String (temp_id)</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The id of the parent project (could be temp id). If set to null, the project will be moved to the root</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="delete-a-project">Delete a project</h2>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=[{</span><span class="s2">"type"</span>: <span class="s2">"project_delete"</span>, <span class="s2">"uuid"</span>: <span class="s2">"367182ba-125f-4dbb-bff6-c1343fd751e4"</span>, <span class="s2">"args"</span>: <span class="o">{</span><span class="s2">"id"</span>: 128501815<span class="o">}}]</span><span class="s1">'
+
+{
+  ...
+  "sync_status": {"367182ba-125f-4dbb-bff6-c1343fd751e4": "ok"},
+  ...
+}
+</span></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">project</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">projects</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="mi">128501815</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">project</span><span class="o">.</span><span class="n">delete</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>Delete an existing project and all its descendants.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>id <em>Integer (id) or String (temp id)</em></td>&#13;
+<td>Yes</td>&#13;
+<td>Id of the project to delete (could be a temp id).</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="archive-a-project">Archive a project</h2>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=[{</span><span class="s2">"type"</span>: <span class="s2">"project_archive"</span>, <span class="s2">"uuid"</span>: <span class="s2">"bbec1a60-2bdd-48ac-a623-c8eb968e1697"</span>, <span class="s2">"args"</span>: <span class="o">{</span><span class="s2">"id"</span>: 128501682<span class="o">}}]</span><span class="s1">'
+
+{
+  ...
+  "sync_status": {"bbec1a60-2bdd-48ac-a623-c8eb968e1697": "ok"},
+  ...
+}
+</span></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">project</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">projects</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="mi">128501682</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">project</span><span class="o">.</span><span class="n">archive</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p><em>Only available for Todoist Premium users.</em></p>&#13;
+&#13;
+<p>Archive a project and its descendants.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>id <em>Integer (id) or String (temp id)</em></td>&#13;
+<td>Yes</td>&#13;
+<td>id of the project to archive (could be a temp id).</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="unarchive-a-project">Unarchive a project</h2>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=[{</span><span class="s2">"type"</span>: <span class="s2">"project_unarchive"</span>, <span class="s2">"uuid"</span>: <span class="s2">"7d86f042-e098-4fa6-9c1f-a61fe8c39d74"</span>, <span class="s2">"args"</span>: <span class="o">{</span><span class="s2">"id"</span>: 128501682<span class="o">}}]</span><span class="s1">'
+
+{
+  ...
+  "sync_status": {"7d86f042-e098-4fa6-9c1f-a61fe8c39d74": "ok"},
+  ...
+}
+</span></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">project</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">projects</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="mi">128501815</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">project</span><span class="o">.</span><span class="n">unarchive</span><span class="p">()</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p><em>Only available for Todoist Premium users.</em></p>&#13;
+&#13;
+<p>Unarchive a project. No ancestors will be unarchived along with the unarchived
+project. Instead, the project is unarchived alone, loses any parent relationship
+(becomes a root project), and is placed at the end of the list of other root
+projects.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>id  <em>Integer (id) or String (temp id)</em></td>&#13;
+<td>Yes</td>&#13;
+<td>id of the project to unarchive (could be a temp id).</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="reorder-projects">Reorder projects</h2>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=[{</span><span class="s2">"type"</span>: <span class="s2">"project_reorder"</span>, <span class="s2">"uuid"</span>: <span class="s2">"bf0855a3-0138-4b76-b895-88cad8db9edc"</span>, <span class="s2">"args"</span>: <span class="o">{</span><span class="s2">"projects"</span>: <span class="o">[{</span><span class="s2">"id"</span>: 128501472, <span class="s2">"child_order"</span>: 1<span class="o">}</span>, <span class="o">{</span><span class="s2">"id"</span>: 128501471, <span class="s2">"child_order"</span>: 2<span class="o">}]}}]</span><span class="s1">'
+
+{
+  ...
+  "sync_status": {"bf0855a3-0138-4b76-b895-88cad8db9edc": "ok"},
+  ...
+}
+</span></code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">project1</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="mi">128501472</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">project1</span><span class="o">.</span><span class="n">reorder</span><span class="p">(</span><span class="n">child_order</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">project2</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">items</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="mi">128501471</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">project2</span><span class="o">.</span><span class="n">reorder</span><span class="p">(</span><span class="n">child_order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>The command updates <code class="prettyprint">child_order</code> properties of items in bulk.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>projects <em>Array of Objects</em></td>&#13;
+<td>Yes</td>&#13;
+<td>An array of objects to update. Each object contains two attribute: <code class="prettyprint">id</code> of the project to update and <code class="prettyprint">child_order</code>, the new order.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;

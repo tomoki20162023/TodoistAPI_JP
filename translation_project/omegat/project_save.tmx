@@ -46,7 +46,7 @@
 - Changes
 - Brand usage</seg>
       </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200719T114724Z" creationid="tom71" creationdate="20200719T114211Z">
+      <tuv lang="JA" changeid="tom71" changedate="20200720T065812Z" creationid="tom71" creationdate="20200719T114211Z">
         <seg>- 概要
 - 始めに
 - 認証
@@ -54,19 +54,19 @@
 - プロジェクト
 - テンプレート
 - アイテム
-- Labels
-- Notes
-- ProjectNotes
-- Sections
-- Uploads
-- Filters
-- Reminders
-- Due dates
-- Miscellaneous
-- Quick add task
-- User
-- User settings
-- Sharing
+- ラベル
+- ノート
+- プロジェクトノート
+- セクション
+- アップロード
+- フィルター
+- リマインダー
+- 期限
+- 色々
+- タスクをすぐに追加
+- ユーザ
+- ユーザ設定
+- 共有
 - Live notifications
 - Business
 - Activity
@@ -78,6 +78,14 @@
 - Limits
 - Changes
 - Brand usage</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Overview</seg>
+      </tuv>
+      <tuv lang="JA" changeid="tom71" changedate="20200720T221406Z" creationid="tom71" creationdate="20200720T221406Z">
+        <seg>概要</seg>
       </tuv>
     </tu>
 <!-- Alternative translations -->

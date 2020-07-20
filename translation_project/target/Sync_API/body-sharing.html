@@ -1,0 +1,303 @@
+          <h1 id="sharing">Sharing</h1>&#13;
+&#13;
+<p>Project can be shared with other users, which are then called collaborators, and
+this section describes the different commands that are related to sharing.</p>&#13;
+&#13;
+<h3 id="collaborators">Collaborators</h3>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of a collaborator object:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1855589</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"you@example.com"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example User"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GMT +3:00"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"image_id"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<p>There are two types of objects to get information about a user’s collaborators
+and their participation in shared projects: <code class="prettyprint">collaborators</code> and
+<code class="prettyprint">collaborator_states</code></p>&#13;
+&#13;
+<p>Every user who shares at least one project with another user, has a
+collaborators record in the API response. The record contains a restricted
+subset of user-specific properties.</p>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Property</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>id <em>Integer</em></td>&#13;
+<td>The user id of the collaborator.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>email <em>String</em></td>&#13;
+<td>The email of the collaborator.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>full_name <em>String</em></td>&#13;
+<td>The full name of the collaborator.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>timezone <em>String</em></td>&#13;
+<td>The timezone of the collaborator.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>image_id <em>Integer</em></td>&#13;
+<td>The image id for the collaborator’s avatar, which can be used to get an avatar from a specific URL.  Specifically the <code class="prettyprint">https://dcff1xvirvpfp.cloudfront.net/&lt;image_id&gt;_big.jpg</code> can be used for a big (<code class="prettyprint">195x195</code> pixels) avatar, <code class="prettyprint">https://dcff1xvirvpfp.cloudfront.net/&lt;image_id&gt;_medium.jpg</code> for a medium (<code class="prettyprint">60x60</code> pixels) avatar, and <code class="prettyprint">https://dcff1xvirvpfp.cloudfront.net/&lt;image_id&gt;_small.jpg</code> for a small (<code class="prettyprint">35x35</code> pixels) avatar.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<p>Partial sync returns updated collaborator objects for users that have changed
+their attributes, such as their name or email.</p>&#13;
+&#13;
+<h3 id="collaborator-states">Collaborator states</h3>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of a collaborator state:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"project_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">128501470</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1855589</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"is_deleted"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>&#13;
+<p>The list of collaborators doesn’t contain any information on how users are
+connected to shared projects. To provide information about these connections,
+the <code class="prettyprint">collaborator_states</code> field should be used. Every collaborator state record
+is a mere “user to shared project” mapping.</p>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Property</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>project_id <em>Integer</em></td>&#13;
+<td>The shared project id of the user.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>user_id <em>Integer</em></td>&#13;
+<td>The user id of the collaborator.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>state <em>String</em></td>&#13;
+<td>The status of the collaborator state, either <code class="prettyprint">active</code> or <code class="prettyprint">invited</code>.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>is_deleted <em>Boolean</em></td>&#13;
+<td>Set to <code class="prettyprint">true</code> when the collaborator leaves the shared project.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="share-a-project">Share a project</h2>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of sharing a project:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{"type": "share_project", "temp_id": "854be9cd-965f-4ddd-a07e-6a1d4a6e6f7a", "uuid": "fe6637e3-03ce-4236-a202-8b28de2c8372", "args": {"project_id": "128501470", "email": "you@example.com"}}]'</span>
+
+<span class="o">{</span> 
+  ...
+  <span class="s2">"sync_status"</span>: <span class="o">{</span><span class="s2">"fe6637e3-03ce-4236-a202-8b28de2c8372"</span>: <span class="s2">"ok"</span><span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">projects</span><span class="o">.</span><span class="n">share</span><span class="p">(</span><span class="mi">128501470</span><span class="p">,</span> <span class="s">'you@example.com'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>Share a project with another user.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>project_id <em>Integer or String (temp_id)</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The project to be shared.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>email <em>String</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The user email with whom to share the project.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="delete-a-collaborator">Delete a collaborator</h2>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of deleting a person from a shared project:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{"type": "delete_collaborator", "uuid": "0ae55ac0-3b8d-4835-b7c3-59ba30e73ae4", "args": {"project_id": 128501470, "email": "you@example.com"}}]'</span>
+
+<span class="o">{</span>
+  ...
+  <span class="s2">"sync_status"</span>: <span class="o">{</span><span class="s2">"0ae55ac0-3b8d-4835-b7c3-59ba30e73ae4"</span>: <span class="s2">"ok"</span><span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">collaborators</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">128501470</span><span class="p">,</span> <span class="s">'you@example.com'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>Remove an user from a shared project.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>project_id <em>Integer or String (temp_id)</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The project to be affected.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>email <em>String</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The user email with whom the project was shared with.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="accept-an-invitation">Accept an invitation</h2>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of accepting an invitation:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{"type": "accept_invitation", "uuid": "4b254da4-fa2b-4a88-9439-b27903a90f7f", "args": {"invitation_id": 1234,  "invitation_secret": "abcdefghijklmno"}}]'</span>
+
+<span class="o">{</span>
+  ...
+  <span class="s2">"sync_status"</span>: <span class="o">{</span><span class="s2">"4b254da4-fa2b-4a88-9439-b27903a90f7f"</span>: <span class="s2">"ok"</span><span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">invitations</span><span class="o">.</span><span class="n">accept</span><span class="p">(</span><span class="mi">1234</span><span class="p">,</span> <span class="s">'abcdefghijklmno'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>Accept an invitation to join a shared project.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>invitation_id <em>Integer</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The invitation id.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>invitation_secret <em>String</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The secret fetched from the live notification.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="reject-an-invitation">Reject an invitation</h2>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of rejecting an invitation:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{"type": "reject_invitation", "uuid": "284fd900-c36f-44e5-ab92-ee93455e50e0", "args": {"invitation_id": 1234,  "invitation_secret": "abcdefghijklmno"}}]'</span>
+
+<span class="o">{</span>
+  ...
+  <span class="s2">"sync_status"</span>: <span class="o">{</span><span class="s2">"284fd900-c36f-44e5-ab92-ee93455e50e0"</span>: <span class="s2">"ok"</span><span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">invitations</span><span class="o">.</span><span class="n">reject</span><span class="p">(</span><span class="mi">1234</span><span class="p">,</span> <span class="s">'abcdefghijklmno'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>Reject an invitation to join a shared project.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>invitation_id <em>Integer</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The invitation id.</td>&#13;
+</tr>&#13;
+<tr>&#13;
+<td>invitation_secret <em>String</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The secret fetched from the live notification.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;
+<h2 id="delete-an-invitation">Delete an invitation</h2>&#13;
+&#13;
+<blockquote>&#13;
+<p>An example of deleting an invitation:</p>&#13;
+</blockquote>&#13;
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
+    <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{"type": "delete_invitation", "uuid": "399f6a8d-ddea-4146-ae8e-b41fb8ff6945", "args": {"invitation_id": 128501470}}]'</span>
+
+<span class="o">{</span>
+  ...
+  <span class="s2">"sync_status"</span>: <span class="o">{</span><span class="s2">"399f6a8d-ddea-4146-ae8e-b41fb8ff6945"</span>: <span class="s2">"ok"</span><span class="o">}</span>,
+  ...
+<span class="o">}</span>
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">todoist</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">invitations</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">128501470</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</code></pre></div>&#13;
+<p>Delete an invitation to join a shared project.</p>&#13;
+&#13;
+<h3 id="command-arguments">Command arguments</h3>&#13;
+&#13;
+<table><thead>&#13;
+<tr>&#13;
+<th>Argument</th>&#13;
+<th>Required</th>&#13;
+<th>Description</th>&#13;
+</tr>&#13;
+</thead><tbody>&#13;
+<tr>&#13;
+<td>invitation_id <em>Integer</em></td>&#13;
+<td>Yes</td>&#13;
+<td>The invitation to be deleted.</td>&#13;
+</tr>&#13;
+</tbody></table>&#13;
+&#13;

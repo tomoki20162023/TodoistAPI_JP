@@ -1,0 +1,55 @@
+          <div name="overview" data-unique="overview"/><h1 id="overview">Overview</h1>
+
+<p>This is the official documentation for Todoist REST API. Our original API,
+named <a href="https://developer.todoist.com/sync/">Sync API</a>, provides an easy way to deal with full and partial
+syncs, but it’s not so simple for individual calls. REST API aims to provide API
+developers a friendly way to deal with the most basic features of Todoist API.</p>
+
+<h3 id="request-and-response-format">Request and response format</h3>
+
+<p>API endpoints accept arguments either as url-encoded values for non-POST
+requests or as json-encoded objects encoded in POST request body with
+<code class="prettyprint">Content-Type: application/json</code> header.</p>
+
+<p>Each modification request may provide additional <code class="prettyprint">X-Request-Id</code> HTTP header that
+could be used as an unique string to ensure modifications are applied only once
+— request having the same id as previously seen would be discarded.</p>
+
+<p>It’s is not required but can be handy if you need to implement any request
+re-trying logic. This header value should not exceed 36 bytes. We will be
+generating them with <code class="prettyprint">uuidgen</code> for shell and <code class="prettyprint">uuid.uuid4</code> for Python in the code
+examples.</p>
+
+<p>This API relies on standard HTTP response codes to indicate operation
+result. The table below is a simple reference about the most used status codes:</p>
+
+<table><thead>
+<tr>
+<th>Status code</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>The request was processed successfully.</td>
+</tr>
+<tr>
+<td>204</td>
+<td>The request was processed successfully without any data to return.</td>
+</tr>
+<tr>
+<td>4xx</td>
+<td>The request was processed with an error and should not be retried unmodified as they won’t be processed any different by an API.</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td>The request failed due to a server error, it’s safe to retry later.</td>
+</tr>
+</tbody></table>
+
+<p>All <code class="prettyprint">200 OK</code> responses have the <code class="prettyprint">Content-type: application/json</code> and contain a
+JSON-encoded representation of one or more objects.</p>
+
+<p>Payload of POST requests has to be JSON-encoded and accompanied with
+<code class="prettyprint">Content-Type: application/json</code> header.</p>
+
