@@ -2,8 +2,8 @@
 
 Todoist Developer APIの翻訳をしているところです。
 
-- [REST API](./REST_API)
-- [Sync API](./Sync_API)
+| REST API | (本家)[https://developer.todoist.com/rest/v1/] | (翻訳前)[translation_project/source/REST_API] | (翻訳後)[translation_project/target/REST_API] | [公開版](REST_API/) |
+| Sync API | (本家)[https://developer.todoist.com/sync/v8/] | (翻訳前)[translation_project/source/Sync_API] | (翻訳後)[translation_project/target/Sync_API] | [公開版](Sync_API/) |
 
 markdown形式でやろうかと思ってたんですが、
 すべて張り付けたり抽出したりするのが面倒になってきたので、
