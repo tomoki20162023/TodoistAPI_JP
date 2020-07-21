@@ -1,12 +1,10 @@
-          <h1 id="limits">Limits</h1>&#13;
+          <h1 id="limits">制限事項</h1>&#13;
 &#13;
-<p>There is currently a 1MiB http request body limit on POST requests. The
-exception to this rule is any of the <em>upload</em> endpoints which have a limit of
-100 MiB.</p>&#13;
+<p>現在、POSTリクエストに対し、HTTPリクエスト本体の1MiB制限がある。このルールの例外はすべての <em>アップロード</em> エンドポイントで、100MiBの制限となっている。</p>&#13;
 &#13;
 <p>Upload endpoints are for POST requests pointed at paths such as <code class="prettyprint">/upload</code> and <code class="prettyprint">/uploads/add</code>.</p>&#13;
 &#13;
-<h2 id="sync">Sync</h2>&#13;
+<h2 id="sync">同期</h2>&#13;
 &#13;
 <p>The maximum number of commands is 100 per request, and this is done to prevent
 timeouts and other problems when dealing with big requests.</p>&#13;
@@ -14,10 +12,9 @@ timeouts and other problems when dealing with big requests.</p>&#13;
 <p>There’s also a maximum number of 50 sync requests per minute for each user, in
 order to prevent clients from accidentally overloading our servers.</p>&#13;
 &#13;
-<h3 id="processing-timeouts">Processing Timeouts</h3>&#13;
+<h3 id="processing-timeouts">処理のタイムアウト</h3>&#13;
 &#13;
-<p>There are processing timeouts associated with each endpoint and these vary
-depending on the type of action being performed.</p>&#13;
+<p>各エンドポイントには処理のタイムアウトがあり、実行されるアクションの種類に応じて変わります。</p>&#13;
 &#13;
 <table><thead>&#13;
 <tr>&#13;
@@ -26,7 +23,7 @@ depending on the type of action being performed.</p>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
-<td>Uploads</td>&#13;
+<td>アップロード</td>&#13;
 <td>5 minutes</td>&#13;
 </tr>&#13;
 <tr>&#13;
@@ -39,7 +36,7 @@ depending on the type of action being performed.</p>&#13;
 &#13;
 <p>Total size of HTTP headers cannot exceed 65 KiB.</p>&#13;
 &#13;
-<h3 id="requests-per-minute">Requests per Minute</h3>&#13;
+<h3 id="requests-per-minute">毎分のリクエスト数</h3>&#13;
 &#13;
 <p>You can make a total of 50 requests per minute per user when using the Sync
 API. This can be further increased when commands are batched where it’s

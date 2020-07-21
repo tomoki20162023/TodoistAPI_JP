@@ -1,15 +1,12 @@
-          <div name="limits" data-unique="limits"/><h1 id="limits">Limits</h1>
+          <div name="limits" data-unique="limits"/><h1 id="limits">制限事項</h1>
 
-<p>There is currently a 1MiB http request body limit on POST requests. The
-exception to this rule is any of the <em>upload</em> endpoints which have a limit of
-100 MiB.</p>
+<p>現在、POSTリクエストに対し、HTTPリクエスト本体の1MiB制限がある。このルールの例外はすべての <em>アップロード</em> エンドポイントで、100MiBの制限となっている。</p>
 
 <p>Upload endpoints are for POST requests pointed at paths such as <code class="prettyprint">/upload</code> and <code class="prettyprint">/uploads/add</code>.</p>
 
-<h3 id="processing-timeouts">Processing Timeouts</h3>
+<h3 id="processing-timeouts">処理のタイムアウト</h3>
 
-<p>There are processing timeouts associated with each endpoint and these vary
-depending on the type of action being performed.</p>
+<p>各エンドポイントには処理のタイムアウトがあり、実行されるアクションの種類に応じて変わります。</p>
 
 <table><thead>
 <tr>
@@ -18,7 +15,7 @@ depending on the type of action being performed.</p>
 </tr>
 </thead><tbody>
 <tr>
-<td>Uploads</td>
+<td>アップロード</td>
 <td>5 minutes</td>
 </tr>
 <tr>
@@ -31,7 +28,7 @@ depending on the type of action being performed.</p>
 
 <p>Total size of HTTP headers cannot exceed 65 KiB.</p>
 
-<h3 id="requests-per-minute">Requests per Minute</h3>
+<h3 id="requests-per-minute">毎分のリクエスト数</h3>
 
-<p>You can make a total of 50 requests per minute per user when using the REST API.</p>
+<p>REST APIを使うときは、各ユーザが１分当たり50リクエストまでとなっています。</p>
 

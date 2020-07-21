@@ -1,31 +1,31 @@
-          <h1 id="webhooks">Webhooks</h1>&#13;
+          <h1 id="webhooks">ウェブフック</h1>&#13;
 &#13;
 <p>The Todoist Webhooks API allows applications to receive real-time notification
 (in the form of HTTP POST payload) on the subscribed user events. Notice that
 once you have a webhook setup, you will start receiving webhook events from
 <strong>all your app users</strong> immediately.</p>&#13;
 &#13;
-<h3 id="important-considerations">Important Considerations</h3>&#13;
+<h3 id="important-considerations">重要な考慮点</h3>&#13;
 &#13;
 <p>Due to the nature of network requests, your application should assume webhook
 requests could arrive out of order or could even fail to arrive; webhooks should
 be used only as notifications and not as a primary Todoist data source (make
 sure your application could still work when webhook is not available).</p>&#13;
 &#13;
-<h2 id="configuration">Configuration</h2>&#13;
+<h2 id="configuration">構成</h2>&#13;
 &#13;
 <p>Before you can start receiving webhook event notifications, you must first have
 your webhook configured at the App Management Console.</p>&#13;
 &#13;
-<h3 id="events">Events</h3>&#13;
+<h3 id="events">イベント</h3>&#13;
 &#13;
 <p>Here is a list of events that you could subscribe to, and they are configured at
 the <a href="../../appconsole.html">App Management Console</a>.</p>&#13;
 &#13;
 <table><thead>&#13;
 <tr>&#13;
-<th>Event Name</th>&#13;
-<th>Description</th>&#13;
+<th>イベント名</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -112,7 +112,7 @@ the <a href="../../appconsole.html">App Management Console</a>.</p>&#13;
 &#13;
 <h2 id="request-format">Request Format</h2>&#13;
 &#13;
-<h3 id="event-json-object">Event JSON Object</h3>&#13;
+<h3 id="event-json-object">イベントのJSONオブジェクト</h3>&#13;
 &#13;
 <p>Each webhook event notification request contains a JSON object. The event JSON
 object follows this general structure:</p>&#13;
@@ -163,16 +163,16 @@ X-Todoist-Hmac-SHA256: UEEq9si3Vf9yRSrLthbpazbb69kP9+CZQ7fXmVyjhPs=
 }
 ...
 </code></pre></div>&#13;
-<h3 id="request-header">Request Header</h3>&#13;
+<h3 id="request-header">リクエストヘッダー</h3>&#13;
 &#13;
 <table><thead>&#13;
 <tr>&#13;
-<th>Header Name</th>&#13;
-<th>Description</th>&#13;
+<th>ヘッダー名</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
-<td>User-Agent</td>&#13;
+<td>ユーザーエージェントUser-Agent</td>&#13;
 <td>Will be set to “Todoist-Webhooks”</td>&#13;
 </tr>&#13;
 <tr>&#13;

@@ -1,4 +1,4 @@
-          <h1 id="sections">Sections</h1>&#13;
+          <h1 id="sections">セクション</h1>&#13;
 &#13;
 <blockquote>&#13;
 <p>An example section object</p>&#13;
@@ -18,12 +18,12 @@
   </span><span class="s2">"date_added"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-10-07T07:09:27Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>&#13;
-<h3 id="properties">Properties</h3>&#13;
+<h3 id="properties">属性</h3>&#13;
 &#13;
 <table><thead>&#13;
 <tr>&#13;
-<th>Property</th>&#13;
-<th>Description</th>&#13;
+<th>属性</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -44,7 +44,7 @@
 </tr>&#13;
 <tr>&#13;
 <td>section_order <em>Integer</em></td>&#13;
-<td>The order of section. Defines the position of the section among all the sections in the project</td>&#13;
+<td>セクションの順序。プロジェクト内の全セクション間のセクションの位置を定義する</td>&#13;
 </tr>&#13;
 <tr>&#13;
 <td>collapsed <em>Boolean</em></td>&#13;
@@ -72,7 +72,7 @@
 </tr>&#13;
 </tbody></table>&#13;
 &#13;
-<h2 id="add-a-section">Add a section</h2>&#13;
+<h2 id="add-a-section">セクションを追加する</h2>&#13;
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{
@@ -92,15 +92,15 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">section</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">sections</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s">'Section1'</span><span class="p">,</span> <span class="n">project_id</span><span class="o">=</span><span class="mi">39982</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
 </code></pre></div>&#13;
-<p>Add a new section to a project.</p>&#13;
+<p>プロジェクトに新しいセクションを追加する。</p>&#13;
 &#13;
 <h3 id="command-arguments">Command arguments</h3>&#13;
 &#13;
 <table><thead>&#13;
 <tr>&#13;
 <th>Argument</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -116,11 +116,11 @@
 <tr>&#13;
 <td>section_order <em>Integer</em></td>&#13;
 <td>No</td>&#13;
-<td>The order of section. Defines the position of the section among all the sections in the project</td>&#13;
+<td>セクションの順序。プロジェクト内の全セクション間のセクションの位置を定義する</td>&#13;
 </tr>&#13;
 </tbody></table>&#13;
 &#13;
-<h2 id="update-a-section">Update a section</h2>&#13;
+<h2 id="update-a-section">セクションを更新する</h2>&#13;
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{
@@ -140,15 +140,15 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">section</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">'UpdatedSection1'</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
 </code></pre></div>&#13;
-<p>Updates section attributes.</p>&#13;
+<p>セクションの属性を更新する。</p>&#13;
 &#13;
 <h3 id="command-arguments">Command arguments</h3>&#13;
 &#13;
 <table><thead>&#13;
 <tr>&#13;
 <th>Argument</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -163,7 +163,7 @@
 </tr>&#13;
 </tbody></table>&#13;
 &#13;
-<h2 id="move-a-section">Move a section</h2>&#13;
+<h2 id="move-a-section">セクションを移動する</h2>&#13;
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{
@@ -183,15 +183,15 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">section</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">project_id</span><span class="o">=</span><span class="mi">2217861081</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
 </code></pre></div>&#13;
-<p>Move section to a different location.</p>&#13;
+<p>異なる場所にセクションを移動する。</p>&#13;
 &#13;
 <h3 id="command-arguments">Command arguments</h3>&#13;
 &#13;
 <table><thead>&#13;
 <tr>&#13;
 <th>Argument</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -206,7 +206,7 @@
 </tr>&#13;
 </tbody></table>&#13;
 &#13;
-<h2 id="reorder-sections">Reorder sections</h2>&#13;
+<h2 id="reorder-sections">セクションを並べ替える</h2>&#13;
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{
@@ -240,8 +240,8 @@
 <table><thead>&#13;
 <tr>&#13;
 <th>Argument</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -251,7 +251,7 @@
 </tr>&#13;
 </tbody></table>&#13;
 &#13;
-<h2 id="delete-a-section">Delete a section</h2>&#13;
+<h2 id="delete-a-section">セクションを削除する</h2>&#13;
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{
@@ -278,8 +278,8 @@
 <table><thead>&#13;
 <tr>&#13;
 <th>Argument</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -289,7 +289,7 @@
 </tr>&#13;
 </tbody></table>&#13;
 &#13;
-<h2 id="archive-a-section">Archive a section</h2>&#13;
+<h2 id="archive-a-section">セクションをアーカイブに入れる</h2>&#13;
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{
@@ -309,15 +309,15 @@
 <span class="o">&gt;&gt;&gt;</span> <span class="n">section</span><span class="o">.</span><span class="n">archive</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
 </code></pre></div>&#13;
-<p>Archive a section and all its descendants tasks.</p>&#13;
+<p>セクションと全ての下位タスクをアーカイブに入れる。</p>&#13;
 &#13;
 <h3 id="command-arguments">Command arguments</h3>&#13;
 &#13;
 <table><thead>&#13;
 <tr>&#13;
 <th>Argument</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -327,7 +327,7 @@
 </tr>&#13;
 </tbody></table>&#13;
 &#13;
-<h2 id="unarchive-a-section">Unarchive a section</h2>&#13;
+<h2 id="unarchive-a-section">セクションをアーカイブから出す</h2>&#13;
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{
@@ -354,8 +354,8 @@
 <table><thead>&#13;
 <tr>&#13;
 <th>Argument</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;

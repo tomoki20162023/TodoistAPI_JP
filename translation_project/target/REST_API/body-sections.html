@@ -1,7 +1,7 @@
-          <div name="sections" data-unique="sections"/><h1 id="sections">Sections</h1>
+          <div name="sections" data-unique="sections"/><h1 id="sections">セクション</h1>
 
 <blockquote>
-<p>Section object example</p>
+<p>セクションオブジェクトの例</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="o">{</span>
     <span class="s2">"id"</span>: 1234,
@@ -16,12 +16,12 @@
     <span class="s">"name"</span><span class="p">:</span> <span class="s">"Agenda"</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="properties">Properties</h3>
+<h3 id="properties">属性</h3>
 
 <table><thead>
 <tr>
-<th>Property</th>
-<th>Description</th>
+<th>属性</th>
+<th>説明</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -42,10 +42,10 @@
 </tr>
 </tbody></table>
 
-<div name="get-all-sections" data-unique="get-all-sections"/><h2 id="get-all-sections">Get all sections</h2>
+<div name="get-all-sections" data-unique="get-all-sections"/><h2 id="get-all-sections">全てのセクションを取得する</h2>
 
 <blockquote>
-<p>Get all sections</p>
+<p>全てのセクションを取得する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span> <span class="se">\</span>
     https://api.todoist.com/rest/v1/sections
@@ -73,10 +73,10 @@
 <p>Returns JSON array of all sections. Successful response has <code class="prettyprint">200 OK</code> status and
 <code class="prettyprint">application/json</code> Content-Type.</p>
 
-<div name="get-project-sections" data-unique="get-project-sections"/><h2 id="get-project-sections">Get project sections</h2>
+<div name="get-project-sections" data-unique="get-project-sections"/><h2 id="get-project-sections">プロジェクトのセクションを取得する</h2>
 
 <blockquote>
-<p>Get project sections</p>
+<p>プロジェクトのセクションを取得する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span> <span class="se">\</span>
     https://api.todoist.com/rest/v1/sections?project_id<span class="o">=</span>5678
@@ -103,13 +103,13 @@
 </code></pre></div>
 <p>Returns a JSON array of all the sections that are in the provided project.</p>
 
-<h3 id="parameters">Parameters</h3>
+<h3 id="parameters">パラメータ一覧</h3>
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
+<th>パラメータ</th>
+<th>要求</th>
+<th>説明</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -119,10 +119,10 @@
 </tr>
 </tbody></table>
 
-<div name="create-a-new-section" data-unique="create-a-new-section"/><h2 id="create-a-new-section">Create a new section</h2>
+<div name="create-a-new-section" data-unique="create-a-new-section"/><h2 id="create-a-new-section">新しいセクションを作成する</h2>
 
 <blockquote>
-<p>Create a new section</p>
+<p>新しいセクションを作成する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-X</span> POST <span class="nt">--data</span> <span class="s1">'{"project_id":1234, "name":"Morning routine"}'</span> <span class="se">\</span>
     <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
@@ -156,13 +156,13 @@
 <p>Creates a new section and returns it as a JSON object. Successful response has
 <code class="prettyprint">200 OK</code> status and <code class="prettyprint">application/json</code> Content-Type.</p>
 
-<h3 id="parameters">Parameters</h3>
+<h3 id="parameters">パラメータ一覧</h3>
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
+<th>パラメータ</th>
+<th>要求</th>
+<th>説明</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -182,10 +182,10 @@
 </tr>
 </tbody></table>
 
-<div name="get-a-single-section" data-unique="get-a-single-section"/><h2 id="get-a-single-section">Get a single section</h2>
+<div name="get-a-single-section" data-unique="get-a-single-section"/><h2 id="get-a-single-section">1つのセクションを取得する</h2>
 
 <blockquote>
-<p>Get a single section</p>
+<p>1つのセクションを取得する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span> <span class="se">\</span>
     https://api.todoist.com/rest/v1/sections/6789
@@ -210,10 +210,10 @@
 <p>Returns single section as a JSON object. Successful response has <code class="prettyprint">200 OK</code> status
 and <code class="prettyprint">application/json</code> Content-Type.</p>
 
-<div name="update-a-section" data-unique="update-a-section"/><h2 id="update-a-section">Update a section</h2>
+<div name="update-a-section" data-unique="update-a-section"/><h2 id="update-a-section">セクションを更新する</h2>
 
 <blockquote>
-<p>Update a section</p>
+<p>セクションを更新する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-s</span> <span class="nt">-X</span> POST <span class="nt">--data</span> <span class="s1">'{"name":"Morning routine"}'</span> <span class="se">\</span>
     <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
@@ -231,13 +231,13 @@ and <code class="prettyprint">application/json</code> Content-Type.</p>
 <p>Updates section for the given ID. Successful response has <code class="prettyprint">204 No Content</code>
 status and an empty body.</p>
 
-<h3 id="parameters">Parameters</h3>
+<h3 id="parameters">パラメータ一覧</h3>
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
+<th>パラメータ</th>
+<th>要求</th>
+<th>説明</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -247,10 +247,10 @@ status and an empty body.</p>
 </tr>
 </tbody></table>
 
-<div name="delete-a-section" data-unique="delete-a-section"/><h2 id="delete-a-section">Delete a section</h2>
+<div name="delete-a-section" data-unique="delete-a-section"/><h2 id="delete-a-section">セクションを削除する</h2>
 
 <blockquote>
-<p>Delete a section</p>
+<p>セクションを削除する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-X</span> DELETE <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span> <span class="se">\</span>
     https://api.todoist.com/rest/v1/sections/1234

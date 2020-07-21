@@ -1,7 +1,7 @@
-          <h1 id="user">User</h1>&#13;
+          <h1 id="user">ユーザ</h1>&#13;
 &#13;
 <blockquote>&#13;
-<p>An example user object</p>&#13;
+<p>ユーザオブジェクトの例</p>&#13;
 </blockquote>&#13;
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"auto_reminder"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -66,12 +66,12 @@
 <p>A user in Todoist is a JSON object. The dates will be in the UTC
 timezone. Typically a user object will have the following properties:</p>&#13;
 &#13;
-<h3 id="properties">Properties</h3>&#13;
+<h3 id="properties">属性</h3>&#13;
 &#13;
 <table><thead>&#13;
 <tr>&#13;
-<th>Property</th>&#13;
-<th>Description</th>&#13;
+<th>属性</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -339,13 +339,13 @@ timezone. Typically a user object will have the following properties:</p>&#13;
 <span class="p">}</span>
 
 </code></pre></div>&#13;
-<h3 id="parameters">Parameters</h3>&#13;
+<h3 id="parameters">パラメータ一覧</h3>&#13;
 &#13;
 <table><thead>&#13;
 <tr>&#13;
-<th>Parameter</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>パラメータ</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -375,7 +375,7 @@ timezone. Typically a user object will have the following properties:</p>&#13;
 </tr>&#13;
 </tbody></table>&#13;
 &#13;
-<h2 id="delete-an-existing-user">Delete an existing user</h2>&#13;
+<h2 id="delete-an-existing-user">既存のユーザを削除する</h2>&#13;
 &#13;
 <blockquote>&#13;
 <p>An example of deleting an existing user:</p>&#13;
@@ -389,13 +389,13 @@ timezone. Typically a user object will have the following properties:</p>&#13;
 <span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'secret'</span><span class="p">)</span>
 <span class="n">ok</span>
 </code></pre></div>&#13;
-<h3 id="parameters">Parameters</h3>&#13;
+<h3 id="parameters">パラメータ一覧</h3>&#13;
 &#13;
 <table><thead>&#13;
 <tr>&#13;
-<th>Parameter</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>パラメータ</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -410,7 +410,7 @@ timezone. Typically a user object will have the following properties:</p>&#13;
 </tr>&#13;
 </tbody></table>&#13;
 &#13;
-<h2 id="update-users-properties">Update user’s properties</h2>&#13;
+<h2 id="update-users-properties">ユーザ属性を更新する</h2>&#13;
 &#13;
 <blockquote>&#13;
 <p>An example of updating the user’s properties:</p>&#13;
@@ -433,8 +433,8 @@ timezone. Typically a user object will have the following properties:</p>&#13;
 <table><thead>&#13;
 <tr>&#13;
 <th>Argument</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -514,7 +514,7 @@ timezone. Typically a user object will have the following properties:</p>&#13;
 </tr>&#13;
 </tbody></table>&#13;
 &#13;
-<h2 id="update-karma-goals">Update karma goals</h2>&#13;
+<h2 id="update-karma-goals">カルマ目標数を更新する</h2>&#13;
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=</span><span class="s1">'[{"type": "update_goals", "uuid": "b9bbeaf8-9db6-452a-a843-a192f1542892", "args": {"vacation_mode": 1}}]'</span>
@@ -528,15 +528,15 @@ timezone. Typically a user object will have the following properties:</p>&#13;
 <span class="o">&gt;&gt;&gt;</span> <span class="n">api</span> <span class="o">=</span> <span class="n">todoist</span><span class="o">.</span><span class="n">TodoistAPI</span><span class="p">(</span><span class="s">'0123456789abcdef0123456789abcdef01234567'</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">update_goals</span><span class="p">(</span><span class="n">vacation_mode</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>&#13;
-<p>Update the karma goals of the user.</p>&#13;
+<p>ユーザのカルマ目標数を更新する。</p>&#13;
 &#13;
 <h3 id="command-arguments">Command arguments</h3>&#13;
 &#13;
 <table><thead>&#13;
 <tr>&#13;
 <th>Argument</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -566,7 +566,7 @@ timezone. Typically a user object will have the following properties:</p>&#13;
 </tr>&#13;
 </tbody></table>&#13;
 &#13;
-<h2 id="update-notification-settings">Update notification settings</h2>&#13;
+<h2 id="update-notification-settings">通知設定を更新する</h2>&#13;
 &#13;
 <blockquote>&#13;
 <p>An example of updating the user’s notification settings</p>&#13;
@@ -696,15 +696,15 @@ timezone. Typically a user object will have the following properties:</p>&#13;
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>&#13;
-<p>Update the user’s notification settings.</p>&#13;
+<p>ユーザの通知設定を更新する。</p>&#13;
 &#13;
-<h3 id="parameters">Parameters</h3>&#13;
+<h3 id="parameters">パラメータ一覧</h3>&#13;
 &#13;
 <table><thead>&#13;
 <tr>&#13;
-<th>Parameter</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>パラメータ</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;

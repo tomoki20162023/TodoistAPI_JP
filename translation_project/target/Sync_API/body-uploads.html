@@ -1,9 +1,9 @@
-          <h1 id="uploads">Uploads</h1>&#13;
+          <h1 id="uploads">アップロード</h1>&#13;
 &#13;
 <p>Files can be uploaded to our servers and used as file attachments
 in <a href="#notes">Notes</a>.</p>&#13;
 &#13;
-<h2 id="upload-a-file">Upload a file</h2>&#13;
+<h2 id="upload-a-file">ファイルをアップロードする</h2>&#13;
 &#13;
 <blockquote>&#13;
 <p>On success, an HTTP 200 OK with JSON data of file data is returned:</p>&#13;
@@ -56,13 +56,13 @@ in <a href="#notes">Notes</a>.</p>&#13;
 <p>Upload a file suitable to be passed as a <code class="prettyprint">file_attachment</code> attribute to the
 <code class="prettyprint">note_add</code> or <code class="prettyprint">note_update</code> calls.</p>&#13;
 &#13;
-<h3 id="parameters">Parameters</h3>&#13;
+<h3 id="parameters">パラメータ一覧</h3>&#13;
 &#13;
 <table><thead>&#13;
 <tr>&#13;
-<th>Parameter</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>パラメータ</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -77,7 +77,7 @@ in <a href="#notes">Notes</a>.</p>&#13;
 <table><thead>&#13;
 <tr>&#13;
 <th>Attribute</th>&#13;
-<th>Description</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -113,7 +113,7 @@ by <code class="prettyprint">uploads/add</code> API call) have following sizes: 
 <table><thead>&#13;
 <tr>&#13;
 <th>Attribute</th>&#13;
-<th>Description</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -140,7 +140,7 @@ browsers. See
 <a href="https://developer.mozilla.org/en-US/docs/HTML/Supported_media_formats">supported media formats</a> for
 the reference.</p>&#13;
 &#13;
-<h2 id="get-uploads">Get uploads</h2>&#13;
+<h2 id="get-uploads">アップロードしたものを取得する</h2>&#13;
 &#13;
 <blockquote>&#13;
 <p>An example of getting the user’s uploads</p>&#13;
@@ -207,15 +207,15 @@ the reference.</p>&#13;
     <span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>&#13;
-<p>Get all user’s uploads.</p>&#13;
+<p>全てのユーザーのアップロードしたものを取得する。</p>&#13;
 &#13;
-<h3 id="parameters">Parameters</h3>&#13;
+<h3 id="parameters">パラメータ一覧</h3>&#13;
 &#13;
 <table><thead>&#13;
 <tr>&#13;
-<th>Parameter</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>パラメータ</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -230,7 +230,7 @@ the reference.</p>&#13;
 </tr>&#13;
 </tbody></table>&#13;
 &#13;
-<h2 id="delete-upload">Delete upload</h2>&#13;
+<h2 id="delete-upload">アップロードしたものを削除する</h2>&#13;
 &#13;
 <blockquote>&#13;
 <p>An example of deleting an upload</p>&#13;
@@ -245,15 +245,15 @@ the reference.</p>&#13;
 <span class="o">&gt;&gt;&gt;</span> <span class="n">api</span><span class="o">.</span><span class="n">uploads</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="s">'https://*.cloudfront.net/*/example.jpg'</span><span class="p">)</span>
 <span class="n">ok</span>
 </code></pre></div>&#13;
-<p>Delete an uploaded file.</p>&#13;
+<p>アップロードしたファイルを削除する</p>&#13;
 &#13;
-<h3 id="parameters">Parameters</h3>&#13;
+<h3 id="parameters">パラメータ一覧</h3>&#13;
 &#13;
 <table><thead>&#13;
 <tr>&#13;
-<th>Parameter</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>パラメータ</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;

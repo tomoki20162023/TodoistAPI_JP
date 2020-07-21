@@ -1,7 +1,7 @@
-          <div name="authorization" data-unique="authorization"/><h1 id="authorization">Authorization</h1>
+          <div name="authorization" data-unique="authorization"/><h1 id="authorization">認証</h1>
 
 <blockquote>
-<p>Authenticated request and response examples</p>
+<p>認証されたリクエストとレスポンスの例</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-X</span> GET <span class="se">\</span>
   https://api.todoist.com/rest/v1/projects <span class="se">\</span>
@@ -19,12 +19,7 @@
 
 <span class="p">[{</span><span class="s">u'comment_count'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s">u'id'</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span> <span class="s">u'name'</span><span class="p">:</span> <span class="s">u'Inbox'</span><span class="p">}]</span>
 </code></pre></div>
-<p>API endpoints accept GET arguments as <code class="prettyprint">url-encoded</code> values. Every endpoint
-requires an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization">authorization header</a> with the appropriate <code class="prettyprint">Bearer $token</code> that holds the
-<a href="https://todoist.com/Users/viewPrefs?page=integrations">Todoist personal API token</a> or
-<a href="https://developer.todoist.com/sync/v8/#oauth">OAuth API token</a> with full permission scope.</p>
+<p>APIエンドポイントは <code class="prettyprint">URLエンコードされた</code> 値としてGETの引数を受理します。全てのエンドポイント requires an <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization">認証ヘッダー</a> with 適切な <code class="prettyprint">Bearer $token</code> that holds the <a href="https://todoist.com/Users/viewPrefs?page=integrations">Todoist personal API token</a> もしくは <a href="https://developer.todoist.com/sync/v8/#oauth">OAuth API token</a> with 全権限範囲.</p>
 
-<p>Note that we’re using <code class="prettyprint">$token</code> on all of our <code class="prettyprint">curl</code> examples, so you
-can define a temporary environment variable containing your token and
-easily copy &amp; paste <code class="prettyprint">curl</code> commands into your terminal.</p>
+<p>Note that we’re using <code class="prettyprint">$token</code> on all of our <code class="prettyprint">curl</code> examples, so you can define 一時的な環境変数 containing 自身の token and easily コピペ <code class="prettyprint">curl</code> コマンド into 端末.</p>
 

@@ -1,7 +1,7 @@
-          <div name="labels" data-unique="labels"/><h1 id="labels">Labels</h1>
+          <div name="labels" data-unique="labels"/><h1 id="labels">ラベル</h1>
 
 <blockquote>
-<p>Label object sample</p>
+<p>ラベルオブジェクトの例</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="o">{</span>
     <span class="s2">"id"</span>: 1234,
@@ -18,12 +18,12 @@
     <span class="s">"favorite"</span><span class="p">:</span> <span class="n">false</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="properties">Properties</h3>
+<h3 id="properties">属性</h3>
 
 <table><thead>
 <tr>
-<th>Property</th>
-<th>Description</th>
+<th>属性</th>
+<th>説明</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -48,10 +48,10 @@
 </tr>
 </tbody></table>
 
-<div name="get-all-labels" data-unique="get-all-labels"/><h2 id="get-all-labels">Get all labels</h2>
+<div name="get-all-labels" data-unique="get-all-labels"/><h2 id="get-all-labels">全てのラベルを取得する</h2>
 
 <blockquote>
-<p>Get all labels</p>
+<p>全てのラベルを取得する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="s2">"https://api.todoist.com/rest/v1/labels"</span> <span class="se">\</span>
     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
@@ -78,12 +78,12 @@
     <span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
-<p>Returns a JSON-encoded array containing all user labels</p>
+<p>全ユーザのラベルを含むJSONエンコードされた配列を返す。</p>
 
-<div name="create-a-new-label" data-unique="create-a-new-label"/><h2 id="create-a-new-label">Create a new label</h2>
+<div name="create-a-new-label" data-unique="create-a-new-label"/><h2 id="create-a-new-label">新しいラベルを作成する</h2>
 
 <blockquote>
-<p>Create a new label</p>
+<p>新しいラベルを作成する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="s2">"https://api.todoist.com/rest/v1/labels"</span> <span class="se">\</span>
     <span class="nt">-X</span> POST <span class="se">\</span>
@@ -118,15 +118,15 @@
     <span class="s">"favorite"</span><span class="p">:</span> <span class="n">true</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Creates a new label and returns its object as JSON.</p>
+<p>新しいラベルを作成し、JSONとしてオブジェクトを返す。</p>
 
-<h3 id="json-body-parameters">JSON body parameters</h3>
+<h3 id="json-body-parameters">JSON本体のパラメータ</h3>
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
+<th>パラメータ</th>
+<th>要求</th>
+<th>説明</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -151,10 +151,10 @@
 </tr>
 </tbody></table>
 
-<div name="get-a-label" data-unique="get-a-label"/><h2 id="get-a-label">Get a label</h2>
+<div name="get-a-label" data-unique="get-a-label"/><h2 id="get-a-label">ラベルを取得する</h2>
 
 <blockquote>
-<p>Get a label</p>
+<p>ラベルを取得する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="s2">"https://api.todoist.com/rest/v1/labels/1234"</span> <span class="se">\</span>
     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
@@ -175,10 +175,10 @@
 </code></pre></div>
 <p>Returns a label by id</p>
 
-<div name="update-a-label" data-unique="update-a-label"/><h2 id="update-a-label">Update a label</h2>
+<div name="update-a-label" data-unique="update-a-label"/><h2 id="update-a-label">ラベルを更新する</h2>
 
 <blockquote>
-<p>Update a label</p>
+<p>ラベルを更新する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="s2">"https://api.todoist.com/rest/v1/labels/1234"</span> <span class="se">\</span>
     <span class="nt">-X</span> POST <span class="se">\</span>
@@ -201,13 +201,13 @@
 </code></pre></div>
 <p>Updates a label and returns an empty body with a HTTP status code 204.</p>
 
-<h3 id="json-body-parameters">JSON body parameters</h3>
+<h3 id="json-body-parameters">JSON本体のパラメータ</h3>
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
+<th>パラメータ</th>
+<th>要求</th>
+<th>説明</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -232,10 +232,10 @@
 </tr>
 </tbody></table>
 
-<div name="delete-a-label" data-unique="delete-a-label"/><h2 id="delete-a-label">Delete a label</h2>
+<div name="delete-a-label" data-unique="delete-a-label"/><h2 id="delete-a-label">ラベルを削除する</h2>
 
 <blockquote>
-<p>Delete a label</p>
+<p>ラベルを削除する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-X</span> DELETE <span class="s2">"https://api.todoist.com/rest/v1/labels/1234"</span> <span class="se">\</span>
     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>

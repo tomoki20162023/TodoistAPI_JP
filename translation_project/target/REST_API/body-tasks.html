@@ -1,7 +1,7 @@
-          <div name="tasks" data-unique="tasks"/><h1 id="tasks">Tasks</h1>
+          <div name="tasks" data-unique="tasks"/><h1 id="tasks">タスク</h1>
 
 <blockquote>
-<p>Task object sample</p>
+<p>タスクオブジェクトの例</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="o">{</span>
     <span class="s2">"assignee"</span>: 1
@@ -54,12 +54,12 @@
     <span class="s">"url"</span><span class="p">:</span> <span class="s">"https://todoist.com/showTask?id=12345&amp;sync_id=56789"</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="properties">Properties</h3>
+<h3 id="properties">属性</h3>
 
 <table><thead>
 <tr>
-<th>Property</th>
-<th>Description</th>
+<th>属性</th>
+<th>説明</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -124,9 +124,9 @@
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
+<th>パラメータ</th>
+<th>要求</th>
+<th>説明</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -151,10 +151,10 @@
 </tr>
 </tbody></table>
 
-<div name="get-active-tasks" data-unique="get-active-tasks"/><h2 id="get-active-tasks">Get active tasks</h2>
+<div name="get-active-tasks" data-unique="get-active-tasks"/><h2 id="get-active-tasks">実行中のタスクを取得する</h2>
 
 <blockquote>
-<p>Get active tasks</p>
+<p>実行中のタスクを取得する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-X</span> GET <span class="se">\</span>
   https://api.todoist.com/rest/v1/tasks <span class="se">\</span>
@@ -202,13 +202,13 @@
 </code></pre></div>
 <p>Returns a JSON-encoded array containing all user active tasks.</p>
 
-<h3 id="parameters">Parameters</h3>
+<h3 id="parameters">パラメータ一覧</h3>
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
+<th>パラメータ</th>
+<th>要求</th>
+<th>説明</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -250,10 +250,10 @@
 <p>Note that <strong>filters are premium-only feature</strong>, if used for non-premium users,
 server would return 402 Payment Required.</p>
 
-<div name="create-a-new-task" data-unique="create-a-new-task"/><h2 id="create-a-new-task">Create a new task</h2>
+<div name="create-a-new-task" data-unique="create-a-new-task"/><h2 id="create-a-new-task">新しいタスクを作成する</h2>
 
 <blockquote>
-<p>Create a new task</p>
+<p>新しいタスクを作成する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="s2">"https://api.todoist.com/rest/v1/tasks"</span> <span class="se">\</span>
     <span class="nt">-X</span> POST <span class="se">\</span>
@@ -317,13 +317,13 @@ server would return 402 Payment Required.</p>
 </code></pre></div>
 <p>Creates a new task and returns the JSON object according for it.</p>
 
-<h3 id="json-body-parameters">JSON body parameters</h3>
+<h3 id="json-body-parameters">JSON本体のパラメータ</h3>
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
+<th>パラメータ</th>
+<th>要求</th>
+<th>説明</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -396,10 +396,10 @@ server would return 402 Payment Required.</p>
 <p>Please note that only one of the <code class="prettyprint">due_*</code> fields can be used at
 the same time (<code class="prettyprint">due_lang</code> is a special case).</p>
 
-<div name="get-an-active-task" data-unique="get-an-active-task"/><h2 id="get-an-active-task">Get an active task</h2>
+<div name="get-an-active-task" data-unique="get-an-active-task"/><h2 id="get-an-active-task">実行中のタスクを取得する</h2>
 
 <blockquote>
-<p>Get an active task</p>
+<p>実行中のタスクを取得する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="s2">"https://api.todoist.com/rest/v1/tasks/1234"</span> <span class="se">\</span>
     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
@@ -447,10 +447,10 @@ the same time (<code class="prettyprint">due_lang</code> is a special case).</p>
 </code></pre></div>
 <p>Returns an active (non-completed) task by id</p>
 
-<div name="update-a-task" data-unique="update-a-task"/><h2 id="update-a-task">Update a task</h2>
+<div name="update-a-task" data-unique="update-a-task"/><h2 id="update-a-task">タスクを更新する</h2>
 
 <blockquote>
-<p>Update a task</p>
+<p>タスクを更新する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="s2">"https://api.todoist.com/rest/v1/tasks/1234"</span> <span class="se">\</span>
     <span class="nt">-X</span> POST <span class="se">\</span>
@@ -472,13 +472,13 @@ the same time (<code class="prettyprint">due_lang</code> is a special case).</p>
 </code></pre></div>
 <p>Updates a task and returns an empty body with the HTTP status code 204.</p>
 
-<h3 id="json-body-parameters">JSON body parameters</h3>
+<h3 id="json-body-parameters">JSON本体のパラメータ</h3>
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
+<th>パラメータ</th>
+<th>要求</th>
+<th>説明</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -542,10 +542,10 @@ the same time (<code class="prettyprint">due_lang</code> is a special case).</p>
 tasks are completed and moved to history, subtasks are checked (marked as done,
 but not moved to history), recurring tasks are moved forward (due date is updated).</p>
 
-<div name="reopen-a-task" data-unique="reopen-a-task"/><h2 id="reopen-a-task">Reopen a task</h2>
+<div name="reopen-a-task" data-unique="reopen-a-task"/><h2 id="reopen-a-task">タスクを再開する</h2>
 
 <blockquote>
-<p>Reopen a task</p>
+<p>タスクを再開する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-X</span> POST <span class="s2">"https://api.todoist.com/rest/v1/tasks/1234/reopen"</span> <span class="se">\</span>
     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
@@ -567,10 +567,10 @@ workspace as normal unchecked tasks (without their subtasks though).</li>
 <li>Non-completed recurring tasks are ignored.</li>
 </ul>
 
-<div name="delete-a-task" data-unique="delete-a-task"/><h2 id="delete-a-task">Delete a task</h2>
+<div name="delete-a-task" data-unique="delete-a-task"/><h2 id="delete-a-task">タスクを削除する</h2>
 
 <blockquote>
-<p>Delete a task</p>
+<p>タスクを削除する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-X</span> DELETE <span class="s2">"https://api.todoist.com/rest/v1/tasks/1234"</span> <span class="se">\</span>
     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>

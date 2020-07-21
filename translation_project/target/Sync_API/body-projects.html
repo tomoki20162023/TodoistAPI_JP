@@ -1,7 +1,7 @@
-          <h1 id="projects">Projects</h1>&#13;
+          <h1 id="projects">プロジェクト</h1>&#13;
 &#13;
 <blockquote>&#13;
-<p>An example project object</p>&#13;
+<p>プロジェクトのオブジェクトとしての例</p>&#13;
 </blockquote>&#13;
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">396936926</span><span class="p">,</span><span class="w">
@@ -20,12 +20,12 @@
   </span><span class="s2">"is_favorite"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>&#13;
-<h3 id="properties">Properties</h3>&#13;
+<h3 id="properties">属性</h3>&#13;
 &#13;
 <table><thead>&#13;
 <tr>&#13;
-<th>Property</th>&#13;
-<th>Description</th>&#13;
+<th>属性</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -113,8 +113,8 @@
 <table><thead>&#13;
 <tr>&#13;
 <th>Argument</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -144,7 +144,7 @@
 </tr>&#13;
 </tbody></table>&#13;
 &#13;
-<h2 id="update-a-project">Update a project</h2>&#13;
+<h2 id="update-a-project">プロジェクトを更新する</h2>&#13;
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=[{</span><span class="s2">"type"</span>: <span class="s2">"project_update"</span>, <span class="s2">"uuid"</span>: <span class="s2">"1ca42128-d12f-4a66-8413-4d6ff2838fde"</span>, <span class="s2">"args"</span>: <span class="o">{</span><span class="s2">"id"</span>: 128501815, <span class="s2">"name"</span>: <span class="s2">"foo"</span><span class="o">}}]</span><span class="s1">'
@@ -167,8 +167,8 @@
 <table><thead>&#13;
 <tr>&#13;
 <th>Argument</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -221,8 +221,8 @@
 <table><thead>&#13;
 <tr>&#13;
 <th>Argument</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -237,7 +237,7 @@
 </tr>&#13;
 </tbody></table>&#13;
 &#13;
-<h2 id="delete-a-project">Delete a project</h2>&#13;
+<h2 id="delete-a-project">プロジェクトを削除する</h2>&#13;
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">commands</span><span class="o">=[{</span><span class="s2">"type"</span>: <span class="s2">"project_delete"</span>, <span class="s2">"uuid"</span>: <span class="s2">"367182ba-125f-4dbb-bff6-c1343fd751e4"</span>, <span class="s2">"args"</span>: <span class="o">{</span><span class="s2">"id"</span>: 128501815<span class="o">}}]</span><span class="s1">'
@@ -260,8 +260,8 @@
 <table><thead>&#13;
 <tr>&#13;
 <th>Argument</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -296,8 +296,8 @@
 <table><thead>&#13;
 <tr>&#13;
 <th>Argument</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -335,8 +335,8 @@ projects.</p>&#13;
 <table><thead>&#13;
 <tr>&#13;
 <th>Argument</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;
@@ -372,8 +372,8 @@ projects.</p>&#13;
 <table><thead>&#13;
 <tr>&#13;
 <th>Argument</th>&#13;
-<th>Required</th>&#13;
-<th>Description</th>&#13;
+<th>要求</th>&#13;
+<th>説明</th>&#13;
 </tr>&#13;
 </thead><tbody>&#13;
 <tr>&#13;

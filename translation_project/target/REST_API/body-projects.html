@@ -1,7 +1,7 @@
-          <div name="projects" data-unique="projects"/><h1 id="projects">Projects</h1>
+          <div name="projects" data-unique="projects"/><h1 id="projects">プロジェクト</h1>
 
 <blockquote>
-<p>An example project object</p>
+<p>プロジェクトのオブジェクトとしての例</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="o">{</span>
     <span class="s2">"comment_count"</span>: 10,
@@ -26,12 +26,12 @@
     <span class="s">"favorite"</span><span class="p">:</span> <span class="n">false</span>
 <span class="p">}</span>
 </code></pre></div>
-<h3 id="properties">Properties</h3>
+<h3 id="properties">属性</h3>
 
 <table><thead>
 <tr>
-<th>Property</th>
-<th>Description</th>
+<th>属性</th>
+<th>説明</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -84,10 +84,10 @@
 </tr>
 </tbody></table>
 
-<div name="get-all-projects" data-unique="get-all-projects"/><h2 id="get-all-projects">Get all projects</h2>
+<div name="get-all-projects" data-unique="get-all-projects"/><h2 id="get-all-projects">全てのプロジェクトを取得する</h2>
 
 <blockquote>
-<p>Get all projects</p>
+<p>全てのプロジェクトを取得する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-X</span> GET <span class="se">\</span>
   https://api.todoist.com/rest/v1/projects <span class="se">\</span>
@@ -125,10 +125,10 @@
 </code></pre></div>
 <p>Returns JSON-encoded array containing all user projects.</p>
 
-<div name="create-a-new-project" data-unique="create-a-new-project"/><h2 id="create-a-new-project">Create a new project</h2>
+<div name="create-a-new-project" data-unique="create-a-new-project"/><h2 id="create-a-new-project">新しいプロジェクトを作成する</h2>
 
 <blockquote>
-<p>Create a new project</p>
+<p>新しいプロジェクトを作成する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="s2">"https://api.todoist.com/rest/v1/projects"</span> <span class="se">\</span>
     <span class="nt">-X</span> POST <span class="se">\</span>
@@ -173,13 +173,13 @@
 </code></pre></div>
 <p>Creates a new project and return its value in a JSON format.</p>
 
-<h3 id="parameters">Parameters</h3>
+<h3 id="parameters">パラメータ一覧</h3>
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
+<th>パラメータ</th>
+<th>要求</th>
+<th>説明</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -209,10 +209,10 @@
 </tr>
 </tbody></table>
 
-<div name="get-a-project" data-unique="get-a-project"/><h2 id="get-a-project">Get a project</h2>
+<div name="get-a-project" data-unique="get-a-project"/><h2 id="get-a-project">プロジェクトを取得する</h2>
 
 <blockquote>
-<p>Get a project</p>
+<p>プロジェクトを取得する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="s2">"https://api.todoist.com/rest/v1/projects/1234"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
@@ -243,10 +243,10 @@
 </code></pre></div>
 <p>Returns a JSON object containing a project object related to the given id.</p>
 
-<div name="update-a-project" data-unique="update-a-project"/><h2 id="update-a-project">Update a project</h2>
+<div name="update-a-project" data-unique="update-a-project"/><h2 id="update-a-project">プロジェクトを更新する</h2>
 
 <blockquote>
-<p>Update a project</p>
+<p>プロジェクトを更新する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="s2">"https://api.todoist.com/rest/v1/projects/1234"</span> <span class="se">\</span>
     <span class="nt">-X</span> POST <span class="se">\</span>
@@ -270,13 +270,13 @@
 <p>Updates the project for the given id and returns HTTP status code 204
 with an empty body.</p>
 
-<h3 id="parameters">Parameters</h3>
+<h3 id="parameters">パラメータ一覧</h3>
 
 <table><thead>
 <tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
+<th>パラメータ</th>
+<th>要求</th>
+<th>説明</th>
 </tr>
 </thead><tbody>
 <tr>
@@ -296,10 +296,10 @@ with an empty body.</p>
 </tr>
 </tbody></table>
 
-<div name="delete-a-project" data-unique="delete-a-project"/><h2 id="delete-a-project">Delete a project</h2>
+<div name="delete-a-project" data-unique="delete-a-project"/><h2 id="delete-a-project">プロジェクトを削除する</h2>
 
 <blockquote>
-<p>Delete a project</p>
+<p>プロジェクトを削除する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-X</span> DELETE <span class="s2">"https://api.todoist.com/rest/v1/projects/1234"</span> <span class="se">\</span>
     <span class="nt">-H</span> <span class="s2">"Authorization: Bearer </span><span class="nv">$token</span><span class="s2">"</span>
@@ -308,10 +308,10 @@ with an empty body.</p>
 </code></pre></div>
 <p>Deletes a project and returns an empty response.</p>
 
-<div name="get-all-collaborators" data-unique="get-all-collaborators"/><h2 id="get-all-collaborators">Get all collaborators</h2>
+<div name="get-all-collaborators" data-unique="get-all-collaborators"/><h2 id="get-all-collaborators">全ての協力者を取得する</h2>
 
 <blockquote>
-<p>Get all collaborators of a shared project</p>
+<p>共有プロジェクト上で全ての協力者を取得する</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell" style="display: none;"><code><span class="nv">$ </span>curl <span class="nt">-X</span> GET <span class="se">\</span>
   <span class="s2">"https://api.todoist.com/rest/v1/projects/1234/collaborators"</span> <span class="se">\</span>

@@ -90,22 +90,6 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>Accept an invitation</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T074046Z" creationid="tom71" creationdate="20200721T074046Z">
-        <seg>招待を了承する</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Accept an invitation to join a shared project.</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T074124Z" creationid="tom71" creationdate="20200721T074124Z">
-        <seg>共有プロジェクトに参加するために招待を受ける。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>Accept invitation</seg>
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T061809Z" creationid="tom71" creationdate="20200721T061809Z">
@@ -242,34 +226,10 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>An example user object</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T075350Z" creationid="tom71" creationdate="20200721T075350Z">
-        <seg>ユーザオブジェクトの例</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>An example user settings object</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T075245Z" creationid="tom71" creationdate="20200721T075245Z">
-        <seg>ユーザ設定オブジェクトの例</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>Archive a section</seg>
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T073342Z" creationid="tom71" creationdate="20200721T073342Z">
         <seg>セクションをアーカイブに入れる</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Archive a section and all its descendants tasks.</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T073419Z" creationid="tom71" creationdate="20200721T073419Z">
-        <seg>セクションと全ての下位タスクをアーカイブに入れる。</seg>
       </tuv>
     </tu>
     <tu>
@@ -371,22 +331,6 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>Collaborator states</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T073528Z" creationid="tom71" creationdate="20200721T073528Z">
-        <seg>協力者の状態</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Collaborators</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T073502Z" creationid="tom71" creationdate="20200721T073502Z">
-        <seg>協力者</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>Colors</seg>
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T032738Z" creationid="tom71" creationdate="20200721T032738Z">
@@ -431,14 +375,6 @@
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T063342Z" creationid="tom71" creationdate="20200721T063342Z">
         <seg>アイテムを完了する</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Configuration</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T080138Z" creationid="tom71" creationdate="20200721T080138Z">
-        <seg>構成</seg>
       </tuv>
     </tu>
     <tu>
@@ -503,16 +439,6 @@
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T071755Z" creationid="tom71" creationdate="20200721T071755Z">
         <seg>プロジェクト内の全セクション間のセクションの位置を定義する</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <note>削除する、、排除ではないよな？？
-協力関係を解除する、くらいがいいか。</note>
-      <tuv lang="EN-US">
-        <seg>Delete a collaborator</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T073956Z" creationid="tom71" creationdate="20200721T073956Z">
-        <seg>協力者を削除する</seg>
       </tuv>
     </tu>
     <tu>
@@ -581,50 +507,10 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>Delete an existing user</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T075443Z" creationid="tom71" creationdate="20200721T075443Z">
-        <seg>既存のユーザを削除する</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Delete an invitation</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T074218Z" creationid="tom71" creationdate="20200721T074218Z">
-        <seg>招待状を削除する</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Delete an invitation to join a shared project.</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T074235Z" creationid="tom71" creationdate="20200721T074235Z">
-        <seg>共有プロジェクトに参加するための招待状を削除する。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Delete an uploaded file.</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T074413Z" creationid="tom71" creationdate="20200721T074413Z">
-        <seg>アップロードしたファイルを削除する</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>Delete item</seg>
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T063029Z" creationid="tom71" creationdate="20200721T063029Z">
         <seg>アイテムを削除する</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Delete upload</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T074432Z" creationid="tom71" creationdate="20200721T074432Z">
-        <seg>アップロードしたものを削除する</seg>
       </tuv>
     </tu>
     <tu>
@@ -665,30 +551,6 @@
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T062054Z" creationid="tom71" creationdate="20200721T062054Z">
         <seg>eメール</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Event JSON Object</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T080331Z" creationid="tom71" creationdate="20200721T080331Z">
-        <seg>イベントのJSONオブジェクト</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Event Name</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T080258Z" creationid="tom71" creationdate="20200721T080258Z">
-        <seg>イベント名</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Events</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T080253Z" creationid="tom71" creationdate="20200721T080253Z">
-        <seg>イベント</seg>
       </tuv>
     </tu>
     <tu>
@@ -798,14 +660,6 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>Get all user’s uploads.</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T074515Z" creationid="tom71" creationdate="20200721T074515Z">
-        <seg>全てのユーザーのアップロードしたものを取得する。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>Get an active task</seg>
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T055546Z" creationid="tom71" creationdate="20200721T055459Z">
@@ -838,26 +692,10 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>Get uploads</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T074537Z" creationid="tom71" creationdate="20200721T074537Z">
-        <seg>アップロードしたものを取得する</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>Getting started</seg>
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T062248Z" creationid="tom71" creationdate="20200721T062248Z">
         <seg>始めに</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Header Name</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T080357Z" creationid="tom71" creationdate="20200721T080357Z">
-        <seg>ヘッダー名</seg>
       </tuv>
     </tu>
     <tu>
@@ -874,14 +712,6 @@
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T032237Z" creationid="tom71" creationdate="20200721T032237Z">
         <seg>If you plan to utilize Todoist’s logo or branding in the visual design of your application or website, please adhere to &lt;a0&gt;Todoistのブランドガイドライン&lt;/a0&gt;.</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Important Considerations</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T080053Z" creationid="tom71" creationdate="20200721T080053Z">
-        <seg>重要な考慮点</seg>
       </tuv>
     </tu>
     <tu>
@@ -1033,8 +863,8 @@
       <tuv lang="EN-US">
         <seg>Parameters</seg>
       </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T075850Z" creationid="tom71" creationdate="20200721T043148Z">
-        <seg>パラメータ一覧</seg>
+      <tuv lang="JA" changeid="tom71" changedate="20200721T043148Z" creationid="tom71" creationdate="20200721T043148Z">
+        <seg>パラメータ</seg>
       </tuv>
     </tu>
     <tu>
@@ -1086,22 +916,6 @@
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN-US">
-        <seg>Reject an invitation</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T074141Z" creationid="tom71" creationdate="20200721T074141Z">
-        <seg>招待を断る</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Reject an invitation to join a shared project.</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T074202Z" creationid="tom71" creationdate="20200721T074202Z">
-        <seg>共有プロジェクトに参加するための招待を断る。</seg>
-      </tuv>
-    </tu>
-    <tu>
       <note>reminder=備忘、念押しする機能。</note>
       <tuv lang="EN-US">
         <seg>Reminders</seg>
@@ -1120,14 +934,6 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>Remove an user from a shared project.</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T074016Z" creationid="tom71" creationdate="20200721T074016Z">
-        <seg>共有プロジェクトからユーザーを削除する。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>Reopen a task</seg>
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T055901Z" creationid="tom71" creationdate="20200721T055901Z">
@@ -1140,14 +946,6 @@
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T073052Z" creationid="tom71" creationdate="20200721T073052Z">
         <seg>セクションを並べ替える</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Request Header</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T080352Z" creationid="tom71" creationdate="20200721T080352Z">
-        <seg>リクエストヘッダー</seg>
       </tuv>
     </tu>
     <tu>
@@ -1192,14 +990,6 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>Scheme</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T075147Z" creationid="tom71" creationdate="20200721T075147Z">
-        <seg>スキーム</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>Section object example</seg>
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T053542Z" creationid="tom71" creationdate="20200721T053542Z">
@@ -1220,31 +1010,6 @@
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T061619Z" creationid="tom71" creationdate="20200721T061619Z">
         <seg>招待状を送る</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Share a project</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T073540Z" creationid="tom71" creationdate="20200721T073540Z">
-        <seg>プロジェクトを共有する</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <note>他のユーザーのプロジェクトに参加する、という意味のはず。</note>
-      <tuv lang="EN-US">
-        <seg>Share a project with another user.</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T073619Z" creationid="tom71" creationdate="20200721T073619Z">
-        <seg>他のユーザのプロジェクトを共有する。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Sharing</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T073455Z" creationid="tom71" creationdate="20200721T073455Z">
-        <seg>共有</seg>
       </tuv>
     </tu>
     <tu>
@@ -1273,14 +1038,6 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>Sync</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T074243Z" creationid="tom71" creationdate="20200721T074243Z">
-        <seg>同期</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>Task object sample</seg>
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T053914Z" creationid="tom71" creationdate="20200721T053914Z">
@@ -1293,14 +1050,6 @@
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T053900Z" creationid="tom71" creationdate="20200721T053900Z">
         <seg>タスク</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Templates</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T074318Z" creationid="tom71" creationdate="20200721T074318Z">
-        <seg>テンプレート</seg>
       </tuv>
     </tu>
     <tu>
@@ -1373,23 +1122,6 @@
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T021709Z" creationid="tom71" creationdate="20200721T021033Z">
         <seg>これはTodoist Sync APIの公式ドキュメントです。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <note>スキーム=この場合は手段のこと。URLを使った通信手段。</note>
-      <tuv lang="EN-US">
-        <seg>URL schemes</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T074608Z" creationid="tom71" creationdate="20200721T074608Z">
-        <seg>URLスキーム</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Unarchive a section</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T073433Z" creationid="tom71" creationdate="20200721T073433Z">
-        <seg>セクションをアーカイブから出す</seg>
       </tuv>
     </tu>
     <tu>
@@ -1466,66 +1198,10 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>Update karma goals</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T075752Z" creationid="tom71" creationdate="20200721T075628Z">
-        <seg>カルマ目標数を更新する</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Update notification settings</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T075806Z" creationid="tom71" creationdate="20200721T075806Z">
-        <seg>通知設定を更新する</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Update one or more user settings.</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T075307Z" creationid="tom71" creationdate="20200721T075307Z">
-        <seg>1つ以上のユーザ設定を更新する</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>Update the content and due date of a task</seg>
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T062445Z" creationid="tom71" creationdate="20200721T062445Z">
         <seg>タスクの期日と内容を更新する</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Update the karma goals of the user.</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T075720Z" creationid="tom71" creationdate="20200721T075720Z">
-        <seg>ユーザのカルマ目標数を更新する。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Update the user’s notification settings.</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T075827Z" creationid="tom71" creationdate="20200721T075827Z">
-        <seg>ユーザの通知設定を更新する。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Update user settings</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T075334Z" creationid="tom71" creationdate="20200721T075334Z">
-        <seg>ユーザ設定を更新する</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Update user’s properties</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T075543Z" creationid="tom71" creationdate="20200721T075543Z">
-        <seg>ユーザ属性を更新する</seg>
       </tuv>
     </tu>
     <tu>
@@ -1550,72 +1226,6 @@
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T062923Z" creationid="tom71" creationdate="20200721T062923Z">
         <seg>タスクの属性を更新する。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Upload a file</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T074358Z" creationid="tom71" creationdate="20200721T074358Z">
-        <seg>ファイルをアップロードする</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Uploads</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T074344Z" creationid="tom71" creationdate="20200721T074344Z">
-        <seg>アップロード</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>User</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T075344Z" creationid="tom71" creationdate="20200721T075344Z">
-        <seg>ユーザ</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>User settings</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T075233Z" creationid="tom71" creationdate="20200721T075233Z">
-        <seg>ユーザ設定</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>User-Agent</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T080411Z" creationid="tom71" creationdate="20200721T080411Z">
-        <seg>ユーザーエージェントUser-Agent</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Value</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T075154Z" creationid="tom71" creationdate="20200721T075154Z">
-        <seg>値</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <note>とりあえずビューにしておく。。GUI上のページ名みたいなもの。</note>
-      <tuv lang="EN-US">
-        <seg>Views</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T074824Z" creationid="tom71" creationdate="20200721T074824Z">
-        <seg>ビュー</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <note>良い訳はあるのかな？Webhookのままでもいいような気もする。</note>
-      <tuv lang="EN-US">
-        <seg>Webhooks</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T075943Z" creationid="tom71" creationdate="20200721T075943Z">
-        <seg>ウェブフック</seg>
       </tuv>
     </tu>
     <tu>

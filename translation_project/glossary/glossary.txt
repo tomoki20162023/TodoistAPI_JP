@@ -1,10 +1,57 @@
+Activity	活動
 Authorization	認証
-Sync	同期
-Project	プロジェクト
-Template	テンプレート
+Backup	バックアップ
+Comment	コメント
+GET	GET	HTTP GETリクエストの時に使う
+Getting started	始めに
+Hexadecimal	16進数
 Item	アイテム
+JSON-encode	JSONエンコード
 Label	ラベル
+Miscellaneous	色々
 Note	ノート
-Section	セクション
-Upload	アップロード
+OAuth	OAuth	認証アルゴリズムの一つ
 Overview	概要
+POST	POST	HTTP POSTリクエストのときに使う
+Parameter	パラメータ
+Project	プロジェクト
+Properties	属性
+Property	属性
+REST API	REST API	このまま使う
+Section	セクション
+Status code	ステータスコード
+Sync	同期
+Sync API	Sync API	このまま使う
+Template	テンプレート
+Terms of Service	利用規約
+Upload	アップロード
+active	実行中の
+archive	アーカイブする	アーカイブに入れる・出すの方が分かりやすいか
+array	配列
+body	本体
+collaborator	協力者
+credentials	資格情報
+description	説明
+download	ダウンロード
+due date	期日	期限でもいいか？
+endpoint	エンドポイント
+filter	フィルター
+invitation	招待状
+limit	制限
+migration	移行
+notification	通知
+object	オブジェクト
+permissioin	権限
+reopen	再開する
+task	タスク
+timeout	タイムアウト
+url-encoded	URLエンコードされた
+usage	利用法
+sharing	共有
+scheme	スキーム
+user setting	ユーザ設定
+karma goals	カルマ目標数
+configuration	構成
+Event	イベント
+Request Header	リクエストヘッダー
+User-Agent	ユーザーエージェント
