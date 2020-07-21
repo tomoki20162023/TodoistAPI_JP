@@ -80,6 +80,30 @@
 - Brand usage</seg>
       </tuv>
     </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Overview</seg>
+      </tuv>
+      <tuv lang="JA" changeid="tom71" changedate="20200720T221406Z" creationid="tom71" creationdate="20200720T221406Z">
+        <seg>概要</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Summary of contents</seg>
+      </tuv>
+      <tuv lang="JA" changeid="tom71" changedate="20200721T021136Z" creationid="tom71" creationdate="20200721T021136Z">
+        <seg>要約</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>This is the official documentation for Todoist Sync API.</seg>
+      </tuv>
+      <tuv lang="JA" changeid="tom71" changedate="20200721T021033Z" creationid="tom71" creationdate="20200721T021033Z">
+        <seg>これはTodoist Sync APIの公式ドキュメントです.</seg>
+      </tuv>
+    </tu>
 <!-- Alternative translations -->
   </body>
 </tmx>

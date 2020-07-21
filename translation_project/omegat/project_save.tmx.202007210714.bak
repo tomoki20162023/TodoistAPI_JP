@@ -82,34 +82,10 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>In the &lt;a0&gt;Getting started&lt;/a0&gt; section we will try to present to you the Todoist API, in the simplest possible way, by using real examples, based on common tasks that many users want to accomplish.</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T021653Z" creationid="tom71" creationdate="20200721T021653Z">
-        <seg>&lt;a0&gt;始めに&lt;/a0&gt;の節で、みなさんにTodoist APIを示します。できるだけ簡単な方法で、例を使いながら、多くのユーザが達成したいであろう共通のタスクを基にして。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>Overview</seg>
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200720T221406Z" creationid="tom71" creationdate="20200720T221406Z">
         <seg>概要</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Summary of contents</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T021136Z" creationid="tom71" creationdate="20200721T021136Z">
-        <seg>要約</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>This is the official documentation for Todoist Sync API.</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T021709Z" creationid="tom71" creationdate="20200721T021033Z">
-        <seg>これはTodoist Sync APIの公式ドキュメントです。</seg>
       </tuv>
     </tu>
 <!-- Alternative translations -->
