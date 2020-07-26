@@ -1295,8 +1295,8 @@
       <tuv lang="EN-US">
         <seg>This is the official documentation for Todoist Sync API.</seg>
       </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200721T021709Z" creationid="tom71" creationdate="20200721T021033Z">
-        <seg>これはTodoist Sync APIの公式ドキュメントです。</seg>
+      <tuv lang="JA" changeid="tom71" changedate="20200726T224757Z" creationid="tom71" creationdate="20200721T021033Z">
+        <seg>これはTodoist Sync APIの非公式ドキュメントです。（意図的に非公式としています。GitHubに載せている間はこのままになると思います）</seg>
       </tuv>
     </tu>
     <tu>
