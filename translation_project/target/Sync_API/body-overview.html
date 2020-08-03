@@ -1,29 +1,35 @@
           <h1 id="overview">概要</h1>&#13;
 &#13;
-<p>これはTodoist Sync APIの非公式ドキュメントです。（訳者注：意図的に非公式としています。GitHubに載せている間はこのままになると思います）私たちの公式なAPIの機能的な参考文書を提供しています。各APIエンドポイント、パラメータそしてサンプルの詳細な説明が付いています。</p>&#13;
+<p>これはTodoist Sync APIの公式ドキュメントです。A reference to the functionality our public API provides with detailed description of each API endpoint, parameters, and examples.</p>&#13;
 &#13;
 <h2 id="summary-of-contents">要約</h2>&#13;
 &#13;
-<p><a href="#getting-started">始めに</a>の節で、みなさんにTodoist APIを示します。できるだけ簡単な方法で、例を使いながら、多くのユーザが達成したいであろう共通のタスクを基にしています。</p>&#13;
+<p><a href="#getting-started">始めに</a>の節で、みなさんにTodoist APIを示します。できるだけ簡単な方法で、例を使いながら、多くのユーザが達成したいであろう共通のタスクを基にして。</p>&#13;
 &#13;
-<p>この節を読んだあと、あなたは<a href="#authorization">認証</a>の節も読み進めるべきです。 私たちのサーバへ認証を行う最善の方法を、すべて詳細に学ぶことができます。</p>&#13;
+<p>After reading this section you should continue with
+the <a href="#authorization">Authorization</a>, in order to learn all the details
+on the best way to authenticate to our server.</p>&#13;
 &#13;
-<p>最も大事な節は<a href="#sync">Sync</a>です。そして、次にAPIがどう動いているか説明しているところを読み進めるのがいいでしょう。</p>&#13;
+<p>The most important section is the <a href="#sync">Sync</a> section, and you
+should read it next, where the way that the API works is explained.</p>&#13;
 &#13;
-<p>その他の節は別のTodoistのオブジェクトとエンドポイントの参考文書となっていますので、あなたが必要な通りに読み進めて下さい。</p>&#13;
+<p>The other sections are the reference documentation of the different
+Todoist objects and endpoints, and you can continue reading them in
+the order you need them.</p>&#13;
 &#13;
 <h2 id="python-library">Python library</h2>&#13;
 &#13;
-<p>私たちは現在、生産活動が簡単になるように、Doistで公式のPythonライブラリを提供しています。</p>&#13;
+<p>We currently have an official Python library supported by Doist to make the
+developer life easier.</p>&#13;
 &#13;
 <blockquote>&#13;
-<p>pipからtodoistのpythonライブラリをインストールできます:</p>&#13;
+<p>You can install todoist python library via pip:</p>&#13;
 </blockquote>&#13;
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>pip install todoist-python
 </code></pre></div>&#13;
-<p>Githubのリポジトリから<a href="https://github.com/doist/todoist-python">Pythonライブラリのソースコード</a>を見ることもできます。</p>&#13;
+<p>You can find the <a href="https://github.com/doist/todoist-python">Python library source code</a> at its repository at Github.</p>&#13;
 &#13;
-<p><a href="http://todoist-python.readthedocs.org/en/latest/">Pythonライブラリの文書</a>をオンラインで読むこともできます。</p>&#13;
+<p>You can also read the <a href="http://todoist-python.readthedocs.org/en/latest/">Python library documentation</a> online.</p>&#13;
 &#13;
-<p>最後に、インストールが必要な方のために<a href="https://pypi.python.org/pypi/todoist-python">PyPIパッケージ</a>も用意しています。</p>&#13;
+<p>Finally, there’s also a <a href="https://pypi.python.org/pypi/todoist-python">PyPI package</a> ready for you to install.</p>&#13;
 &#13;
