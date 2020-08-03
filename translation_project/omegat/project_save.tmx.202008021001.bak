@@ -1361,14 +1361,6 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>The other sections are the reference documentation of the different Todoist objects and endpoints, and you can continue reading them in the order you need them.</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200803T112021Z" creationid="tom71" creationdate="20200803T112021Z">
-        <seg>その他の節は別のTodoistのオブジェクトとエンドポイントの参考文書となっていますので、あなたが必要な通りに読み進めて下さい。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>The table below shows the ids for any of these colors.</seg>
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T033106Z" creationid="tom71" creationdate="20200721T033106Z">
@@ -1642,36 +1634,12 @@
       </tuv>
     </tu>
     <tu>
-      <tuv lang="EN-US">
-        <seg>We currently have an official Python library supported by Doist to make the developer life easier.</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200803T115122Z" creationid="tom71" creationdate="20200803T115122Z">
-        <seg>私たちは現在、生産活動が簡単になるように、Doistで公式のPythonライブラリを提供しています。</seg>
-      </tuv>
-    </tu>
-    <tu>
       <note>良い訳はあるのかな？Webhookのままでもいいような気もする。</note>
       <tuv lang="EN-US">
         <seg>Webhooks</seg>
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T075943Z" creationid="tom71" creationdate="20200721T075943Z">
         <seg>ウェブフック</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>You can find the &lt;a0&gt;Python library source code&lt;/a0&gt; at its repository at Github.</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200803T115518Z" creationid="tom71" creationdate="20200803T115518Z">
-        <seg>Githubのリポジトリから&lt;a0&gt;Pythonライブラリのソースコード&lt;/a0&gt;を見ることもできます。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>You can install todoist python library via pip:</seg>
-      </tuv>
-      <tuv lang="JA" changeid="tom71" changedate="20200803T115218Z" creationid="tom71" creationdate="20200803T115218Z">
-        <seg>pipからtodoistのpythonライブラリをインストールできます:</seg>
       </tuv>
     </tu>
     <tu>
