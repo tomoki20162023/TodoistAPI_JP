@@ -1,11 +1,11 @@
           <h1 id="getting-started">始めに</h1>&#13;
 &#13;
-<p>この節では、多くのユーザが達成するのに助けを求めるであろう、いくつかの共通の事例を示します。ほとんどの場合は<code class="prettyprint">同期</code>呼び出しを使うと思いますが、それについては<a href="#sync">同期</a>の節に詳細を載せています。For now this can be considered as just an endpoint, and you will soon figure some of the things it can do, just by having a look at some examples.</p>&#13;
+<p>この節では、多くのユーザが達成するのに助けを求めるであろう、いくつかの共通の事例を示します。ほとんどの場合は<code class="prettyprint">同期</code>呼び出しを使うと思いますが、それについては<a href="#sync">同期</a>の節に詳細を載せています。現時点では、これは単なるエンドポイントと見なすことができ、いくつかの例を見るだけで、実行できる事例のいくつかをすぐに理解できます。</p>&#13;
 &#13;
 <h2 id="get-all-projects">全てのプロジェクトを取得する</h2>&#13;
 &#13;
 <blockquote>&#13;
-<p>The example of how we get all projects:</p>&#13;
+<p>全てのプロジェクトを取得する方法の例:</p>&#13;
 </blockquote>&#13;
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="nv">$ </span>curl https://api.todoist.com/sync/v8/sync <span class="se">\</span>
     <span class="nt">-d</span> <span class="nv">token</span><span class="o">=</span>0123456789abcdef0123456789abcdef01234567 <span class="se">\</span>
@@ -51,9 +51,9 @@
   <span class="p">})</span>
 <span class="p">]</span>
 </code></pre></div>&#13;
-<p>First, let’s see how we can get all projects a user has.</p>&#13;
+<p>まず、ユーザが持っている全てのプロジェクトを取得する方法を見てみましょう。</p>&#13;
 &#13;
-<h3 id="using-curl">Using curl</h3>&#13;
+<h3 id="using-curl">curlを使う場合</h3>&#13;
 &#13;
 <p>We send a request to the <code class="prettyprint">sync</code> endpoint, and then specify the following
 arguments:</p>&#13;
@@ -80,7 +80,7 @@ syncs.</li>&#13;
 <li>An empty <code class="prettyprint">temp_id_mapping</code> object which we’ll look at later on.</li>&#13;
 </ul>&#13;
 &#13;
-<h3 id="using-the-python-library">Using the Python library</h3>&#13;
+<h3 id="using-the-python-library">Pythonライブラリを使う場合</h3>&#13;
 &#13;
 <p>We need to import the <code class="prettyprint">TodoistAPI</code> class from the <code class="prettyprint">todoist</code> module, create a
 <code class="prettyprint">TodoistAPI</code> object which we store to the <code class="prettyprint">api</code> variable, and specify our user
@@ -124,7 +124,7 @@ user’s projects through the <code class="prettyprint">api.state</code> object,
 &#13;
 <p>For example, if we were making a request for everything but <code class="prettyprint">notes</code> and <code class="prettyprint">labels</code>, it’d look like this: <code class="prettyprint">resource_types=["all", "-notes", "-labels"]</code>.</p>&#13;
 &#13;
-<h3 id="using-curl">Using curl</h3>&#13;
+<h3 id="using-curl">curlを使う場合</h3>&#13;
 &#13;
 <p>Similar to our previous example, we’re sending a request to the <code class="prettyprint">sync</code> endpoint with the following arguments:</p>&#13;
 &#13;
@@ -199,7 +199,7 @@ user’s projects through the <code class="prettyprint">api.state</code> object,
 </code></pre></div>&#13;
 <p>Let’s create a new project, and observe the result of our action.</p>&#13;
 &#13;
-<h3 id="using-curl">Using curl</h3>&#13;
+<h3 id="using-curl">curlを使う場合</h3>&#13;
 &#13;
 <p>We use the <code class="prettyprint">sync</code> call, and then specify the following arguments:</p>&#13;
 &#13;
@@ -240,7 +240,7 @@ an incremental sync.</li>&#13;
 <li>A new <code class="prettyprint">sync_token</code> which we can use later on to continue doing incremental syncs.</li>&#13;
 </ul>&#13;
 &#13;
-<h3 id="using-the-python-library">Using the Python library</h3>&#13;
+<h3 id="using-the-python-library">Pythonライブラリを使う場合</h3>&#13;
 &#13;
 <p>We call the <code class="prettyprint">api.projects.add()</code> call, supplying the name of the new project,
 and as a return value we get a new project object.  This object holds the newly
@@ -385,7 +385,7 @@ getting back the new project’s properties.</p>&#13;
 </code></pre></div>&#13;
 <p>Let’s create two new tasks in one go, and observe the result of our action.</p>&#13;
 &#13;
-<h3 id="using-curl">Using curl</h3>&#13;
+<h3 id="using-curl">curlを使う場合</h3>&#13;
 &#13;
 <p>We use the <code class="prettyprint">sync</code> call, and then specify the following arguments:</p>&#13;
 &#13;
@@ -417,7 +417,7 @@ an incremental sync.</li>&#13;
 <li>A new <code class="prettyprint">sync_token</code> which we can use later on to do more incremental syncs.</li>&#13;
 </ul>&#13;
 &#13;
-<h3 id="using-the-python-library">Using the Python library</h3>&#13;
+<h3 id="using-the-python-library">Pythonライブラリを使う場合</h3>&#13;
 &#13;
 <p>We call the <code class="prettyprint">api.items.add()</code> call, supplying the content of each new task and
 the project it should be added to, and as a return value we get a new item
@@ -518,7 +518,7 @@ and so both item objects are populated with the properties these new tasks have.
 <p>Let’s update the content and due date of the first task we created in the
 previous step.</p>&#13;
 &#13;
-<h3 id="using-curl">Using curl</h3>&#13;
+<h3 id="using-curl">curlを使う場合</h3>&#13;
 &#13;
 <p>We use the <code class="prettyprint">sync</code> call, and then specify the following arguments:</p>&#13;
 &#13;
@@ -546,7 +546,7 @@ an incremental sync.</li>&#13;
 <li>A new <code class="prettyprint">sync_token</code> which we can use later on to do more incremental syncs.</li>&#13;
 </ul>&#13;
 &#13;
-<h3 id="using-the-python-library">Using the Python library</h3>&#13;
+<h3 id="using-the-python-library">Pythonライブラリを使う場合</h3>&#13;
 &#13;
 <p>We call the <code class="prettyprint">update()</code> call on the <code class="prettyprint">task1</code> object that we got in the previous
 step, so we call <code class="prettyprint">task1.update()</code>, and we specify the new <code class="prettyprint">content=NewTask1</code> and
@@ -695,7 +695,7 @@ updated.</p>&#13;
 <p>Let’s complete the task we updated in the previous step, and delete the task we
 created earlier.</p>&#13;
 &#13;
-<h3 id="using-curl">Using curl</h3>&#13;
+<h3 id="using-curl">curlを使う場合</h3>&#13;
 &#13;
 <p>We use the <code class="prettyprint">sync</code> call, and then specify the following arguments:</p>&#13;
 &#13;
@@ -725,7 +725,7 @@ an incremental sync.</li>&#13;
 <li>A new <code class="prettyprint">sync_token</code> which we can use later on to do more incremental syncs.</li>&#13;
 </ul>&#13;
 &#13;
-<h3 id="using-the-python-library">Using the Python library</h3>&#13;
+<h3 id="using-the-python-library">Pythonライブラリを使う場合</h3>&#13;
 &#13;
 <p>We call the <code class="prettyprint">complete()</code> method on the <code class="prettyprint">task1</code> object that we have already
 stored from earlier, and also the <code class="prettyprint">delete()</code> method on the <code class="prettyprint">task2</code> object.</p>&#13;
@@ -906,7 +906,7 @@ stored from earlier, and also the <code class="prettyprint">delete()</code> meth
 <p>Let’s create a new task, add a new comment, and also set a
 reminder based on its due date.</p>&#13;
 &#13;
-<h3 id="using-curl">Using curl</h3>&#13;
+<h3 id="using-curl">curlを使う場合</h3>&#13;
 &#13;
 <p>We use the <code class="prettyprint">sync</code> call, and then specify the following arguments:</p>&#13;
 &#13;
@@ -937,7 +937,7 @@ an incremental sync.</li>&#13;
 <li>A new <code class="prettyprint">sync_token</code> which we can use later on to do more incremental syncs.</li>&#13;
 </ul>&#13;
 &#13;
-<h3 id="using-the-python-library">Using the Python library</h3>&#13;
+<h3 id="using-the-python-library">Pythonライブラリを使う場合</h3>&#13;
 &#13;
 <p>We call the <code class="prettyprint">api.items.add()</code> method to create the new task. and we store the
 object in the <code class="prettyprint">task3</code> variable. We then use the value of <code class="prettyprint">task3['id']</code> as the

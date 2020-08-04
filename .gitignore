@@ -1,6 +1,6 @@
 # file
-*.swp
 *.bak
 *.tmx
+last_entry.properties
 
 # directory
