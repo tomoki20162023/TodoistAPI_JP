@@ -926,6 +926,14 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
+        <seg>In this section we will do some common things, that many of our users ask for help on accomplishing them.</seg>
+      </tuv>
+      <tuv lang="JA" changeid="tom71" changedate="20200804T103217Z" creationid="tom71" creationdate="20200804T103217Z">
+        <seg>この節では、多くのユーザが達成するのに助けを求めるであろう、いくつかの共通の事例を示します。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
         <seg>Items</seg>
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200721T062754Z" creationid="tom71" creationdate="20200721T062754Z">
@@ -1655,6 +1663,14 @@
       </tuv>
       <tuv lang="JA" changeid="tom71" changedate="20200803T115122Z" creationid="tom71" creationdate="20200803T115122Z">
         <seg>私たちは現在、生産活動が簡単になるように、Doistで公式のPythonライブラリを提供しています。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>We will mostly use the &lt;c0&gt;sync&lt;/c0&gt; call, which is described in detail at the &lt;a1&gt;Sync&lt;/a1&gt; section.</seg>
+      </tuv>
+      <tuv lang="JA" changeid="tom71" changedate="20200804T103946Z" creationid="tom71" creationdate="20200804T103946Z">
+        <seg>ほとんどの場合は&lt;c0&gt;同期&lt;/c0&gt;呼び出しを使うと思いますが、それについては&lt;a1&gt;同期&lt;/a1&gt;の節に詳細を載せています。</seg>
       </tuv>
     </tu>
     <tu>
