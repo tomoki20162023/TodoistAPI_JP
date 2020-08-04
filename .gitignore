@@ -1,5 +1,7 @@
 # file
 *.swp
+*.bak
+*.tmx
 
 # directory
 
