@@ -55,18 +55,12 @@
 &#13;
 <h3 id="using-curl">curlを使う場合</h3>&#13;
 &#13;
-<p>We send a request to the <code class="prettyprint">sync</code> endpoint, and then specify the following
-arguments:</p>&#13;
+<p><code class="prettyprint">sync</code> エンドポイントに向けてリクエストを送り、その時には以下の引数を指定します：</p>&#13;
 &#13;
 <ul>&#13;
-<li>The user’s API token, which here is set to
-<code class="prettyprint">token=0123456789abcdef0123456789abcdef01234567</code>.  You can find out your token
-from the Todoist Web app, at <code class="prettyprint">Todoist Settings -&gt; Integrations -&gt; API token</code>.</li>&#13;
-<li>A special sync token, which denotes that we want a full sync, in contrast to
-an incremental sync, which is denoted with the <code class="prettyprint">*</code> symbol, so we set
-<code class="prettyprint">sync_token=*</code>.</li>&#13;
-<li>That we want to get back only the <code class="prettyprint">projects</code>, and not any other data, so we
-set <code class="prettyprint">resource_types='["projects"]'</code>.</li>&#13;
+<li>ユーザのAPIトークンは、次のように指定します：<code class="prettyprint">token=0123456789abcdef0123456789abcdef01234567</code>。自身のトークンはTodoistのウェブアプリから探すことができます。項目の場所は <code class="prettyprint">Todoist Settings -&gt; Integrations -&gt; API token</code>です。</li>&#13;
+<li>十分な同期が欲しい時に指定する特別なsync用トークンは、インクリメンタルな同期と対照的に、<code class="prettyprint">*</code> シンボルを指定します。そのため、<code class="prettyprint">sync_token=*</code>を設定します。</li>&#13;
+<li>それにより<code class="prettyprint">projects</code>のみ取得したいが、他のデータは欲しくないとき、<code class="prettyprint">resource_types='["projects"]'</code>を設定します。</li>&#13;
 </ul>&#13;
 &#13;
 <p>In the results we get back, we notice the following data:</p>&#13;
@@ -126,10 +120,10 @@ user’s projects through the <code class="prettyprint">api.state</code> object,
 &#13;
 <h3 id="using-curl">curlを使う場合</h3>&#13;
 &#13;
-<p>Similar to our previous example, we’re sending a request to the <code class="prettyprint">sync</code> endpoint with the following arguments:</p>&#13;
+<p>前の例と同じように、以下の引数を用いて<code class="prettyprint">sync</code> エンドポイントにリクエストを送っています:</p>&#13;
 &#13;
 <ul>&#13;
-<li>The user’s API token, which is set to <code class="prettyprint">token=0123456789abcdef0123456789abcdef01234567</code>. You can find out your token from the Todoist Web app, at <code class="prettyprint">Todoist Settings -&gt; Account -&gt; API token</code>.</li>&#13;
+<li>ユーザのAPIトークンは, 次のように設定する：<code class="prettyprint">token=0123456789abcdef0123456789abcdef01234567</code>。You can find out your token from the Todoist Web app, at <code class="prettyprint">Todoist Settings -&gt; Account -&gt; API token</code>.</li>&#13;
 <li>A special sync token, which denotes that we want a full sync, in contrast to an incremental sync, which is done with the * symbol, so we set <code class="prettyprint">sync_token=*</code>.</li>&#13;
 <li>The use of <code class="prettyprint">resource_types='["all", "-projects"]'</code> allows us to specify that we want everything <em>but</em> projects.</li>&#13;
 </ul>&#13;
